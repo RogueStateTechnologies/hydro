@@ -1,0 +1,5 @@
+<%= form_for(@harvest), url: harvests_path, method: :post do |f| %>
+  <%= f.text_field :num_plants %><br />
+  <%= f.text_field :profit_margin %><br />
+  <%= f.submit "Create Harvest" %>
+<% end %>
