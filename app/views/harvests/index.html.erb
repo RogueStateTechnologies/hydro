@@ -1,12 +1,18 @@
-<h1>Harvests#index</h1>
-<p>Find me in app/views/harvests/index.html.erb</p>
-
-<%= link_to "Add Harvest, new_harvests_path %>
-<table>
-  <% @harvests.each do |harvest| %>
-  <tr>
-    <td><%= harvest.num_plans %></td>
-    <td><%= harvest.profit_margin %></td>
-  </tr>
-  <% end %>
-</table>
+<div>
+  <h3>Harvest Logs</h3>
+  <%= button_to "Add Harvest", new_harvest_path %>
+  <table>
+    <tr>
+      <th>Harvest</th>
+      <th>Plants</th>
+      <th>Yield (expected)</th>
+          <th>Yield (actual)</th>
+          <th>Cost (per weight)</th>
+          <th>Value (per weight)</th>
+          <th>Profit (expected)</th>
+          <th>Profit (actual)</th>
+          <th>Margins</th>
+        </tr>
+    <%= render partial: 'harvest', collection: @harvests %>
+  </table>
+</div>  

@@ -2,8 +2,6 @@ class HarvestsController < ApplicationController
 
   def index
     @harvests = Harvest.all
-    @num_columns = @harvest.size
-    @num_plants = @harvests.map(&:num_plants)
   end
 
   def new

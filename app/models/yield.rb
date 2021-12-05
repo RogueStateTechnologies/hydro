@@ -1,0 +1,2 @@
+class Yield < ApplicationRecord
+end

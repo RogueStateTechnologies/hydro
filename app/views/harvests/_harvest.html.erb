@@ -1,0 +1,13 @@
+<tr>
+  <td><%= harvest.date.strftime('%m/%d/%Y') %></td>
+  <td><%= harvest.num_plants %></td>
+  <td><%= harvest.expected_yield %>g</td>
+  <td><%= harvest.actual_yield %>g</td>
+  <td>$<%= harvest.cost_per_weight_in_pennies / 100 %></td>
+  <td>$<%= harvest.value_per_weight_in_pennies / 100 %></td>
+  <td>$<%= harvest.profit_expected_in_pennies / 100 %></td>
+  <td>$<%= 300.00 %></td>
+  <td><%= -10000 %></td>
+</tr>
+
+

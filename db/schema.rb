@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 2021_12_03_210751) do
 
   create_table "harvests", force: :cascade do |t|
     t.date "date"
-    t.integer "num_plans"
+    t.integer "num_plants"
     t.integer "expected_yield"
     t.integer "actual_yield"
     t.integer "cost_per_weight_in_pennies"
