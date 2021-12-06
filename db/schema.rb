@@ -10,10 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_03_210751) do
+ActiveRecord::Schema.define(version: 2021_12_05_205807) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "feed_plans", force: :cascade do |t|
+    t.string "name"
+    t.integer "stage_one_id"
+    t.integer "stage_one_cost_in_pennies"
+    t.integer "stage_two_id"
+    t.integer "stage_two_cost_in_pennies"
+    t.integer "stage_three_id"
+    t.integer "stage_three_cost_in_pennies"
+    t.integer "unit_size_in_mililiters"
+    t.integer "unit_cost_in_pennies"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "harvests", force: :cascade do |t|
     t.date "date"
@@ -24,6 +38,47 @@ ActiveRecord::Schema.define(version: 2021_12_03_210751) do
     t.integer "value_per_weight_in_pennies"
     t.integer "profit_expected_in_pennies"
     t.integer "profit_actual_in_pennies"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "plants", force: :cascade do |t|
+    t.string "strain"
+    t.integer "yield"
+    t.integer "feed_plan"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "stages", force: :cascade do |t|
+    t.integer "feed_plan"
+    t.integer "mix_per_feeding_in_mililiters"
+    t.integer "light_intensity_in_wattage"
+    t.integer "duration_in_weeks"
+    t.integer "feedings_per_week"
+    t.integer "mix_usage_in_mililiters"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "weeks", force: :cascade do |t|
+    t.date "start_date"
+    t.date "end_date"
+    t.integer "feed_plan"
+    t.integer "stage"
+    t.integer "plant"
+    t.string "performance"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "yields", force: :cascade do |t|
+    t.date "harvest_date"
+    t.integer "cost_in_pennies"
+    t.integer "weight_in_grams"
+    t.integer "plant_id"
+    t.integer "value_per_weight_in_pennies"
+    t.integer "profit_in_pennies"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
