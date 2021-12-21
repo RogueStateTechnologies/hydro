@@ -1,89 +1,136 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link rel="stylesheet" type="text/css" href="index.css" />
     <title>GroWise</title>
   </head>
   <body>
-    <h1>
-      Prototype Plant index table
-    </h1>
-
-    <div>
-      <h4>Plants in Cycle: 10,000,000</h4>
-      <span>next harvest: 10-20-22</span><span> | </span>
-      <span>last harvest: 9-20-22</span><span> | </span>
-      <span>Current plant performance: On Track</span>
-      <table>
-        <tr>
-          <th>Plant ID</th><th>Strain</th><th>Feed Plan</th><th>Stage</th><th>Performance</th>
-        </tr>
-        <tr>
-          <td>001</td><td>OG Kush</td><td>Fox Farm</td><td>Veg</td><td>On Track</td>
-        </tr>
-        <tr>
-          <td>002</td><td>OG Kush</td><td>Fox Farm</td><td>Veg</td><td>On Track</td>
-        </tr>
-        <tr>
-          <td>003</td><td>OG Kush</td><td>Fox Farm</td><td>Veg</td><td>On Track</td>
-        </tr>
-        <tr>
-          <td>004</td><td>OG Kush</td><td>Fox Farm</td><td>Veg</td><td>On Track</td>
-        </tr>
-        <tr>
-          <td>005</td><td>OG Kush</td><td>Fox Farm</td><td>Veg</td><td>On Track</td>
-        </tr>
-      </table>
-      <button>Add Plant</button><button>Update Plant</button>
-    </div>
-    <div>
-      <h1>
-        Prototype Plant Report Card
-      </h1>
+    <div id="header">
       <div>
-        <h4>Plant: 001</h4>
-        <span>Current Stage: Veg</span><span> | </span>
-        <span>Current Performance: On Track</span><span> | </span>
-        <span>Current Weekly Cost: $1000</span>
+        <h1>GroWise</h1>
+        <span>For all your Growing Needs</span>
       </div>
-      <table>
-        <h4>Weekly Reports</h4>
-        <tr>
-          <th>Start Date</th><th>End Date</th><th>Feed Plan</th><th>Feeding Adjustments</th><th>Stage</th><th>Performance</th><th>Notes</th>
-        </tr>
-        <tr>
-          <td>10-10-10</td><td>10-11-10</td><td>Fox Farm</td><td>10ml</td><td>Veg</td><td>On Track</td><td>Note Icons</td>
-        </tr>
-        <tr>
-          <td>10-10-10</td><td>10-11-10</td><td>Fox Farm</td><td>10ml</td><td>Veg</td><td>On Track</td><td>Note Icons</td>
-        </tr>
-        <tr>
-          <td>10-10-10</td><td>10-11-10</td><td>Fox Farm</td><td>10ml</td><td>Veg</td><td>On Track</td><td>Note Icons</td>
-        </tr>
-        <tr>
-          <td>10-10-10</td><td>10-11-10</td><td>Fox Farm</td><td>10ml</td><td>Veg</td><td>On Track</td><td>Note Icons</td>
-        </tr>
-        <tr>
-          <td>10-10-10</td><td>10-11-10</td><td>Fox Farm</td><td>10ml</td><td>Veg</td><td>On Track</td><td>Note Icons</td>
-        </tr>
-      </table>
-      <button>Add Weekly Report</button><button>Update Weekly Report</button><button>Finalize Report</button>
+      <div>
+        <h3>Hello, User</h3>
+      </div>
+      <div class="button" id="access">
+        <button>Sign Up</button>
+        <button>Log In</button>
+      </div>
     </div>
-    <div>
-      <h1>Prototype Plant Creation Form</h1>
-      <form>
-        <!-- check boxes for creating from blueprint or new -->
-        <!-- if blueprint is selected create a dropdown with a list of blueprints -->
-        <!-- drop down for strain type, with option to add more -->
-        <!-- cycle start date and end date defaulted, with a check box to delay start which triggers creation of a date selection field -->
-        <!-- drop down for Feed Plan with option to add a new one -->
-        <!-- plant quantity field  -->
-        <!-- estimated costs  -->
-        <!-- estimated value -->
-        <!-- estimated weight at harvest -->
-        <!-- estimated profits auto-filled by using following calculation: (value*harvest_weight)-cost  -->
-        <!-- submit button -->
-        <!-- submit as blueprint button  -->
-      </form>
+    <div id="sidebar">
+      <button>Profile</button><br>
+      <button>Plants</button><br>
+      <button>Grow Plans</button><br>
+    </div>
+    <div id="main">
+      <div id="row">
+        <div id="thing">
+          <h1>10</h1>
+          <h5>Plants</h5>
+        </div>
+        <div id="thing">
+          <h1>100g</h1>
+          <h5>Overall Yields</h5>
+        </div>
+        <div id="thing">
+          <h1>01-15-22</h1>
+          <h5>Next Harvest</h5>
+        </div>
+        <div id="thing">
+          <h1>150g</h1>
+          <h5>Expected Yield</h5>
+        </div>
+        <div id="thing">
+          <h1>50%</h1>
+          <h5>Growth %</h5>
+        </div>
+      </div>
+      <div id="index">
+        <table>
+          <button>New Plant</button> 
+          <tr>
+            <th>Start Date |</th>
+            <th> Harvest Date |</th>
+            <th> Current Week |</th> 
+            <th> Grow Medium |</th>
+            <th> Nutrient Mix |</th>
+            <th> Light? |</th>
+            <th> Growth |</th>
+            <th> Notes |</th>
+          </tr>
+          <tr>
+            <td>10-10-10 |</td>
+            <td>10-10-10 |</td>
+            <td> Veg 4 |</td> 
+            <td> CoCo |</td>
+            <td> Fox Farms |</td>
+            <td> 10kw |</td>
+            <td> On Track |</td>
+            <td> <button>View Notes</button> |</td>
+          </tr>
+          <tr>
+            <td>10-10-10 |</td>
+            <td>10-10-10 |</td>
+            <td> Veg 4 |</td> 
+            <td> CoCo |</td>
+            <td> Fox Farms |</td>
+            <td> 10kw |</td>
+            <td> On Track |</td>
+            <td> <button>View Notes</button>  |</td>
+          </tr>
+          <tr>
+            <td>10-10-10 |</td>
+            <td>10-10-10 |</td>
+            <td> Veg 4 |</td> 
+            <td> CoCo |</td>
+            <td> Fox Farms |</td>
+            <td> 10kw |</td>
+            <td> On Track |</td>
+            <td> <button>View Notes</button>  |</td>
+          </tr>
+          <tr>
+            <td>10-10-10 |</td>
+            <td>10-10-10 |</td>
+            <td> Veg 4 |</td> 
+            <td> CoCo |</td>
+            <td> Fox Farms |</td>
+            <td> 10kw |</td>
+            <td> On Track |</td>
+            <td> <button>View Notes</button>  |</td>
+          </tr>
+          <tr>
+            <td>10-10-10 |</td>
+            <td>10-10-10 |</td>
+            <td> Veg 4 |</td> 
+            <td> CoCo |</td>
+            <td> Fox Farms |</td>
+            <td> 10kw |</td>
+            <td> On Track |</td>
+            <td> <button>View Notes</button>  |</td>
+          </tr>
+          <tr>
+            <td>10-10-10 |</td>
+            <td>10-10-10 |</td>
+            <td> Veg 4 |</td> 
+            <td> CoCo |</td>
+            <td> Fox Farms |</td>
+            <td> 10kw |</td>
+            <td> On Track |</td>
+            <td> <button>View Notes</button>  |</td>
+          </tr>
+          <tr>
+            <td>10-10-10 |</td>
+            <td>10-10-10 |</td>
+            <td> Veg 4 |</td> 
+            <td> CoCo |</td>
+            <td> Fox Farms |</td>
+            <td> 10kw |</td>
+            <td> On Track |</td>
+            <td> <button>View Notes</button>  |</td>
+          </tr>
+        </table>
+      </div>
     </div>
   </body>
 </html>

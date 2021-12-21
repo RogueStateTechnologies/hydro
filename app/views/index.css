@@ -1,0 +1,24 @@
+#header{
+  display: flex;
+  justify-content: space-around;
+  border: 1px solid black;
+}
+#sidebar{
+  position: fixed;
+  height: 100%;
+  border: 1px solid black;
+  width: 100px;
+}
+#main{
+  position: relative;
+  padding: 0 30px 30px;
+  float: right;
+}
+#row{
+  display: flex;
+  margin-left: -15px;
+  margin-right: -15px;
+}
+#thing{
+  padding: 0 50px;
+}
