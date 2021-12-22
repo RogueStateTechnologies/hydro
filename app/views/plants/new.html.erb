@@ -1,5 +1,16 @@
-<%= form_for(@plant), url: plants_path, method: :post do |f| %>
-  <%= f.text_field :num_plants %><br />
-  <%= f.text_field :profit_margin %><br />
-  <%= f.submit "Create Harvest" %>
-<% end %>
+<form>
+  <label for="start_date">Start Date</label><br>
+  <input type="text" id="start_date" placeholder="MM/DD/YY"><br>
+  <label for="phase">Grow Phase</label><br>
+  <select value="phase">
+    <option>Rooting</option>
+    <option>Veg</option>
+    <option>Flower</option>
+    <option>Cleanse</option>
+  </select><br>
+  <label for="medium">Grow Medium</label><br>
+  <select value="medium"</select>
+    <option>Coco</option>
+    <option>Soil</option>
+  </select>
+</form>

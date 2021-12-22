@@ -1,5 +1,10 @@
 <tr>
   <td><%= plant.start_date %></td>
+  <%
+=begin%>
+if harvested == true render "Harvested" else render link_to new_plant_harvest  
+<%
+=end%>
   <td><%= plant.harvested %></td>
   <td><%= plant.current_stage %></td> 
   <td><%= plant.grow_medium %></td>
