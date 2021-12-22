@@ -43,9 +43,14 @@ ActiveRecord::Schema.define(version: 2021_12_05_205807) do
   end
 
   create_table "plants", force: :cascade do |t|
-    t.string "strain"
-    t.integer "yield"
-    t.integer "feed_plan"
+    t.date "start_date"
+    t.boolean "harvested"
+    t.string "current_stage"
+    t.string "grow_medium"
+    t.string "nutrient_mix"
+    t.string "light_intensity"
+    t.string "growth_track"
+    t.string "plant_notes"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

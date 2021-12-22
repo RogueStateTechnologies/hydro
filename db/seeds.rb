@@ -1,9 +1,14 @@
 
 (0..10).each do 
   Plant.create(
-    strain: "OG Kush",
-    yield: 1,
-    feed_plan: 1
+    start_date: Date.today,
+    harvested: false,
+    current_stage: "Veg",
+    grow_medium: "CoCo",
+    nutrient_mix: "Fox Farm",
+    light_intensity: "10kw",
+    growth_track: "On Track",
+    plant_notes: "Looks good"
   )
   Week.create(
     start_date: Date.today,
