@@ -1,23 +1,16 @@
-      <div id="index">
-        <table>
-          <button>New Plant</button> 
-          <tr>
-            <th>Start Date |</th>
-            <th> Harvested</th>
-            <th> Current Week |</th> 
-            <th> Grow Medium |</th>
-            <th> Nutrient Mix |</th>
-            <th> Light? |</th>
-            <th> Growth |</th>
-          </tr>
-          <tr>
-            <td><%= @plants.first.start_date %></td>
-            <td><%= @plants.first.harvested %></td>
-            <td><%= @plants.first.current_stage %></td> 
-            <td><%= @plants.first.grow_medium %></td>
-            <td><%= @plants.first.nutrient_mix %></td>
-            <td><%= @plants.first.light_intensity %></td>
-            <td><%= @plants.first.growth_track %></td>
-          </tr>
-        </table>
-      </div>
+<div id="index">
+  <table>
+  <%= button_to "Add Plant", new_plant_path %>
+    <tr>
+      <th>Start Date |</th>
+      <th> Harvested</th>
+      <th> Current Week |</th> 
+      <th> Grow Medium |</th>
+      <th> Nutrient Mix |</th>
+      <th> Light? |</th>
+      <th> Growth |</th>
+    </tr>
+  <%= render partial: 'plant', collection: @plants %>
+  </table>
+</div>
+    
