@@ -1,2 +1,0 @@
-class YieldsController < ApplicationController
-end

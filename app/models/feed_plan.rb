@@ -1,2 +1,0 @@
-class FeedPlan < ApplicationRecord
-end
