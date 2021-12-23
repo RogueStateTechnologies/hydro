@@ -2,13 +2,14 @@
   <table>
   <%= link_to "Add Plant", new_plant_path %>
     <tr>
+      <th>Crop |</th>
       <th>Start Date |</th>
-      <th> Harvested</th>
+      <th> Estimated Harvest</th>
       <th> Current Week |</th> 
       <th> Grow Medium |</th>
-      <th> Nutrient Mix |</th>
-      <th> Light? |</th>
-      <th> Growth |</th>
+      <th> Food Plan |</th>
+      <th> Light Intensity |</th>
+      <th> Growth Status |</th>
     </tr>
   <%= render partial: 'plant', collection: @plants %>
   </table>

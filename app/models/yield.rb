@@ -1,2 +1,0 @@
-class Yield < ApplicationRecord
-end

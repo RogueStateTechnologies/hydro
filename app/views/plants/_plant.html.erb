@@ -1,14 +1,10 @@
 <tr>
+  <td><%= plant.crop %></td>
   <td><%= plant.start_date %></td>
-  <%
-=begin%>
-if harvested == true render "Harvested" else render link_to new_plant_harvest  
-<%
-=end%>
-  <td><%= plant.harvested %></td>
-  <td><%= plant.current_stage %></td> 
+  <td><%= plant.estmd_harvest_date %></td>
+  <td><%= plant.current_week %></td> 
   <td><%= plant.grow_medium %></td>
-  <td><%= plant.nutrient_mix %></td>
+  <td><%= plant.food_plan %></td>
   <td><%= plant.light_intensity %></td>
-  <td><%= plant.growth_track %></td>
+  <td><%= plant.growth_status %></td>
 </tr>
