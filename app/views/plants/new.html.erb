@@ -1,24 +1,13 @@
-<form>
-<label for="crop">Crop</lable>
-<select class="crop" id="crop" value="crop">
-<option>Cannabis</option>
-<option>Lettuce</option>
-<option>Strawberries</option>
-<option>Tomatoes</option>
-<option>Pumpkins</option>
-</select>
-<label for="startDate">Start Date</label>
-<input type="date">
-<label for="HarvestDate">Estimated Harvest Date</label>
-<input type="date">
-<label for="growMedium">Grow Medium</lable>
-<select class="growMedium" id="growMedium" value="growMedium">
-<option>CoCo</option>
-<option>Soil</option>
-</select>
-<label for="foodPlan">Food Plan</lable>
-<select class="foodPlan" id="foodPlan" value="foodPlan">
-<option>Fox Farm</option>
-<option>Aethena</option>
-</select>
-</form>
+<%= form_with url: "/plants" do |plant_form| %>
+  <%= plant_form.label :crop, "Crop to be planted" %>
+  <%= plant_form.select :crop, ["Cannabis", "Tomatoes", "Lettuce"] %><br>
+  <%= plant_form.label :start_date, "Start Date" %>
+  <%= plant_form.date_field :start_date %><br>
+  <%= plant_form.label :grow_medium, "Grow Medium used" %>
+  <%= plant_form.select :grow_medium, ["Soil", "CoCo"] %><br>
+  <%= plant_form.label :food_plan, "Food Plan" %>
+  <%= plant_form.select :food_plan, ["Fox Farm", "Athena"] %><br>
+  <%= plant_form.label :light_intensity, "Lights Used" %>
+  <%= plant_form.select :light_intensity, ["10kw", "50kw", "100kw"] %>
+  <%= button_to "Add Plant" %>
+<% end %>
