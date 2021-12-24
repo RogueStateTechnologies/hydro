@@ -1,17 +1,29 @@
-<div id="index">
-  <table>
-  <%= link_to "Add Plant", new_plant_path %>
-    <tr>
-      <th>Crop |</th>
-      <th>Start Date |</th>
-      <th> Estimated Harvest</th>
-      <th> Current Week |</th> 
-      <th> Grow Medium |</th>
-      <th> Food Plan |</th>
-      <th> Light Intensity |</th>
-      <th> Growth Status |</th>
-    </tr>
-  <%= render partial: 'plant', collection: @plants %>
+<%= content_for :card_header do %>
+  <div class="row p-3">
+    <div class="col-md-10">
+      <h2>My Plants</h2>
+    </div>
+    <div class="text-right col-md-2">
+      <%= link_to "Add Plant", new_plant_path, class: "btn btn-primary" %>
+    </div>
+  </div>
+<% end %>
+<div class='table-responsive'>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Crop</th>
+        <th>Start Date</th>
+        <th>Estimated Harvest</th>
+        <th>Current Week</th>
+        <th>Grow Medium</th>
+        <th>Food Plan</th>
+        <th>Light Intensity</th>
+        <th>Growth Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <%= render partial: 'plant', collection: @plants %>
+    </tbody>
   </table>
 </div>
-    

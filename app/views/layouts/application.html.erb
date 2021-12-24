@@ -5,16 +5,29 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <%= render partial: 'layouts/shared/header' %>
-    <%= render partial: 'layouts/shared/sidebar' %>
-    <div id="main">
-      <%= yield %>
+    <div class-="wrapper">
+      <%= render partial: 'layouts/shared/sidebar' %>
+      <div class="main-panel" id="main">
+        <%= render partial: "layouts/shared/navbar" %>
+        <div class="content">
+          <div class="card">
+            <div class="card-header">
+              <%= yield :card_header %>
+            </div>
+            <div class="card-body">
+              <%= yield %>
+            </div>
+
+          </div>
+        </div>
+       <%= render partial: 'layouts/shared/footer' %>
+      </div>
     </div>
   </body>
 </html>
