@@ -4,8 +4,12 @@ class PlantsController < ApplicationController
     @plants = Plant.all
   end
 
+  def show
+    
+  end
+
   def create
-    Plant.create(@plant_params)
+    Plant.create(plant_params)
   end
 
   private
