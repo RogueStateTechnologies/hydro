@@ -1,10 +1,9 @@
 <tr>
   <td><%= plant.crop %></td>
   <td><%= plant.start_date %></td>
-  <td><%= plant.estmd_harvest_date %></td>
   <td><%= plant.current_week %></td> 
   <td><%= plant.grow_medium %></td>
   <td><%= plant.food_plan %></td>
-  <td><%= plant.light_intensity %></td>
   <td><%= plant.growth_status %></td>
+  <td><%= link_to "Plant Journal", plant_path(plant.id), class: "btn btn-primary" %></td>
 </tr>
