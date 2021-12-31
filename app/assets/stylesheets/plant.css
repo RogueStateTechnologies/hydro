@@ -1,6 +1,7 @@
 .plantHeader{
   display: flex;
   justify-content: space-between;
+  padding: 10px;
 }
 .reports{
   display: flex;

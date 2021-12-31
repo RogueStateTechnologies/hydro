@@ -12,5 +12,6 @@
  *
  *= require bootstrap.min
  *= require paper-dashboard
+ *= require plant.css
  * require_self
  */
