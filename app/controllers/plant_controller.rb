@@ -1,20 +1,20 @@
 class PlantsController < ApplicationController
 
   def index
-    @plants = Plant.all
+    @journal = PlantJournal.all
   end
 
   def show
-    @plant = Plant.find(params[:id])
+    @plant_journal = PlantJournal.find(params[:id])
   end
 
   def create
-    Plant.create(plant_params)
+    PlantJournal.create(plant_journal_params)
   end
 
   private
 
-  def plant_params
+  def plant_journal_params
     params.permit( :crop, :start_date, :grow_medium)
   end
 end

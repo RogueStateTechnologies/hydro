@@ -10,21 +10,46 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_05_194940) do
+ActiveRecord::Schema.define(version: 2022_01_03_213414) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "crops", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "media", force: :cascade do |t|
+    t.string "name"
+    t.string "description"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "plans", force: :cascade do |t|
+    t.string "name"
+    t.string "description"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "plants", force: :cascade do |t|
-    t.string "crop"
+    t.integer "crop_id"
+    t.integer "variant_id"
+    t.integer "medium_id"
+    t.integer "plan_id"
     t.date "start_date"
-    t.date "estmd_harvest_date"
-    t.integer "current_week"
-    t.integer "grow_medium"
-    t.integer "food_plan"
-    t.string "light_intensity"
-    t.string "growth_status"
-    t.integer "harvest"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "variants", force: :cascade do |t|
+    t.string "name"
+    t.string "description"
+    t.integer "crop_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

@@ -1,3 +1,10 @@
+.plantsHeader{
+  display: flex;
+  justify-content: space-between;
+}
+.headerStat{
+  margin-top: auto;
+}
 .plantHeader{
   display: flex;
   justify-content: space-between;

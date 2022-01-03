@@ -1,14 +1,5 @@
-
-(0..10).each do 
-  Plant.create(
-    crop: "Cannabis",
-    start_date: Date.today,
-    estmd_harvest_date: Date.today,
-    current_week: 1,
-    grow_medium: 5,
-    food_plan: 3,
-    light_intensity: "10kw",
-    growth_status: "On Track",
-    harvest: 3,
-  )
-end               
+crop = Crop.create(name: "Cannabis", description: "Weed...")
+variant = Variant.create(name: "Blueberry", description: "A Good Strain")
+plan = Plan.create(name: "Fox Farm", description: "A Quality Nutrient Line...")
+medium = Medium.create(name: "CoCo", description: "A growth medium")
+Plant.create(crop_id: crop.id, variant_id: variant.id, medium_id: medium.id , plan_id: plan.id, start_date: Date.today)             
