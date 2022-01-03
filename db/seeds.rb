@@ -1,5 +1,5 @@
 crop = Crop.create(name: "Cannabis", description: "Weed...")
-variant = Variant.create(name: "Blueberry", description: "A Good Strain")
+variant = Variant.create(name: "Blueberry", description: "A Good Strain", crop_id: crop.id)
 plan = Plan.create(name: "Fox Farm", description: "A Quality Nutrient Line...")
 medium = Medium.create(name: "CoCo", description: "A growth medium")
 Plant.create(crop_id: crop.id, variant_id: variant.id, medium_id: medium.id , plan_id: plan.id, start_date: Date.today)             
