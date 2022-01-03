@@ -1,10 +1,19 @@
 <%= content_for :content_header do %>
-  <div class="row p-3">
-    <div class="col-md-10">
-      <h2>My Plants</h2>
+  <div class="plantsHeader">
+    <div class="headerStat">
+      <h1>100</h1>
+      <h5>Number of Active Journals</h5>
     </div>
-    <div class="text-right col-md-2">
-      <%= link_to "Add Plant", new_plant_path, class: "btn btn-primary" %>
+    <div class="headerStat">
+      <h3>Seed</h3>
+      <h5>25 plants</h5>
+      <h6>Most Comman Phase</h6>
+    </div>
+    <div>
+      <h3></h3>
+    </div>
+    <div class="headerStat">
+      <%= link_to "Add Plant", new_plant_journal_path, class: "btn btn-primary" %>
     </div>
   </div>
   <hr>
@@ -13,17 +22,14 @@
   <table class="table">
     <thead>
       <tr>
-        <th>Crop</th>
         <th>Start Date</th>
-        <th>Current Week</th>
-        <th>Grow Medium</th>
-        <th>Food Plan</th>
-        <th>Growth Status</th>
+        <th>Crop</th>
+        <th>Phase</th>
         <th>Actions</th>
       </tr>
     </thead>
     <tbody>
-      <%= render partial: 'plant', collection: @plants %>
+      <%= render partial: 'plant', collection: @plant_journals %>
     </tbody>
   </table>
-</div>
+</div> 
