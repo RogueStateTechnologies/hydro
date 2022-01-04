@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_03_213414) do
+ActiveRecord::Schema.define(version: 2022_01_04_180850) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,9 +29,20 @@ ActiveRecord::Schema.define(version: 2022_01_03_213414) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "phases", force: :cascade do |t|
+    t.string "name"
+    t.integer "duration"
+    t.integer "plan_id"
+    t.text "description"
+    t.integer "feed_frequency"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "plans", force: :cascade do |t|
     t.string "name"
-    t.string "description"
+    t.text "description"
+    t.integer "crop_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -41,6 +52,7 @@ ActiveRecord::Schema.define(version: 2022_01_03_213414) do
     t.integer "variant_id"
     t.integer "medium_id"
     t.integer "plan_id"
+    t.integer "phase_id"
     t.date "start_date"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
