@@ -1,95 +1,16 @@
 <%= content_for :content_header do%>
 <div class="plantHeader">
   <div>
-    <h1>Cannabis</h1>
-    <span>Pull From WikiPedia Page on the Crop?</span>
+    <h3><%= @plant.crop.name %></h3>
+    <h5><%= @plant.variant.name%></h5>
+    <span><%= @plant.crop.description %></span>
   </div>
   <div>
-    <h3>Blueberry</h3>
+    <h3><%= @plant.start_date %></h3>
+    <h5><%= @plant.plan.name %></h5>
+    <span>Estimated Harvest Date?</span>
   </div>
 </div>
 <hr>
 <% end %>
-<div class="reports">
-  <div class="reportCard card">
-    <h2>Feeding Schedule</h2>
-    <hr>
-    <h3>10-10-10</h3>
-    <h6>Planting Date</h6>
-    <hr>
-    <h2>Fox Farm</h2>
-    <h6>Food Plan</h6>
-    <hr>
-    <h2>10-11-10</h2>
-    <h6>Next Scheduled Feeding</h6>
-    <button>View/Create/Edit Feeding Schedule</button>
-  </div>
-  <div class="reportCard card">
-    <h2>Harvest Report</h2>
-    <hr>
-    <h3>11-11-11</h3>
-    <h6>Estimated/Latest Harvest Date</h6>
-    <hr>
-    <h3>100g</h3>
-    <h6>Estimated/Latest Harvest</h6>
-    <hr>
-    <h3>1000%</h3>
-    <h6>Percentage Growth</h6>
-    <button>View/Create Full Report</button>  
-  </div>
-  <div class="reportCard card">
-    <h3>Health Report</h3>
-    <hr>
-    <h3>10/10</h3>
-    <h6>Status</h6>
-    <button>View Full Report</button>  
-  </div>
-</div>
-<div class="weeklyLogs card">
-  <table class="logsTable table">
-    <thead>
-      <tr>
-        <th>Start</th>
-        <th>End</th>
-        <th>Phase</th>
-        <th>Something</th>
-        <th>Something</th>
-        <th>Full Report</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>10-10-10</td>
-        <td>10-17-10</td>
-        <td>Seeding</td>
-        <td>A Thing</td>
-        <td>A Thing</td>
-        <td><button>View</button></td>
-      </tr>
-      <tr>
-        <td>10-10-10</td>
-        <td>10-17-10</td>
-        <td>Seeding</td>
-        <td>A Thing</td>
-        <td>A Thing</td>
-        <td><button>View</button></td>
-      </tr>
-      <tr>
-        <td>10-10-10</td>
-        <td>10-17-10</td>
-        <td>Seeding</td>
-        <td>A Thing</td>
-        <td>A Thing</td>
-        <td><button>View</button></td>
-      </tr>
-      <tr>
-        <td>10-10-10</td>
-        <td>10-17-10</td>
-        <td>Seeding</td>
-        <td>A Thing</td>
-        <td>A Thing</td>
-        <td><button>View</button></td>
-      </tr>
-    </tbody>
-  </table>
 </div>
