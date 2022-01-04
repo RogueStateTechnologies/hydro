@@ -1,7 +1,7 @@
 <%= content_for :content_header do %>
   <div class="plantsHeader">
     <div class="headerStat">
-      <h1>100</h1>
+      <h1><%= @plants.length %></h1>
       <h5>Number of Active Journals</h5>
     </div>
     <div class="headerStat">
@@ -13,7 +13,7 @@
       <h3></h3>
     </div>
     <div class="headerStat">
-      <%= link_to "Add Plant", new_plant_journal_path, class: "btn btn-primary" %>
+      <%= link_to "Add Plant", new_plant_path, class: "btn btn-primary" %>
     </div>
   </div>
   <hr>
@@ -24,12 +24,12 @@
       <tr>
         <th>Start Date</th>
         <th>Crop</th>
-        <th>Phase</th>
+        <th>Variant</th>
         <th>Actions</th>
       </tr>
     </thead>
     <tbody>
-      <%= render partial: 'plant', collection: @plant_journals %>
+      <%= render partial: 'plant', collection: @plants %>
     </tbody>
   </table>
 </div> 

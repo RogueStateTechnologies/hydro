@@ -1,7 +1,7 @@
 
 <tr>
-  <td><%= plantJournal..start_date %></td>
-  <td><%= plantJournal.crop %></td>
-  <td>Seed</td>
-  <td><%= link_to "Plant Journal", plant_journal_path(plantJournal.id), class: "btn btn-primary" %></td>
+  <td><%= plant.start_date %></td>
+  <td><%= plant.crop.name %></td>
+  <td><%= plant.variant.name %></td>
+  <td><%= link_to "Plant", plant_path(plant.id), class: "btn btn-primary" %></td>
 </tr> 

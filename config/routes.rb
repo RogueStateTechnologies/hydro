@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :variants
   resources :crops
   # Root Route, where to go at application load.
-  root to: 'plant_journals#index'
+  root to: 'plants#index'
 
-  resources :plant_journals
+  resources :plants
 end
