@@ -13,7 +13,7 @@
 <hr>
 <% end %>
 <div class="row">
-  <div class="card">
+  <div class="card feedPlan">
     <h3><%= @plant.plan.name%></h3>
     <span><%= @plant.plan.description %><span>
     <hr>
@@ -29,7 +29,7 @@
     <span>Nutrient mix 4: 1ml</span><br>
   </div>
   <div>
-    <div class="card">
+    <div class="card mediumDetails">
       <h5><%= @plant.medium.name %></h5>
       <span><%= @plant.medium.description %></span>
     </div>
@@ -37,7 +37,7 @@
       <h5>Over All Health?</h5>
     </div>
   </div>
-  <div>
+  <div class="weeklyReport">
     <h3>Most Recent Weekly Report</h3>
     <hr>
     <span>Start Date: 10-10</span><span> End Date: 10-10</span>
@@ -47,10 +47,11 @@
     <span>Target Ph</span>
     <h5>Daily Light Time</h5>
     <span>Light Intensity</span>
+    <hr>
   </div>
 </div>
-<div class="table">
-  <table>
+<div>
+  <table class="table">
     <thead>
       <th>Start Date</th>
       <th>End Date</th>

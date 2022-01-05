@@ -23,3 +23,15 @@
 .logsTable{
   width: 100%;
 }
+.weeklyReport{
+  padding-top: 5px;
+  padding-left: 50px;
+}
+.feedPlan{
+  padding: 10px;
+  margin-left: 25px;
+  margin-right: 25px;
+}
+.weeklyTable{
+  width: 100%;
+}
