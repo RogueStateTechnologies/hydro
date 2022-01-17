@@ -1,0 +1,22 @@
+<div class="feedPlan">
+  <div class= "planHeader">
+    <div class="planHeading">
+      <h5><%= plan.name %></h5>
+      <span>Plan</span>
+    </div>
+    <div class="planHeading" id="phase">
+      <h6><%= phase.name %></h6>
+      <span>Phase</span>
+    </div>
+  </div>
+  <hr>
+  <div>
+    <span>Calcuate Current Week in Phase</span><br>
+    <span><%= phase.duration%> total weeks in phase</span><br>
+    <button>Add Week</button>
+  </div>
+  <hr>
+  <div>
+    <%= render partial: '/nutrients/nutrient', collection: nutrients = Nutrient.where( plan_id: plan.id, phase_id: phase.id) %>
+  </div>
+</div>
