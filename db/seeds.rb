@@ -23,4 +23,8 @@ puts "Phases Seeded!"
 coco = Medium.create(name: "CoCo", description: "Made from Coconut")
 puts "Media Seeded!"
 
-Plant.create(crop_id: cannabis.id, variant_id: og.id, medium_id: coco.id, plan_id: flora.id, phase_id: seed.id, start_date: Date.today)
+Nutrient.create(name: "FloraGrow", plan_id: flora.id, phase_id: seed.id, amount_per_feeding: 1)
+
+plant = Plant.create(crop_id: cannabis.id, variant_id: og.id, medium_id: coco.id, plan_id: flora.id, phase_id: seed.id, start_date: Date.today)
+
+HealthReport.create( plant_id: plant.id, plant_image: "Not An Image", ph: 1, diagnosis: "Healthy", comments: "Nothing to see here"  )

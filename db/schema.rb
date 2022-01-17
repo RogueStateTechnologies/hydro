@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_04_180850) do
+ActiveRecord::Schema.define(version: 2022_01_16_152710) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,9 +22,46 @@ ActiveRecord::Schema.define(version: 2022_01_04_180850) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "growth_reports", force: :cascade do |t|
+    t.integer "height"
+    t.integer "num_of_branches"
+    t.integer "num_of_buds"
+    t.integer "plant_id"
+    t.integer "times_fed"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "harvest_reports", force: :cascade do |t|
+    t.integer "height"
+    t.integer "weight"
+    t.integer "plant_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "health_reports", force: :cascade do |t|
+    t.integer "plant_id"
+    t.string "plant_image"
+    t.integer "ph"
+    t.text "diagnosis"
+    t.text "comments"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "media", force: :cascade do |t|
     t.string "name"
     t.string "description"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "nutrients", force: :cascade do |t|
+    t.string "name"
+    t.integer "plan_id"
+    t.integer "phase_id"
+    t.integer "amount_per_feeding"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

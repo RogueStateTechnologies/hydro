@@ -9,12 +9,13 @@ class PlantsController < ApplicationController
   end
 
   def create
-    Plant.create(plant_params)
+    @plant = Plant.create(plant_params)
+    redirect_to @plant
   end
 
   private
 
   def plant_params
-    params.permit( :crop, :start_date, :grow_medium)
+    params.permit( :crop_id, :start_date, :variant_id, :medium_id, :plan_id, :phase_id)
   end
 end

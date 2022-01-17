@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  resources :health_reports
+  resources :harvest_reports
+  resources :growth_reports
+  resources :nutrients
   resources :phases
   resources :media
   resources :plans

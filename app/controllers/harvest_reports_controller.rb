@@ -1,0 +1,2 @@
+class HarvestReportsController < ApplicationController
+end

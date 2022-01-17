@@ -1,0 +1,2 @@
+class GrowthReportsController < ApplicationController
+end

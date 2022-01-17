@@ -2,69 +2,52 @@
 <div class="plantHeader">
   <div>
     <h3><%= @plant.crop.name %></h3>
+    <hr>
+    <span>Crop</span>
     <h5><%= @plant.variant.name%></h5>
-    <span><%= @plant.crop.description %></span>
+    <hr>
+    <span>Varient</span>
   </div>
   <div>
-    <h5>Start Date: <%= @plant.start_date %></h5>
-    <h3>Estimated Harvest Date?</h3>
+    <h5><%= @plant.start_date %></h5>
+    <hr>
+    <span>Start Date</span>
+    <h3><%= @plant.medium.name %></h3>
+    <hr>
+    <span>Grow Medium</span>
   </div>
 </div>
 <hr>
 <% end %>
-<div class="row">
-  <div class="card feedPlan">
-    <h3><%= @plant.plan.name%></h3>
-    <span><%= @plant.plan.description %><span>
-    <hr>
-    <h5><%= @plant.phase.name %></h5>
-    <span><%= @plant.phase.description %></span>
-    <h6>Duration: <%= @plant.phase.duration %></h6>
-    <span>Current Week: 3</span><br>
-    <span>Feed Schedule: <%= @plant.phase.feed_frequency %></span><br>
-    <hr>
-    <span>Nutrient mix 1: 1ml</span><br>
-    <span>Nutrient mix 2: 1ml</span><br>
-    <span>Nutrient mix 3: 1ml</span><br>
-    <span>Nutrient mix 4: 1ml</span><br>
-  </div>
-  <div>
-    <div class="card mediumDetails">
-      <h5><%= @plant.medium.name %></h5>
-      <span><%= @plant.medium.description %></span>
-    </div>
-    <div class="card">
-      <h5>Over All Health?</h5>
-    </div>
-  </div>
-  <div class="weeklyReport">
-    <h3>Most Recent Weekly Report</h3>
-    <hr>
-    <span>Start Date: 10-10</span><span> End Date: 10-10</span>
-    <h1>Photo of Plant</h1>
-    <hr>
-    <h5>Average Ph</h5>
-    <span>Target Ph</span>
-    <h5>Daily Light Time</h5>
-    <span>Light Intensity</span>
-    <hr>
+<div class="row" style="justify-content: space-around">
+  <%= render partial: "/plans/plan_summary", locals: {plan: @plant.plan, phase: @plant.phase }%>
+  <div class="card">
+    <h5>Current Health Report</h5>
   </div>
 </div>
-<div>
-  <table class="table">
-    <thead>
-      <th>Start Date</th>
-      <th>End Date</th>
-      <th>Over All Health</th>
-      <th>Actions</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><%= @plant.start_date %></td>
-        <td>2021-10-10</td>
-        <td>Good</td>
-        <td><button class="btn">View Report</button></td>
-      </tr>
-    </tbody>
-  </table>
+<div class="row" sytle="justify-content: space-between">
+  <div class="card">
+    <h6>Health Reports</h6>
+    <table class="table">
+      <thead>
+        <th>Date</th>
+        <th>Actions</th>
+      </thead>
+      <tbody>
+        <%= render partial: "/health_reports/table_report", collection: HealthReport.where( plant_id: @plant.id ) %>
+      </tbody>
+    </table>
+  </div>
+  <div class="card">
+    <h6>Harvest Reports</h6>
+    <table class="table">
+      <thead>
+        <th>Date</th>
+        <th>Actions</th>
+      </thead>
+      <tbody>
+        <%= render partial: "/health_reports/table_report", collection: HealthReport.where( plant_id: @plant.id ) %>
+      </tbody>
+    </table>
+  </div>
 </div>

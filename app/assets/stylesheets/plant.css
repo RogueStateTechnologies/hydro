@@ -32,6 +32,28 @@
   margin-left: 25px;
   margin-right: 25px;
 }
+.planHeader{
+  display: flex;
+}
+.planHeading{
+  margin: 15px;
+}
 .weeklyTable{
   width: 100%;
+}
+.planDetails{
+  padding: 20px;
+  padding-bottom: 0px;
+}
+.mediumDetails{
+  padding: 5px;
+  text-align: center;
+}
+.phaseDetails{
+  display: flex;
+  align-items: row;
+  text-align: center;
+}
+.weeklyReport{
+  margin-left: 100px;
 }
