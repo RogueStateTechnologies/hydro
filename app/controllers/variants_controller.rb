@@ -7,6 +7,6 @@ class VariantsController < ApplicationController
   private
 
   def variant_params
-    params.permit( :name )
+    params.permit( :name, :description, :crop_id )
   end
 end
