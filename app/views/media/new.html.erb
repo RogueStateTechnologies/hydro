@@ -1,0 +1,7 @@
+<%= form_with url: "/media" do |media_form| %>
+<div>
+  <%= media_form.text_field :name, placeholder: "Medium" %><br>
+  <%= media_form.label :name, "Medium Name"%><br>
+  <%= button_to "Add Medium" %>
+</div>
+<% end %>

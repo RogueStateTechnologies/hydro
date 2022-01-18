@@ -1,0 +1,7 @@
+<%= form_with url: "/phases" do |phase_form| %>
+<div>
+  <%= phase_form.text_field :name, placeholder: "Phase" %><br>
+  <%=phase_form.label :name, "Crop Name"%><br>
+  <%= button_to "Add Phase" %>
+</div>
+<% end %>

@@ -1,0 +1,7 @@
+<%= form_with url: "/nutrients" do |nutirent_form| %>
+<div>
+  <%= nutrient_form.text_field :name, placeholder: "Nutrient" %><br>
+  <%= nutrient_form.label :name, "Crop Name"%><br>
+  <%= button_to "Add Crop" %>
+</div>
+<% end %>
