@@ -1,7 +1,9 @@
 <%= form_with url: "/variants" do |variant_form| %>
 <div>
-  <%= variant_form.text_field :name, placeholder: "Crop" %><br>
-  <%= variant_form.label :name, "Crop Name"%><br>
-  <%= button_to "Add Crop" %>
+  <%= variant_form.text_field :name, placeholder: "Variant" %><br>
+  <%= variant_form.label :name, "Variant Name"%><br>
+  <%= variant_form.text_area :description, placeholder: "Enter Description Here..." %><br>
+  <%= variant_form.collection_select :crop_id, Crop.order(:name), :id, :name %><br>
+  <%= button_to "Add Variant" %>
 </div>
 <% end %>
