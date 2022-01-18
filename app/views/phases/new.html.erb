@@ -1,7 +1,15 @@
 <%= form_with url: "/phases" do |phase_form| %>
 <div>
   <%= phase_form.text_field :name, placeholder: "Phase" %><br>
-  <%=phase_form.label :name, "Crop Name"%><br>
+  <%= phase_form.label :name, "Phase Name"%><br>
+  <%= phase_form.number_field :duration, placeholder: "1" %><br>
+  <%= phase_form.label :duration, "Length of phase (in weeks)" %><br>
+  <%= phase_form.collection_select :plan_id, Plan.order(:name), :id, :name %><br>
+  <%= phase_form.label :plan, "Growth Plan" %><br>
+  <%= phase_form.text_area :description, placeholder: "Enter Description here..." %><br>
+  <%= phase_form.label :description, "Phase Description" %><br>
+  <%= phase_form.number_field :feed_frequency, placeholder: "1" %><br>
+  <%= phase_form.label :feed_frequency, "Number of Feedings (per week)" %><br>
   <%= button_to "Add Phase" %>
 </div>
 <% end %>

@@ -2,6 +2,10 @@
 <div>
   <%= plan_form.text_field :name, placeholder: "Plan" %><br>
   <%= plan_form.label :name, "Plan Name"%><br>
+  <%= plan_form.text_area :descrption, placeholder: "Enter Description Here..." %><br>
+  <%= plan_form.label :decription, "Plan Description" %><br>
+  <%= plan_form.collection_select :crop_id, Crop.order(:name), :id, :name %><br>
+  <%= plan_form.label :crop, "Select Crop" %><br> 
   <%= button_to "Add Plan" %>
 </div>
 <% end %>

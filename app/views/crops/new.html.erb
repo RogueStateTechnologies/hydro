@@ -2,6 +2,8 @@
 <div>
   <%= crop_form.text_field :name, placeholder: "Crop" %><br>
   <%= crop_form.label :name, "Crop Name"%><br>
+  <%= crop_form.text_area :name, placeholder: "Enter Description Here..." %><br>
+  <%= crop_form.label :name, "Crop Description"%><br>
   <%= button_to "Add Crop" %>
 </div>
 <% end %>
