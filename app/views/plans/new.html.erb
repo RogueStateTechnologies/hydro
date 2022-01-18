@@ -1,0 +1,7 @@
+<%= form_with url: "/plans" do |plan_form| %>
+<div>
+  <%= plan_form.text_field :name, placeholder: "Plan" %><br>
+  <%= plan_form.label :name, "Plan Name"%><br>
+  <%= button_to "Add Plan" %>
+</div>
+<% end %>

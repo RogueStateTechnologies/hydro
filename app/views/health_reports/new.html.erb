@@ -1,0 +1,7 @@
+<%= form_with url: "/health_reports" do |health_form| %>
+<div>
+  <%= health_form.text_field :name, placeholder: "Health" %><br>
+  <%= health_form.label :name, "Crop Name"%><br>
+  <%= button_to "Add Health Report" %>
+</div>
+<% end %>

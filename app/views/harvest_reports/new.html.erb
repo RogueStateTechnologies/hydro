@@ -1,0 +1,7 @@
+<%= form_with url: "/harvest_reports" do |harvest_form| %>
+<div>
+  <%= harvest_form.text_field :name, placeholder: "Harvest" %><br>
+  <%= harvest_form.label :name, "Crop Name"%><br>
+  <%= button_to "Add Harvest" %>
+</div>
+<% end %>

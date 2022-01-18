@@ -1,18 +1,23 @@
 <%= form_with url: "/plants" do |plant_form| %>
 <div style="border-bottom: 1px solid black">
-  <%= plant_form.collection_select :crop_id, Crop.order(:name), :id, :name %><br>
+  <%= plant_form.collection_select :crop_id, Crop.order(:name), :id, :name %>
+  <%= link_to "Add Crop", new_crop_path %><br>
   <%= plant_form.label :crop, "Crop" %><br>
-  <%= plant_form.collection_select :variant_id, Variant.order(:name), :id, :name %><br>
+  <%= plant_form.collection_select :variant_id, Variant.order(:name), :id, :name %>
+  <%= link_to "Add Variant", new_variant_path %><br>
   <%= plant_form.label :variant, "Variant" %><br>
   <%= plant_form.date_field :start_date %><br>
   <%= plant_form.label :start_date, "Start Date" %><br>
-  <%= plant_form.collection_select :medium_id, Medium.order(:name), :id, :name %><br>
+  <%= plant_form.collection_select :medium_id, Medium.order(:name), :id, :name %>
+  <%= link_to "Add Medium", new_medium_path %><br>
   <%= plant_form.label :medium, "Grow Medium" %><br>
 </div>
 <div>
-  <%= plant_form.collection_select :plan_id, Plan.order(:name), :id, :name %><br>
+  <%= plant_form.collection_select :plan_id, Plan.order(:name), :id, :name %>
+  <%= link_to "Add Plan", new_plan_path %><br>
   <%= plant_form.label :plan, "Plan" %><br>
-  <%= plant_form.collection_select :phase_id, Phase.order(:id), :id, :name %><br>
+  <%= plant_form.collection_select :phase_id, Phase.order(:id), :id, :name %>
+    <%= link_to "Add Phase", new_phase_path %><br>
   <%= plant_form.label :phase, "Phase" %><br>
 </div>
   <%= button_to "Add Plant" %>
