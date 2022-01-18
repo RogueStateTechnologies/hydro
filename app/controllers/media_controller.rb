@@ -6,6 +6,6 @@ class MediaController < ApplicationController
   private
 
   def medium_params
-    params.permit( :name )
+    params.permit( :name, :description)
   end
 end

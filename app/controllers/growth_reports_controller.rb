@@ -1,2 +1,0 @@
-class GrowthReportsController < ApplicationController
-end
