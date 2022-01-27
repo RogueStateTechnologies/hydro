@@ -1,4 +1,5 @@
 class Plant < ApplicationRecord
+  belongs_to :user
   belongs_to :crop
   belongs_to :variant
   belongs_to :plan

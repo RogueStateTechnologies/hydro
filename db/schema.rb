@@ -87,6 +87,7 @@ ActiveRecord::Schema.define(version: 2022_01_22_015922) do
   end
 
   create_table "plants", force: :cascade do |t|
+    t.integer "user_id"
     t.integer "crop_id"
     t.integer "variant_id"
     t.integer "medium_id"
