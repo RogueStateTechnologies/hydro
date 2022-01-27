@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_16_152710) do
+ActiveRecord::Schema.define(version: 2022_01_22_015922) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,19 +22,14 @@ ActiveRecord::Schema.define(version: 2022_01_16_152710) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "growth_reports", force: :cascade do |t|
-    t.integer "height"
-    t.integer "num_of_branches"
-    t.integer "num_of_buds"
-    t.integer "plant_id"
-    t.integer "times_fed"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "harvest_reports", force: :cascade do |t|
     t.integer "height"
-    t.integer "weight"
+    t.integer "weight_wet_in_grams"
+    t.integer "weight_dry_in_grams"
+    t.integer "total_wattage_used"
+    t.integer "total_water_used_in_milileters"
+    t.integer "water_per_gram_in_milileters"
+    t.integer "wattage_per_gram"
     t.integer "plant_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -43,6 +38,13 @@ ActiveRecord::Schema.define(version: 2022_01_16_152710) do
   create_table "health_reports", force: :cascade do |t|
     t.integer "plant_id"
     t.string "plant_image"
+    t.integer "height_in_centimeters"
+    t.integer "air_humidity"
+    t.integer "light_schedule"
+    t.integer "day_air_temp"
+    t.integer "night_air_temp"
+    t.integer "watering_volume_per_day"
+    t.integer "container_size"
     t.integer "ph"
     t.text "diagnosis"
     t.text "comments"
@@ -88,11 +90,24 @@ ActiveRecord::Schema.define(version: 2022_01_16_152710) do
     t.integer "crop_id"
     t.integer "variant_id"
     t.integer "medium_id"
+    t.integer "light_wattage"
     t.integer "plan_id"
     t.integer "phase_id"
     t.date "start_date"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
   create_table "variants", force: :cascade do |t|
