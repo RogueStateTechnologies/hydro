@@ -1,4 +1,5 @@
 class PlantsController < ApplicationController
+  skip_before_action :verify_authenticity_token
 
   def index
     @plants = Plant.all
@@ -10,6 +11,7 @@ class PlantsController < ApplicationController
 
   def create
     @plant = Plant.create(plant_params)
+    PlantMailer.new_plant_email
     redirect_to @plant
   end
 

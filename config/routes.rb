@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   resources :health_reports
   resources :harvest_reports
   resources :growth_reports

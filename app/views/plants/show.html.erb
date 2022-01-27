@@ -23,11 +23,13 @@
   <%= render partial: "/plans/plan_summary", locals: {plan: @plant.plan, phase: @plant.phase }%>
   <div class="card">
     <h5>Current Health Report</h5>
+    <%= render partial: "/health_reports/most_recent" %>
   </div>
 </div>
 <div class="row" sytle="justify-content: space-between">
   <div class="card">
     <h6>Health Reports</h6>
+      <%= link_to "+", new_health_report_path, :plant_id => @plant.id, class: "btn btn-primary" %>
     <table class="table">
       <thead>
         <th>Date</th>
@@ -46,7 +48,11 @@
         <th>Actions</th>
       </thead>
       <tbody>
-        <%= render partial: "/health_reports/table_report", collection: HealthReport.where( plant_id: @plant.id ) %>
+        <%
+=begin%>
+ <%= render partial: "/harvest_reports/harvest_table", collection: HarvestReport.where( plant_id: @plant.id ) %> 
+<%
+=end%>
       </tbody>
     </table>
   </div>
