@@ -1,4 +1,4 @@
-<%= form_with url: "/plants" do |plant_form| %>
+<%= form_with url: user_plants_path do |plant_form| %>
 <div style="border-bottom: 1px solid black">
   <%= plant_form.collection_select :crop_id, Crop.order(:name), :id, :name %>
   <%= link_to "Add Crop", new_crop_path %><br>

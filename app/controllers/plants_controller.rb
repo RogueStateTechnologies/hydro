@@ -1,8 +1,9 @@
 class PlantsController < ApplicationController
-  skip_before_action :verify_authenticity_token
+  # skip_before_action :verify_authenticity_token
+  before_action :get_user
 
   def index
-    @plants = Plant.all
+    @plants = @user.plants.all
   end
 
   def show
@@ -10,14 +11,18 @@ class PlantsController < ApplicationController
   end
 
   def create
-    @plant = Plant.create(plant_params)
+    @plant = @user.plants.create(plant_params)
     PlantMailer.new_plant_email
     redirect_to @plant
   end
 
   private
 
+  def get_user
+    @user = User.find(params[:user_id])
+  end
+
   def plant_params
-    params.permit( :crop_id, :start_date, :variant_id, :medium_id, :plan_id, :phase_id)
+    params.permit( :user_id, :crop_id, :start_date, :variant_id, :medium_id, :plan_id, :phase_id)
   end
 end
