@@ -1,8 +1,13 @@
 Rails.application.routes.draw do
+  root to: 'plants#index'
   devise_for :users
-  resources :health_reports
-  resources :harvest_reports
-  resources :growth_reports
+  resources :users, only: [:show] do
+    resources :plants
+  end
+  resources :plants, only: [:show, :edit, :update, :destroy] do
+    resources :health_reports
+    resources :harvest_reports
+  end
   resources :nutrients
   resources :phases
   resources :media
@@ -10,7 +15,4 @@ Rails.application.routes.draw do
   resources :variants
   resources :crops
   # Root Route, where to go at application load.
-  root to: 'plants#index'
-
-  resources :plants
 end

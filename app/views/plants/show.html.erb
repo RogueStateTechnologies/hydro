@@ -23,13 +23,17 @@
   <%= render partial: "/plans/plan_summary", locals: {plan: @plant.plan, phase: @plant.phase }%>
   <div class="card">
     <h5>Current Health Report</h5>
-    <%= render partial: "/health_reports/most_recent" %>
+ <%
+=begin%>
+ <%= render partial: "/health_reports/most_recent" %>  
+<%
+=end%>
   </div>
 </div>
 <div class="row" sytle="justify-content: space-between">
   <div class="card">
     <h6>Health Reports</h6>
-      <%= link_to "+", new_health_report_path, :plant_id => @plant.id, class: "btn btn-primary" %>
+      <%= link_to "+", new_plant_health_report_path(@plant), class: "btn btn-primary" %>
     <table class="table">
       <thead>
         <th>Date</th>

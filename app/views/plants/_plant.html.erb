@@ -3,5 +3,5 @@
   <td><%= plant.start_date %></td>
   <td><%= plant.crop.name %></td>
   <td><%= plant.variant.name %></td>
-  <td><%= link_to "Plant", plant_path(plant.id), class: "btn btn-primary" %></td>
+  <td><%= link_to "Plant", user_plant_path(@user, plant.id), class: "btn btn-primary" %></td>
 </tr> 
