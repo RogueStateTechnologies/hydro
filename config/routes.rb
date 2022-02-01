@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-
   root to: 'plants#index'
 
   devise_for :users
@@ -10,7 +9,7 @@ Rails.application.routes.draw do
     resources :plants
   end
 
-  resources :plants, only: [:show, :edit, :update, :destroy] do
+  resources :plants, only: %i[show edit update destroy] do
     resources :health_reports
     resources :harvest_reports
   end

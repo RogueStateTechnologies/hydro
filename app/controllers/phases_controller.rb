@@ -8,6 +8,6 @@ class PhasesController < ApplicationController
   private
 
   def phase_params
-    params.permit( :name, :duration, :plan_id, :description )
+    params.permit(:name, :duration, :plan_id, :description)
   end
 end

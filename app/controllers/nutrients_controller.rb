@@ -8,6 +8,6 @@ class NutrientsController < ApplicationController
   private
 
   def nutrient_params
-    params.permit( :name, :plan_id, :phase_id, :amount_per_feeding)
+    params.permit(:name, :plan_id, :phase_id, :amount_per_feeding)
   end
 end
