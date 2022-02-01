@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CreateHarvestReports < ActiveRecord::Migration[6.1]
   def change
     create_table :harvest_reports do |t|

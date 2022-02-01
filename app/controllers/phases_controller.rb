@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class PhasesController < ApplicationController
   def create
     @phase = phase.create(phase_params)

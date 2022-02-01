@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 cannabis = Crop.create(name: "Cannabis", description: "Its weed...")
 tomatoes  = Crop.create(name: "Tomatoes", description: "Red and Juciy")
 lettuce = Crop.create(name: "Lettuce", description: "Leafy and Wonderful")
