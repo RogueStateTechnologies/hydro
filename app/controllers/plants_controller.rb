@@ -1,13 +1,15 @@
+# frozen_string_literal: true
+
 class PlantsController < ApplicationController
   # skip_before_action :verify_authenticity_token
-  before_action :get_user
+  before_action :find_user
 
   def index
     @plants = @user.plants.all
   end
 
   def show
-    @plant = Plant.find(params[:id])
+    @plant = @user.plant.find(params[:id])
   end
 
   def create
@@ -18,7 +20,7 @@ class PlantsController < ApplicationController
 
   private
 
-  def get_user
+  def find_user
     @user = User.find(params[:user_id])
   end
 

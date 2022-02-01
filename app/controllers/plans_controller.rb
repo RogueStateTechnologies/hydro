@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class PlansController < ApplicationController
   def create
     @plan = Plan.create(plan_params)
