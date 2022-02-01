@@ -13,6 +13,7 @@ class HealthReportsController < ApplicationController
   private
 
   def health_report_params
-    params.permit(:plant_id, :plant_image, :height_in_centimeters, :air_humidity, :light_schedule, :day_air_temp, :night_air_temp, :watering_volume_per_day, :container_size, :ph, :diagnosis, :comments)
+    params.permit(:plant_id, :plant_image, :height_in_centimeters, :air_humidity, :light_schedule, :day_air_temp,
+                  :night_air_temp, :watering_volume_per_day, :container_size, :ph, :diagnosis, :comments)
   end
 end

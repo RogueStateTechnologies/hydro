@@ -8,6 +8,6 @@ class HarvestReportsController < ApplicationController
   private
 
   def harvest_report_params
-    params.permit( :name )
+    params.permit(:name)
   end
 end
