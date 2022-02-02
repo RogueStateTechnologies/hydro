@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  root to: 'plants#index'
+  root to: 'users/sign_in'
 
   devise_for :users
 
