@@ -9,7 +9,7 @@ class PlantsController < ApplicationController
   end
 
   def show
-    @plant = @user.plant.find(params[:id])
+    @plant = Plant.find(params[:id])
   end
 
   def create
