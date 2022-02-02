@@ -1,9 +1,11 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  root to: 'users/sign_in'
 
   devise_for :users
+  devise_scope :user do
+    root to: "devise/sessions#new"
+  end
 
   resources :users, only: [:show] do
     resources :plants
