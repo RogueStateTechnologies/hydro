@@ -2,10 +2,9 @@
 
 Rails.application.routes.draw do
 
+  
   devise_for :users
-  devise_scope :user do
-    root to: "devise/sessions#new"
-  end
+
 
   resources :users, only: [:show] do
     resources :plants
@@ -23,4 +22,5 @@ Rails.application.routes.draw do
   resources :variants
   resources :crops
   # Root Route, where to go at application load.
+  root to: "pages#home"
 end
