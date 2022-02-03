@@ -42,13 +42,9 @@
         <a><p>Profile</p></a>
       </li>
       <li class="active">
-        <%
-=begin%>
- <% if @user.id %>
- <%= link_to "<p>Plants</p>".html_safe, user_plants_path(@user) %> 
-        <% end %> 
-<%
-=end%>
+      <% if @session %>
+        <%= link_to "<p>Plants</p>".html_safe, user_plants_path(@user) %> 
+      <% end %>
       </li>
       <li>
         <a><p>Grow Plans</p></a>

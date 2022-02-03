@@ -12,11 +12,15 @@ class PlantsController < ApplicationController
   def show
     @plant = Plant.find(params[:id])
   end
+  
+  def new
+    @plant = Plant.new
+  end
 
   def create
     @plant = @user.plants.create(plant_params)
     PlantMailer.new_plant_email
-    redirect_to @plant
+    redirect_to user_plants_url(@user, @plant)
   end
 
   private
@@ -26,6 +30,6 @@ class PlantsController < ApplicationController
   end
 
   def plant_params
-    params.permit(:user_id, :crop_id, :start_date, :variant_id, :medium_id, :plan_id, :phase_id)
+    params.require(:plant).permit(:user_id, :crop_id, :start_date, :variant_id, :medium_id, :plan_id, :phase_id)
   end
 end
