@@ -1,4 +1,4 @@
-<%= form_with url: "/health_reports" do |health_form| %>
+<%= form_for [@plant, @health_report] do |health_form| %>
 <div>
   <%= health_form.number_field :plant_id, placeholder: "1" %><br>
   <%= health_form.label :plant_id, "Plant"%><br>

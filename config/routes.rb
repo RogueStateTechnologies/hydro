@@ -9,11 +9,11 @@ Rails.application.routes.draw do
   resources :users do
     resources :plants
   end
-
-  resources :plants, only: %i[show edit update destroy] do
+  resources :plants do
     resources :health_reports
     resources :harvest_reports
   end
+
 
   resources :nutrients
   resources :phases
