@@ -19,7 +19,8 @@ class PlantsController < ApplicationController
 
   def create
     @plant = @user.plants.create(plant_params)
-    PlantMailer.new_plant_email
+    mail = NotifierMailer.welcome(@user)
+    mail.deliver_now
     redirect_to user_plants_url(@user, @plant)
   end
 
