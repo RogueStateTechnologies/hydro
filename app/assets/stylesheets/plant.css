@@ -1,59 +1,10 @@
-.plantsHeader{
+.plant#header{
+  text-align: center;
+}
+.plant#body{
   display: flex;
   justify-content: space-between;
 }
-.headerStat{
-  margin-top: auto;
-}
-.plantHeader{
-  display: flex;
-  justify-content: space-between;
-  padding: 10px;
-}
-.reports{
-  display: flex;
-  justify-content: space-around;
-}
-.reportCard{
-  text-align: center;
-}
-.weeklyLogs{
-  padding: 50px;
-}
-.logsTable{
-  width: 100%;
-}
-.weeklyReport{
-  padding-top: 5px;
-  padding-left: 50px;
-}
-.feedPlan{
-  padding: 10px;
-  margin-left: 25px;
-  margin-right: 25px;
-}
-.planHeader{
-  display: flex;
-}
-.planHeading{
-  margin: 15px;
-}
-.weeklyTable{
-  width: 100%;
-}
-.planDetails{
-  padding: 20px;
-  padding-bottom: 0px;
-}
-.mediumDetails{
-  padding: 5px;
-  text-align: center;
-}
-.phaseDetails{
-  display: flex;
-  align-items: row;
-  text-align: center;
-}
-.weeklyReport{
-  margin-left: 100px;
+.plant#details{
+  margin-left: 10px;
 }

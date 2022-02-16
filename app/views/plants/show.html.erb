@@ -1,63 +1,63 @@
 <%= content_for :content_header do%>
-<div class="plantHeader">
-  <div>
-    <h3><%= @plant.crop.name %></h3>
-    <hr>
-    <span>Crop</span>
-    <h5><%= @plant.variant.name%></h5>
-    <hr>
-    <span>Varient</span>
-  </div>
-  <div>
-    <h5><%= @plant.start_date %></h5>
-    <hr>
-    <span>Start Date</span>
-    <h3><%= @plant.medium.name %></h3>
-    <hr>
-    <span>Grow Medium</span>
-  </div>
-</div>
-<hr>
+  <%= render partial: 'plant_header', local: @plant %>
 <% end %>
-<div class="row" style="justify-content: space-around">
-  <%= render partial: "/plans/plan_summary", locals: {plan: @plant.plan, phase: @plant.phase }%>
-  <div class="card">
-    <h5>Current Health Report</h5>
- <%
-=begin%>
- <%= render partial: "/health_reports/most_recent" %>    
-<%
-=end%>
-  </div>
-</div>
-<div class="row" sytle="justify-content: space-between">
-  <div class="card">
-    <h6>Health Reports</h6>
-      <%= link_to "+", new_plant_health_report_path(@plant), class: "btn btn-primary" %>
-    <table class="table">
-      <thead>
-        <th>Date</th>
-        <th>Actions</th>
-      </thead>
-      <tbody>
-        <%= render partial: "/health_reports/table_report", collection: HealthReport.where( plant_id: @plant.id ) %>
-      </tbody>
-    </table>
-  </div>
-  <div class="card">
-    <h6>Harvest Reports</h6>
-    <table class="table">
-      <thead>
-        <th>Date</th>
-        <th>Actions</th>
-      </thead>
-      <tbody>
-        <%
-=begin%>
- <%= render partial: "/harvest_reports/harvest_table", collection: HarvestReport.where( plant_id: @plant.id ) %> 
-<%
-=end%>
-      </tbody>
-    </table>
-  </div>
+<div class="card-timeline">
+  <ul class="timeline">
+    <li class="timeline">
+      <div class="timeline-badge success"></div>
+      <div class="timeline-panel">
+        <div class="timeline-heading">
+          <span class="badge badge-pill badge-success"> Health Report</span>
+        </div>
+        <div>
+          <p>
+            THIS IS A HEALTH REPORT!!!
+            LOOKS HEALTHY TO ME...
+          </p>
+        </div>
+      </div>
+    </li>
+        <li class="timeline-inverted">
+      <div class="timeline-badge success"></div>
+      <div class="timeline-panel">
+        <div class="timeline-heading">
+          <span class="badge badge-pill badge-success"> Health Report</span>
+        </div>
+        <div>
+          <p>
+            THIS IS A HEALTH REPORT!!!
+            LOOKS HEALTHY TO ME...
+          </p>
+        </div>
+      </div>
+    </li>
+        <li class="timeline">
+      <div class="timeline-badge success"></div>
+      <div class="timeline-panel">
+        <div class="timeline-heading">
+          <span class="badge badge-pill badge-success"> Health Report</span>
+        </div>
+        <div>
+          <p>
+            THIS IS A HEALTH REPORT!!!
+            LOOKS HEALTHY TO ME...
+          </p>
+        </div>
+      </div>
+    </li>
+        <li class="timeline-inverted">
+      <div class="timeline-badge success"></div>
+      <div class="timeline-panel">
+        <div class="timeline-heading">
+          <span class="badge badge-pill badge-success"> Health Report</span>
+        </div>
+        <div>
+          <p>
+            THIS IS A HEALTH REPORT!!!
+            LOOKS HEALTHY TO ME...
+          </p>
+        </div>
+      </div>
+    </li>
+  </ul>
 </div>
