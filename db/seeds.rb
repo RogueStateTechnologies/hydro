@@ -86,4 +86,4 @@ HealthReport.create!(height_in_centimeters: 100,
                      comments: "nothing to see here")
 
 puts "Seeding Plant Reports..."
-PlantReport.create!(plant_id: 1, reportable: HealthReport.first, )
+PlantReport.create!(plant_id: 1, reportable: HealthReport.first)

@@ -3,9 +3,31 @@
   </div>
   <div class="timeline-panel">
     <div class="timeline-heading">
-      <span class="badge badge-pill badge-success"> Health Report</span>
+      <span class="badge badge-pill badge-success">
+        Health Report
+      </span>
+      <span>
+        <%= report_timeline.created_at.strftime("%b, %d")%>
+      </span>
     </div>
+    <hr>
     <div>
+      <div>
+        <h6>
+          Plant Height
+        </h6>
+        <span>
+          <%= report_timeline.height_in_centimeters %>
+        </span>
+      </div>
+      <div>
+        <h6>
+          Diagnosis
+        </h6>
+        <span>
+          <%= report_timeline.diagnosis %>
+        </span>
+      </div>
     </div>
   </div>
 </li>
