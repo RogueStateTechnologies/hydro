@@ -1,5 +1,5 @@
 # frozen_string_literal: true
 
 class HealthReport < ApplicationRecord
-  belongs_to :plant
+  has_many :plant_reports, as: :reportable
 end

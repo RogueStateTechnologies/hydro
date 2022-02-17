@@ -7,7 +7,8 @@ class Plant < ApplicationRecord
   belongs_to :plan
   belongs_to :medium
   belongs_to :phase
-  has_many :growth_reports
-  has_many :harvest_reports
-  has_many :health_reports
+
+  has_many :plant_reports
+  has_many :health_reports, through: :reports
+  has_many :harvest_reports, through: :reports
 end
