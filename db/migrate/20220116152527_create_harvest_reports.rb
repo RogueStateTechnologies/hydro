@@ -10,7 +10,7 @@ class CreateHarvestReports < ActiveRecord::Migration[6.1]
       t.integer :total_water_used_in_milileters
       t.integer :water_per_gram_in_milileters
       t.integer :wattage_per_gram
-      t.integer :plant_id
+      t.integer :reportable_id
 
       t.timestamps
     end
