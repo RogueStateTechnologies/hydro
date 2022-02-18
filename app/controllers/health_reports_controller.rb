@@ -3,6 +3,7 @@
 class HealthReportsController < ApplicationController
   before_action :find_plant, :find_plant_user
   skip_before_action :verify_authenticity_token
+
   def create
     @health_report = @plant.health_reports.create(health_report_params)
     redirect_to user_plants_path(@user, @plant)

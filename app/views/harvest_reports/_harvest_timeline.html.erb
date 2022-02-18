@@ -1,0 +1,41 @@
+<li class="timeline-inverted">
+  <div class="timeline-badge warning">
+  </div>
+  <div class="timeline-panel">
+    <div class="timeline-heading">
+      <span class="badge badge-pill badge-warning">
+        Harvest Report
+      </span>
+      <span>
+        <%= harvest_timeline.created_at.strftime("%b, %d")%>
+      </span>
+    </div>
+    <hr>
+    <div>
+      <div>
+        <h6>
+          Plant Height
+        </h6>
+        <span>
+          <%= harvest_timeline.height %>
+        </span>
+      </div>
+      <div>
+        <h6>
+          Wet Weight
+        </h6>
+        <span>
+          <%= harvest_timeline.weight_wet_in_grams %>
+        </span>
+      </div>
+      <div>
+        <h6>
+          Dry Weight
+        </h6>
+        <span>
+          <%= harvest_timeline.weight_dry_in_grams %>
+        </span>
+      </div>
+    </div>
+  </div>
+</li>

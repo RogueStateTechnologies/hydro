@@ -7,7 +7,7 @@
         Health Report
       </span>
       <span>
-        <%= report_timeline.created_at.strftime("%b, %d")%>
+        <%= health_timeline.created_at.strftime("%b, %d")%>
       </span>
     </div>
     <hr>
@@ -17,7 +17,7 @@
           Plant Height
         </h6>
         <span>
-          <%= report_timeline.height_in_centimeters %>
+          <%= health_timeline.height_in_centimeters %>
         </span>
       </div>
       <div>
@@ -25,7 +25,7 @@
           Diagnosis
         </h6>
         <span>
-          <%= report_timeline.diagnosis %>
+          <%= health_timeline.diagnosis %>
         </span>
       </div>
     </div>

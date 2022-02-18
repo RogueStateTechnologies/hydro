@@ -3,8 +3,10 @@
     <h3 class="plant card-title" id="header">Plant Details</h3>
     <%= link_to "Add Health Report", 
                 new_plant_health_report_path(@user, @plant), 
-                class: "btn btn-success" 
-    %>
+                class: "btn btn-success" %>
+    <%= link_to "Add Harvest Report", 
+                new_plant_harvest_report_path(@user, @plant), 
+                class: "btn btn-warning" %>
     <hr>
   </div>
   <div class="plant card-body" id="body">

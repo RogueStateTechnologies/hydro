@@ -1,25 +1,25 @@
-<%= form_for [@plant, @health_report] do |health_form| %>
+<%= form_for [@plant, @health_report] do |f| %>
 <div>
-  <%= health_form.number_field :height_in_centimeters, placeholder: "100cm" %><br>
-  <%= health_form.label :height_in_centimeters, "Height(in centimenters)"%><br>
-  <%= health_form.number_field :air_humidity, placeholder: "95%" %><br>
-  <%= health_form.label :air_humidity, "Air Humidity" %><br>
-  <%= health_form.number_field :light_schedule, placeholder: "24hr" %><br>
-  <%= health_form.label :light_schedule, "Light Schedule"%><br>
-  <%= health_form.number_field :day_air_temp, placeholder: "75 F"%><br>
-  <%= health_form.label :day_air_temp, "Day Air Temp" %><br>
-  <%= health_form.number_field :night_air_temp, placeholder: "65 F"%><br>
-  <%= health_form.label :night_air_temp, "Night Air Temp"%><br>
-  <%= health_form.number_field :watering_volume_per_day, placeholder: "10L"%><br>
-  <%= health_form.label :watering_volume_per_day, "Watering Volume(per day)"%><br>
-  <%= health_form.number_field :container_size, placeholder: "10 Gal"%><br>
-  <%= health_form.label :container_size, "Container_size"%><br>
-  <%= health_form.number_field :ph, placeholder: "6.6"%><br>
-  <%= health_form.label :ph, "pH"%><br>
-  <%= health_form.text_field :diagnosis, placeholder: "Healthy" %><br>
-  <%= health_form.label :diagnosis, "Diagnosis" %><br>
-  <%= health_form.text_area :comments, placeholder: "Something else to say?"%><br>
-  <%= health_form.label :comments, "Comments"%><br>
+  <%= f.number_field :height_in_centimeters, placeholder: "100cm" %><br>
+  <%= f.label :height_in_centimeters, "Height(in centimenters)"%><br>
+  <%= f.number_field :air_humidity, placeholder: "95%" %><br>
+  <%= f.label :air_humidity, "Air Humidity" %><br>
+  <%= f.number_field :light_schedule, placeholder: "24hr" %><br>
+  <%= f.label :light_schedule, "Light Schedule"%><br>
+  <%= f.number_field :day_air_temp, placeholder: "75 F"%><br>
+  <%= f.label :day_air_temp, "Day Air Temp" %><br>
+  <%= f.number_field :night_air_temp, placeholder: "65 F"%><br>
+  <%= f.label :night_air_temp, "Night Air Temp"%><br>
+  <%= f.number_field :watering_volume_per_day, placeholder: "10L"%><br>
+  <%= f.label :watering_volume_per_day, "Watering Volume(per day)"%><br>
+  <%= f.number_field :container_size, placeholder: "10 Gal"%><br>
+  <%= f.label :container_size, "Container_size"%><br>
+  <%= f.number_field :ph, placeholder: "6.6"%><br>
+  <%= f.label :ph, "pH"%><br>
+  <%= f.text_field :diagnosis, placeholder: "Healthy" %><br>
+  <%= f.label :diagnosis, "Diagnosis" %><br>
+  <%= f.text_area :comments, placeholder: "Something else to say?"%><br>
+  <%= f.label :comments, "Comments"%><br>
   <%= button_to "Add Health Report" %>
 </div>
 <% end %>
