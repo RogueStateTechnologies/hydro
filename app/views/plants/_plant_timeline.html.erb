@@ -1,7 +1,8 @@
 <div class="card-timeline">
   <ul class="timeline">
-    <%= render partial: '/health_reports/report_timeline', 
-               collection: @plant.health_reports
-    %>
+    <%= render partial: '/health_reports/health_timeline', 
+               collection: @plant.health_reports %>
+    <%= render partial: '/harvest_reports/harvest_timeline', 
+               collection: @plant.harvest_reports %>
   </ul>
 </div>
