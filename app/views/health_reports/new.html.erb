@@ -1,7 +1,5 @@
 <%= form_for [@plant, @health_report] do |health_form| %>
 <div>
-  <%= health_form.number_field :plant_id, placeholder: "1" %><br>
-  <%= health_form.label :plant_id, "Plant"%><br>
   <%= health_form.number_field :height_in_centimeters, placeholder: "100cm" %><br>
   <%= health_form.label :height_in_centimeters, "Height(in centimenters)"%><br>
   <%= health_form.number_field :air_humidity, placeholder: "95%" %><br>

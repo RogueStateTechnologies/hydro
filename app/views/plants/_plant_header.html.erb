@@ -1,49 +1,53 @@
 <div class="plant card">
   <div class="plant card-header">
     <h3 class="plant card-title" id="header">Plant Details</h3>
+    <%= link_to "Add Health Report", 
+                new_plant_health_report_path(@user, @plant), 
+                class: "btn btn-success" 
+    %>
     <hr>
   </div>
   <div class="plant card-body" id="body">
     <div class="plant" id="details">
       <div class="plant" id="start">
         <h5 class="card-category">Start Date</h5>
-        <h4><%= @plant.start_date %></h4>
+        <h6><%= @plant.start_date %></h6>
       </div>
       <div class="plant" id="crop">
         <h5 class="card-category">Crop</h5>
-        <h4><%= @plant.crop.name %></h4>
+        <h6><%= @plant.crop.name %></h6>
       </div>
       <div class="plant" id="variant">
         <h5 class="card-category">Variant</h5>
-        <h4><%= @plant.variant.name %></h4>
+        <h6><%= @plant.variant.name %></h6>
       </div>
     </div>
     <div class="plant" id="details">
       <div class="plant" id="plan">
         <h5 class="card-category">Plan</h5>
-        <h4><%= @plant.plan.name %></h4>
+        <h6><%= @plant.plan.name %></h6>
       </div>
       <div class="plant" id="phase">
         <h5 class="card-category">Phase</h5>
-        <h4><%= @plant.phase.name %></h4>
+        <h6><%= @plant.phase.name %></h6>
       </div>
       <div class="plant" id="media">
         <h5 class="card-category">Medium</h5>
-        <h4><%= @plant.medium.name %></h4>
+        <h6><%= @plant.medium.name %></h6>
       </div>
     </div>
     <div class="plant" id="details">
       <div class="plant" id="rating">
         <h5 class="card-category">Health Rating</h5>
-        <h4>SOME KIND OF RATING</h4>
+        <h6>SOME KIND OF RATING</h6>
       </div>
       <div class="plant" id="light-schedule">
         <h5 class="card-category">Light Schedule</h5>
-        <h4>NUM OF HOURS</h4>
+        <h6>NUM OF HOURS</h6>
       </div>
       <div class="plant" id="next-harvest">
         <h5 class="card-category">EST. Harvest Date</h5>
-        <h4>DATE OF HARVEST</h4>
+        <h6>DATE OF HARVEST</h6>
       </div>
     </div>
   </div>
