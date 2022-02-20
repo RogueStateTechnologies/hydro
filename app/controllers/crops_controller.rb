@@ -1,13 +1,41 @@
 # frozen_string_literal: true
 
 class CropsController < ApplicationController
+  before_action :find_crop, except: :index
+
+  def index
+    @crops = Crop.all
+  end
+
+  def show
+    @crop
+  end
+
+  def new 
+    @crop = Crop.new
+  end
+
   def create
     @crop = Crop.create(crop_params)
   end
 
+  def update
+    @crop.update
+  end
+
+  def delete
+    @crop.delete
+  end
+
   private
 
+  def find_crop
+    @crop = Crop.find(crop_params[:id])
+  end
+
   def crop_params
-    params.permit(:name)
+    params.require(:crop).permit(:id,
+                                 :name,
+                                 :description)
   end
 end

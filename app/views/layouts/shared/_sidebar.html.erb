@@ -39,12 +39,9 @@
     </div>
     <ul class="nav">
       <li>
-        <a><p>Profile</p></a>
+        <a><p><%= link_to 'Crops', crops_path, class: 'active' %></p></a>
       </li>
-      <li class="active">
-      <% if @session %>
-        <%= link_to "<p>Plants</p>".html_safe, user_plants_path(@user) %> 
-      <% end %>
+      <li class="">
       </li>
       <li>
         <a><p>Grow Plans</p></a>
