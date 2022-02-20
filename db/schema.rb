@@ -104,10 +104,12 @@ ActiveRecord::Schema.define(version: 2022_02_16_234707) do
     t.integer "plan_id"
     t.integer "phase_id"
     t.date "start_date"
+    #give a published column
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  #look into user priveleges
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false

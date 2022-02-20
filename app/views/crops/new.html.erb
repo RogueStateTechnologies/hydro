@@ -1,9 +1,9 @@
-<%= form_with url: "/crops" do |crop_form| %>
+<%= form_for @crop do |f| %>
 <div>
-  <%= crop_form.text_field :name, placeholder: "Crop" %><br>
-  <%= crop_form.label :name, "Crop Name"%><br>
-  <%= crop_form.text_area :name, placeholder: "Enter Description Here..." %><br>
-  <%= crop_form.label :name, "Crop Description"%><br>
+  <%= f.text_field :name, placeholder: "Crop" %><br>
+  <%= f.label :name, "Crop Name"%><br>
+  <%= f.text_area :name, placeholder: "Enter Description Here..." %><br>
+  <%= f.label :name, "Crop Description"%><br>
   <%= button_to "Add Crop" %>
 </div>
 <% end %>
