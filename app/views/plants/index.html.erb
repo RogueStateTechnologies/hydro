@@ -1,22 +1,22 @@
 <%= content_for :content_header do %>
-  <div class="plantsHeader">
-    <div class="headerStat">
-      <h1><%= @plants.length %></h1>
-      <h5>Number of Active Journals</h5>
-    </div>
-    <div class="headerStat">
-      <h3>Seed</h3>
-      <h5>25 plants</h5>
-      <h6>Most Comman Phase</h6>
-    </div>
-    <div>
-      <h3></h3>
-    </div>
-    <div class="headerStat">
-      <%= link_to "Add Plant", new_user_plant_path, class: "btn btn-primary" %>
+  <div class="card plants" id="header">
+    <h3 style="text-align: center">ALL PLANTS</h3>
+    <hr>
+    <div class="plants" id="overview">
+      <div class="details" id="journals">
+        <h6>Active Journals</h6>
+        <h4><%= @plants.length %></h4>
+      </div>
+      <div class="details" id="crops">
+        <h6>Popular Crop</h6>
+        <h4>A NAME</h4>
+      </div>
+      <div class="details" id="attentions">
+        <h6>Plants Needing Attention</h6>
+        <h4>A NUMBER</h4>
+      </div>
     </div>
   </div>
-  <hr>
 <% end %>
 <div class='card table-responsive'>
   <table class="table">
