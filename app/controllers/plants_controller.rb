@@ -3,7 +3,11 @@
 class PlantsController < ApplicationController
   # skip_before_action :verify_authenticity_token
   before_action :find_user
+<<<<<<< HEAD
   before_action :find_plant, except: [:index, :new]
+=======
+  before_action :find_plant, except: :index
+>>>>>>> 558b7c653b5f373a294b372721daa5e691de5442
   skip_before_action :verify_authenticity_token
 
   def index
