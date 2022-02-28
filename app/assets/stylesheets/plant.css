@@ -8,3 +8,14 @@
 .plant#details{
   margin-left: 10px;
 }
+.plants#overview{
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+}
+.details#journals{
+  margin-left: 20px;
+}
+.details#attentions{
+  margin-right: 20px;
+}

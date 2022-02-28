@@ -1,4 +1,53 @@
 <div class="card-timeline">
+  <div>
+    <h3 style="text-align: center">Plant Timeline</h3>
+    <div style="display: flex; justify-content: space-around">
+      <div class="card" style="padding: 10px; align-items: center">
+        <h5>Health Reports</h5>
+        <div style="display: flex; justify-content: space-around">
+          <%= link_to "View All",
+                      plant_health_report_path(@user, @plant),
+                      class: "btn btn-primary"%>
+          <%= link_to "New Report", 
+                      new_plant_health_report_path(@user, @plant), 
+                      class: "btn btn-success" %>
+        </div>
+        <div style="display: flex; text-align: center">
+          <div style="margin: 5px">
+            <h6>Total</h6>
+            <span><%= @plant.health_reports.length %></span>
+          </div>
+          <div style="margin: 5px">
+            <h6>Most Recent</h6>
+            <span><%= @plant.health_reports.last.created_at.strftime("%b %d") %></span>
+          </div>
+        </div>
+      </div>
+    <div style="display: flex; justify-content: space-around">
+      <div class="card" style="padding: 10px; align-items: center">
+        <h5>Harvest Reports</h5>
+        <div style="display: flex; justify-content: space-around">
+          <%= link_to "View All",
+                      plant_harvest_report_path(@user, @plant),
+                      class: "btn btn-primary"%>
+          <%= link_to "New Report", 
+                      new_plant_harvest_report_path(@user, @plant), 
+                      class: "btn btn-danger" %>
+        </div>
+        <div style="display: flex; text-align: center">
+          <div style="margin: 5px">
+            <h6>Total</h6>
+            <span><%= @plant.harvest_reports.length %></span>
+          </div>
+          <div style="margin: 5px">
+            <h6>Most Recent</h6>
+            <span><%= @plant.harvest_reports.last.created_at.strftime("%b %d") %></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <hr>
   <ul class="timeline">
     <%= render partial: '/health_reports/health_timeline', 
                collection: @plant.health_reports %>
