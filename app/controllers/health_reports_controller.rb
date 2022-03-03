@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class HealthReportsController < ApplicationController
-  before_action [:find_plant, :find_plant_user], except: :index
+  before_action [:find_plant, :find_plant_user], except: [:index, :new, :create]
   skip_before_action :verify_authenticity_token
 
   def index
@@ -32,7 +32,7 @@ class HealthReportsController < ApplicationController
   private
 
   def find_health_report
-    @health_report = HealthReport.find(params[:])
+    @health_report = HealthReport.find(params[:health_report])
   end
 
   def find_plant

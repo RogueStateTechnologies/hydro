@@ -19,7 +19,9 @@
           </div>
           <div style="margin: 5px">
             <h6>Most Recent</h6>
-            <span><%= @plant.health_reports.last.created_at.strftime("%b %d") %></span>
+            <% if @plant.health_reports.length > 0 %>
+              <span><%= @plant.health_reports.last.created_at.strftime("%b %d") %></span>
+            <% end %>
           </div>
         </div>
       </div>
@@ -41,7 +43,9 @@
           </div>
           <div style="margin: 5px">
             <h6>Most Recent</h6>
-            <span><%= @plant.harvest_reports.last.created_at.strftime("%b %d") %></span>
+            <% if @plant.harvest_reports.length > 0 %>
+              <span><%= @plant.harvest_reports.last.created_at.strftime("%b %d") %></span>
+            <% end %>
           </div>
         </div>
       </div>
