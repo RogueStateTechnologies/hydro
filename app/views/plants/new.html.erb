@@ -2,26 +2,44 @@
   <div class="card-header">
     <h4 class="card-title">The Basics</h4>
   </div>
-  <%= form_for [@user, @plant] do |plant_form| %>
-    <div class="dropdown bootstrap-select">
-      <%= plant_form.collection_select :crop_id, Crop.order(:name), :id, :name %>
-    </div>
-    <%= link_to "Add Crop", new_crop_path %><br>
-    <%= plant_form.label :crop, "Crop" %><br>
-    <%= plant_form.collection_select :variant_id, Variant.order(:name), :id, :name %>
-    <%= link_to "Add Variant", new_variant_path %><br>
-    <%= plant_form.label :variant, "Variant" %><br>
-    <%= plant_form.date_field :start_date %><br>
-    <%= plant_form.label :start_date, "Start Date" %><br>
-    <%= plant_form.collection_select :medium_id, Medium.order(:name), :id, :name %>
-    <%= link_to "Add Medium", new_medium_path %><br>
-    <%= plant_form.label :medium, "Grow Medium" %><br>
-    <%= plant_form.collection_select :plan_id, Plan.order(:name), :id, :name %>
-    <%= link_to "Add Plan", new_plan_path %><br>
-    <%= plant_form.label :plan, "Plan" %><br>
-    <%= plant_form.collection_select :phase_id, Phase.order(:id), :id, :name %>
-    <%= link_to "Add Phase", new_phase_path %><br>
-    <%= plant_form.label :phase, "Phase" %><br>
-    <%= button_to "Add Plant" %>
-  <% end %> 
+  <%= bootstrap_form_for [@user, @plant] do |f| %>
+    <%= f.collection_select :crop_id, 
+                            Crop.order(:name), 
+                            :id, 
+                            :name, 
+                            {}, 
+                            {:class=>'form-control', 
+                             :data_size=>'5'} %>
+    <%= f.collection_select :variant_id,
+                            Variant.order(:name),
+                            :id,
+                            :name,
+                            {},
+                            {:class=>'form-control',
+                             :data_size=>'5'}%>
+    <%= f.collection_select :medium_id,
+                            Medium.order(:name),
+                            :id,
+                            :name,
+                            {},
+                            {:class=>'form-control', 
+                             :data_size=>'5'}%>
+    <%= f.number_field      :light_wattage%>
+    <%= f.collection_select :plan_id,
+                            Plan.order(:name),
+                            :id,
+                            :name,
+                            {},
+                            {:class=>'form-control',
+                             :data_size=>'5'}%>
+    <%= f.collection_select :phase_id,
+                            Phase.order(:id),
+                            :id,
+                            :name,
+                            {},
+                            {:class=>'form-control',
+                             :data_size=>'5'}%>
+    <%= f.date_select       :start_date %>
+    <%= button_to 'Add Plant'%>
+  <% end %>
 </div>
