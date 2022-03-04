@@ -1,0 +1,4 @@
+<%= content_for :content_header do%>
+  <%= render partial: "health_header"%>
+<% end %>
+<%= render partial: 'health_report', collection: @health_reports %> 

@@ -1,45 +1,47 @@
-<div class="card">
-  <div class="card-header">
-    <h4 class="card-title">The Basics</h4>
+<%= bootstrap_form_for [@user, @plant] do |f| %>
+  <div class="card">
+    <div class="card-header">
+      <h4 class="card-title">The Basics</h4>
+    </div>
+    <div class="card-body">
+      <%= f.collection_select :crop_id, 
+                              Crop.order(:name), 
+                              :id, 
+                              :name, 
+                              {}, 
+                              {:class=>'form-control', 
+                               :data_size=>'5'} %>
+      <%= f.collection_select :variant_id,
+                              Variant.order(:name),
+                              :id,
+                              :name,
+                              {},
+                              {:class=>'form-control',
+                               :data_size=>'5'}%>
+      <%= f.collection_select :medium_id,
+                              Medium.order(:name),
+                              :id,
+                              :name,
+                              {},
+                              {:class=>'form-control', 
+                               :data_size=>'5'}%>
+      <%= f.number_field      :light_wattage%>
+      <%= f.collection_select :plan_id,
+                              Plan.order(:name),
+                              :id,
+                              :name,
+                              {},
+                              {:class=>'form-control',
+                               :data_size=>'5'}%>
+      <%= f.collection_select :phase_id,
+                              Phase.order(:id),
+                              :id,
+                              :name,
+                              {},
+                              {:class=>'form-control',
+                               :data_size=>'5'}%>
+      <%= f.date_select       :start_date %>
+      <%= button_to 'Add Plant'%>
+    </div>
   </div>
-  <%= bootstrap_form_for [@user, @plant] do |f| %>
-    <%= f.collection_select :crop_id, 
-                            Crop.order(:name), 
-                            :id, 
-                            :name, 
-                            {}, 
-                            {:class=>'form-control', 
-                             :data_size=>'5'} %>
-    <%= f.collection_select :variant_id,
-                            Variant.order(:name),
-                            :id,
-                            :name,
-                            {},
-                            {:class=>'form-control',
-                             :data_size=>'5'}%>
-    <%= f.collection_select :medium_id,
-                            Medium.order(:name),
-                            :id,
-                            :name,
-                            {},
-                            {:class=>'form-control', 
-                             :data_size=>'5'}%>
-    <%= f.number_field      :light_wattage%>
-    <%= f.collection_select :plan_id,
-                            Plan.order(:name),
-                            :id,
-                            :name,
-                            {},
-                            {:class=>'form-control',
-                             :data_size=>'5'}%>
-    <%= f.collection_select :phase_id,
-                            Phase.order(:id),
-                            :id,
-                            :name,
-                            {},
-                            {:class=>'form-control',
-                             :data_size=>'5'}%>
-    <%= f.date_select       :start_date %>
-    <%= button_to 'Add Plant'%>
-  <% end %>
-</div>
+<% end %>

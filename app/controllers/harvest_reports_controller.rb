@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class HarvestReportsController < ApplicationController
-  before_action [:find_plant, :find_plant_user], except: :index
+  before_action :find_plant, :find_plant_user, except: :index
 
   def index
     @harvest_reports = @plant.harvest_reports
