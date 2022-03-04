@@ -1,15 +1,20 @@
 <%= form_for [@plant, @harvest_report] do |f| %>
-<div>
-  <%= f.number_field :height, placeholder: "100" %><br>
-  <%= f.label :height, "Height (in centimeters)"%><br>
-  <%= f.number_field :weight_wet_in_grams, placholder: "10" %><br>
-  <%= f.label :weight_wet_in_grams, "Wet Weight (in grams)"%><br>
-  <%= f.number_field :weight_dry_in_grams, placeholder: "100" %><br>
-  <%= f.label :weight_dry_in_grams, "Dry Weight (in grams)" %><br>
-  <%= f.number_field :total_wattage_used, placeholder: "100" %><br>
-  <%= f.label :total_wattage_used, "Total Wattage (in Kw)"%><br>
-  <%= f.number_field :total_water_used_in_milileters, placeholder: "100000"%><br>
-  <%= f.label :total_water_used_in_milileters, "" %><br>
-  <%= button_to "Add Harvest" %>
+<div class="card">
+  <div class="card-header">
+    <h4 class="card-title">New Harvest Report</h4>
+  </div>
+  <div class="card-body">
+    <%= f.number_field :height, placeholder: "100" %><br>
+    <%= f.label :height, "Height (in centimeters)"%><br>
+    <%= f.number_field :weight_wet_in_grams, placholder: "10" %><br>
+    <%= f.label :weight_wet_in_grams, "Wet Weight (in grams)"%><br>
+    <%= f.number_field :weight_dry_in_grams, placeholder: "100" %><br>
+    <%= f.label :weight_dry_in_grams, "Dry Weight (in grams)" %><br>
+    <%= f.number_field :total_wattage_used, placeholder: "100" %><br>
+    <%= f.label :total_wattage_used, "Total Wattage (in Kw)"%><br>
+    <%= f.number_field :total_water_used_in_milileters, placeholder: "100000"%><br>
+    <%= f.label :total_water_used_in_milileters, "" %><br>
+    <%= button_to "Add Harvest" %>
+  </div>
 </div>
 <% end %>

@@ -1,7 +1,8 @@
 # frozen_string_literal: true
 
 class HealthReportsController < ApplicationController
-  before_action [:find_plant, :find_plant_user], except: [:index, :new, :create]
+  before_action :find_plant
+  before_action :find_plant_user
   skip_before_action :verify_authenticity_token
 
   def index
