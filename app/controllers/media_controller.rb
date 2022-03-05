@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class MediaController < ApplicationController
-  befor_action :find_media, except: :index
+  before_action :find_media, except: :index
 
   def index
     @media = Medium.all
