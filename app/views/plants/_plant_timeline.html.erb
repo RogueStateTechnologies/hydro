@@ -6,7 +6,7 @@
         <h5>Health Reports</h5>
         <div style="display: flex; justify-content: space-around">
           <%= link_to "View All",
-                      plant_health_report_path(@user, @plant),
+                      plant_health_reports_path(@user, @plant),
                       class: "btn btn-primary"%>
           <%= link_to "New Report", 
                       new_plant_health_report_path(@user, @plant), 
