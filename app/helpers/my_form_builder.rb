@@ -6,6 +6,5 @@ class MyFormBuilder < Action::Helpers::FormBuilder
         yield if block_given?
       end +
       @template.content_tag('hr', '', {class: 'row-divider' })
-      end
   end
 end
