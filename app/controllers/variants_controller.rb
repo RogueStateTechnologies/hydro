@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class VariantsController < ApplicationController
-  befrore_action :find_variant, except: :index
+  before_action :find_variant, except: :index
 
   def index
     @variants = Variant.all
