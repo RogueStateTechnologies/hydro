@@ -1,0 +1,19 @@
+<%= content_for :content_header do %>
+  <div class="card">
+    <div class="card-header">
+      <h4 class="card-title">
+        <%= @user.email %> Grow Journals
+      </h4>
+    </div>
+    <div class="card-body">
+      <div>
+        <h6>
+          Total Active Journals
+        </h6>
+        <h4>
+          <%= @user.plants.length %>
+        <h4>
+      </div>
+    </div>
+  </div>
+<% end %>

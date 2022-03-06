@@ -1,0 +1,20 @@
+<tr>
+  <td>Journal Name</td>
+  <td><%= index_plant.crop.name     %></td>
+  <td><%= index_plant.variant.name  %></td>
+  <td><%= index_plant.start_date    %></td>
+  <td class="text-right">
+    <%= link_to user_plant_path(@user, index_plant.id), 
+        class: "btn btn-info btn-link btn-icon btn-sm" do %>
+      <i class="nc-icon nc-book-bookmark"></i>
+    <% end %>
+    <%= link_to user_plant_path(@user, index_plant.id), 
+        class: "btn btn-warning btn-link btn-icon btn-sm" do %>
+      <i class="nc-icon nc-tv-2"></i>
+    <% end %>
+    <%= link_to user_plant_path(@user, index_plant.id), 
+        class: "btn btn-danger btn-link btn-icon btn-sm" do %>
+      <i class="nc-icon nc-vector"></i>
+    <% end %>
+  </td>
+</tr>
