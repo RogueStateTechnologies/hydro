@@ -1,9 +1,13 @@
-<%= form_with url: "/variants" do |variant_form| %>
-<div>
-  <%= variant_form.text_field :name, placeholder: "Variant" %><br>
-  <%= variant_form.label :name, "Variant Name"%><br>
-  <%= variant_form.text_area :description, placeholder: "Enter Description Here..." %><br>
-  <%= variant_form.collection_select :crop_id, Crop.order(:name), :id, :name %><br>
-  <%= button_to "Add Variant" %>
+<div class="card" style="width:40%;">
+  <div class="card-header">
+    <h5 class="card-title">Variety is the spice of life<h5>
+  </div>
+  <div class="card-body">
+    <%= bootstrap_form_for @variant do |f| %>
+      <%= f.collection_select :crop_id, Crop.order(:name), :id, :name %><br>
+      <%= f.text_field :name, placeholder: "Variant" %><br>
+      <%= f.text_area :description, placeholder: "Enter Description Here..." %><br>
+      <%= button_to "Add Variant", {}, {:class=>"btn btn-primary"} %>
+    <% end %>
+  </div>
 </div>
-<% end %>

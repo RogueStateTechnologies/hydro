@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class NutrientsController < ApplicationController
-  before_action :find_nutrient, except: :index
+  before_action :find_nutrient, except: [:index, :new, :create]
 
   def index
     @nutrients = Nutrients.all
@@ -12,7 +12,7 @@ class NutrientsController < ApplicationController
   end
 
   def new
-    @nutrients = Nutrients.new
+    @nutrients = Nutrient.new
   end
 
   def create
@@ -34,6 +34,6 @@ class NutrientsController < ApplicationController
   end
 
   def nutrient_params
-    params.permit(:name, :plan_id, :phase_id, :amount_per_feeding)
+    params.require(:nutrient).permit(:name, :plan_id, :phase_id, :amount_per_feeding)
   end
 end

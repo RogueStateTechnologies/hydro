@@ -1,12 +1,18 @@
-<%= form_with url: "/nutrients" do |nutrient_form| %>
-<div>
-  <%= nutrient_form.text_field :name, placeholder: "Nutrient" %><br>
-  <%= nutrient_form.label :name, "Crop Name"%><br>
-  <%= nutrient_form.collection_select :plan_id, Plan.order(:name), :id, :name %><br>
-  <%= nutrient_form.label :plan, "Feed Plan"%><br>
-  <%= nutrient_form.collection_select :phase_id, Phase.order(:id), :id, :name %><br>
-  <%= nutrient_form.label :phase, "Growth Phase" %><br>
-  <%= nutrient_form.number_field :amount_per_feeding, placeholder: "1" %><br>
-  <%= button_to "Add Nutrient" %>
+<div class="card" style="width:40%;">
+  <div class="card-header">
+    <h5 class="card-title">Good Plants start with Good Nutrients</h5>
+  </div>
+  <div class="card-body">
+    <%= bootstrap_form_for @nutrients do |f| %>
+      <div>
+        <%= f.text_field :name, placeholder: "Nutrient" %><br>
+        <%= f.number_field :amount_per_feeding, placeholder: "1" %><br>
+      </div>
+      <div>
+        <%= f.collection_select :plan_id, Plan.order(:name), :id, :name %><br>
+        <%= f.collection_select :phase_id, Phase.order(:id), :id, :name %><br>
+      </div>
+      <%= button_to "Add Nutrient" %>
+    <% end %>
+  </div>
 </div>
-<% end %>

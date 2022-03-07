@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class VariantsController < ApplicationController
-  before_action :find_variant, except: :index
+  before_action :find_variant, except: [:index, :new, :create]
 
   def index
     @variants = Variant.all
@@ -34,6 +34,6 @@ class VariantsController < ApplicationController
   end
 
   def variant_params
-    params.permit(:name, :description, :crop_id)
+    params.require(:variant).permit(:name, :description, :crop_id)
   end
 end

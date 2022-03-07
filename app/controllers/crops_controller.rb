@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class CropsController < ApplicationController
-  before_action :find_crop, except: :index
+  before_action :find_crop, except: [:index, :new, :create]
 
   def index
     @crops = Crop.all
@@ -17,6 +17,7 @@ class CropsController < ApplicationController
 
   def create
     @crop = Crop.create(crop_params)
+    redirect_to crops_path()
   end
 
   def update

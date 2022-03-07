@@ -15,23 +15,18 @@
       <div class="main-panel" id="main">
         <%= render partial: "layouts/shared/navbar" %>
         <div class="content">
+          <%= yield :content_header %>
           <div>
-            <div>
-              <%= yield :content_header %>
-            </div>
-            <div class="card-body">
-              <% if notice %>
-                <p class="alert alert-success"><%= notice %></p>
-              <% end %>
-              <% if alert %>
-                <p class="alert alert-danger"><%= alert %></p>
-              <% end %>
-              <%= yield %>
-            </div>
-
+            <% if notice %>
+              <p class="alert alert-success"><%= notice %></p>
+            <% end %>
+            <% if alert %>
+              <p class="alert alert-danger"><%= alert %></p>
+            <% end %>
+            <%= yield %>
           </div>
         </div>
-       <%= render partial: 'layouts/shared/footer' %>
+        <%= render partial: 'layouts/shared/footer' %>
       </div>
     </div>
   </body>

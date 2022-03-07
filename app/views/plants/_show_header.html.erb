@@ -1,0 +1,38 @@
+<div class="card">
+  <div class="card-header" style="display:flex;justify-content:space-between;">
+    <div>
+      <h5 class="card-category">Health Rating</h5>
+      <h3 class="card-title">SOME KIND OF RATING</h3>
+    </div>
+    <div>
+      <h5 class="card-category">Plant ID</h5>
+      <h3 class="card-title">00001</h3>
+    </div>
+  </div>
+  <div class="card-body" style="display:flex;justify-content:space-around;">
+    <div>
+      <h5 class="card-category">Start Date</h5>
+      <h4 class="card-title"><%= @plant.start_date %></h4>
+    </div>
+    <div>
+      <h5 class="card-category">Crop</h5>
+      <h4><%= @plant.crop.name %></h4>
+    </div>
+    <div>
+      <h5 class="card-category">Variant</h5>
+      <h4><%= @plant.variant.name %></h4>
+    </div>
+    <div>
+      <h5 class="card-category">Plan</h5>
+      <h4><%= @plant.plan.name %></h4>
+    </div>
+    <div>
+      <h5 class="card-category">Phase</h5>
+      <h4><%= @plant.phase.name %></h4>
+    </div>
+    <div>
+      <h5 class="card-category">Medium</h5>
+      <h4><%= @plant.medium.name %></h4>
+    </div>
+  </div>
+</div>
