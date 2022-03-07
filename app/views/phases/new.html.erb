@@ -1,15 +1,19 @@
-<%= form_with url: "/phases" do |phase_form| %>
-<div>
-  <%= phase_form.text_field :name, placeholder: "Phase" %><br>
-  <%= phase_form.label :name, "Phase Name"%><br>
-  <%= phase_form.number_field :duration, placeholder: "1" %><br>
-  <%= phase_form.label :duration, "Length of phase (in weeks)" %><br>
-  <%= phase_form.collection_select :plan_id, Plan.order(:name), :id, :name %><br>
-  <%= phase_form.label :plan, "Growth Plan" %><br>
-  <%= phase_form.text_area :description, placeholder: "Enter Description here..." %><br>
-  <%= phase_form.label :description, "Phase Description" %><br>
-  <%= phase_form.number_field :feed_frequency, placeholder: "1" %><br>
-  <%= phase_form.label :feed_frequency, "Number of Feedings (per week)" %><br>
-  <%= button_to "Add Phase" %>
+<div class="card" style="width:40%;">
+  <div class="card-header">
+    <h5 class="card-title">Its the Circle Of Life!</h5>
+  </div>
+  <div class="card-body">
+    <%= bootstrap_form_for @phase do |f| %>
+      <div>
+        <%= f.collection_select :plan_id, Plan.order(:name), :id, :name %><br>
+        <%= f.number_field :duration, placeholder: "1" %><br>
+        <%= f.number_field :feed_frequency, placeholder: "1" %><br>
+      </div>
+      <div>
+        <%= f.text_field :name, placeholder: "Phase" %><br>
+        <%= f.text_area :description, placeholder: "Enter Description here..." %><br>
+      </div>
+      <%= button_to "Add Phase" %>
+    <% end %>
+  </div>
 </div>
-<% end %>

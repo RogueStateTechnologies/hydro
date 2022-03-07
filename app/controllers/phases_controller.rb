@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class PhasesController < ApplicationController
-  before_action :find_phase, except: :index
+  before_action :find_phase, except: [:index, :new, :create]
 
   def index
     @phases = Phase.all
@@ -34,6 +34,6 @@ class PhasesController < ApplicationController
   end
 
   def phase_params
-    params.permit(:name, :duration, :plan_id, :description)
+    params.require(:phase).permit(:name, :duration, :plan_id, :description, :feed_frequency)
   end
 end

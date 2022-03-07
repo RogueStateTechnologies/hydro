@@ -1,11 +1,13 @@
-<%= form_with url: "/plans" do |plan_form| %>
-<div>
-  <%= plan_form.text_field :name, placeholder: "Plan" %><br>
-  <%= plan_form.label :name, "Plan Name"%><br>
-  <%= plan_form.text_area :descrption, placeholder: "Enter Description Here..." %><br>
-  <%= plan_form.label :decription, "Plan Description" %><br>
-  <%= plan_form.collection_select :crop_id, Crop.order(:name), :id, :name %><br>
-  <%= plan_form.label :crop, "Select Crop" %><br> 
-  <%= button_to "Add Plan" %>
+<div class="card" style="width:40%">
+  <div class="card-header">
+    <h5 class="card-title">Gotta have a plan</h5>
+  </div>
+  <div class="card-body">
+    <%= bootstrap_form_for @plan do |f| %>
+      <%= f.collection_select :crop_id, Crop.order(:name), :id, :name %><br>
+      <%= f.text_field :name, placeholder: "Plan" %><br>
+      <%= f.text_area :description, placeholder: "Enter Description Here" %><br>
+      <%= button_to "Add Plan" %>
+    <% end %>
+  </div>
 </div>
-<% end %>

@@ -1,20 +1,26 @@
-<%= form_for [@plant, @harvest_report] do |f| %>
+<%= bootstrap_form_for [@plant, @harvest_report] do |f| %>
 <div class="card">
   <div class="card-header">
-    <h4 class="card-title">New Harvest Report</h4>
+    <h4 class="card-title">How was the harvest?</h4>
   </div>
-  <div class="card-body">
-    <%= f.number_field :height, placeholder: "100" %><br>
-    <%= f.label :height, "Height (in centimeters)"%><br>
-    <%= f.number_field :weight_wet_in_grams, placholder: "10" %><br>
-    <%= f.label :weight_wet_in_grams, "Wet Weight (in grams)"%><br>
-    <%= f.number_field :weight_dry_in_grams, placeholder: "100" %><br>
-    <%= f.label :weight_dry_in_grams, "Dry Weight (in grams)" %><br>
-    <%= f.number_field :total_wattage_used, placeholder: "100" %><br>
-    <%= f.label :total_wattage_used, "Total Wattage (in Kw)"%><br>
-    <%= f.number_field :total_water_used_in_milileters, placeholder: "100000"%><br>
-    <%= f.label :total_water_used_in_milileters, "" %><br>
-    <%= button_to "Add Harvest" %>
+  <div class="card-body" style="display:flex;justify-content:space-around;">
+    <div>
+      <%= f.number_field :height, placeholder: "100" %><br>
+      <%= f.number_field :weight_wet_in_grams, placeholder: "24" %><br>
+      <%= f.number_field :weight_dry_in_grams, placeholder: "24" %><br>
+    </div>
+    <div>
+      <%= f.number_field :total_wattage_used, placeholder: "95" %><br>
+      <%= f.number_field :total_water_used_in_milileters, placeholder: "75"%><br>
+    </div>
+    <div>
+      <%= f.number_field :wattage_per_gram, placeholder: "10"%><br>
+      <%= f.number_field :water_per_gram_in_milileters, placeholder: "10"%><br>
+    </div>
+    <div>
+      <button class="btn btn-info">Add a picture</button>
+      <%= button_to "Add Harvest Report", {}, {:class=>"btn btn-warning"} %>
+    </div>
   </div>
 </div>
 <% end %>

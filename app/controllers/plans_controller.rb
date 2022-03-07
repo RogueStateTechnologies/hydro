@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class PlansController < ApplicationController
-  before_action :find_plan, except: :index
+  before_action :find_plan, except: [:index, :new, :create]
 
   def index
     @plans = Plan.all
@@ -34,6 +34,6 @@ class PlansController < ApplicationController
   end
 
   def plan_params
-    params.permit(:name, :description, :crop_id)
+    params.require(:plan).permit(:name, :description, :crop_id)
   end
 end

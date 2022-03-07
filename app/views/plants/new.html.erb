@@ -1,48 +1,65 @@
 <%= bootstrap_form_for [@user, @plant] do |f| %>
   <div class="card">
     <div class="card-header">
-      <h4 class="card-title">The Basics</h4>
+      <h4 class="card-title">What will you be growing today?</h4>
     </div>
-    <div class="card-body">
-      <%= f.collection_select :crop_id, 
-                              Crop.order(:name), 
-                              :id, 
-                              :name, 
-                              {}, 
-                              {:class=>'form-control', 
-                               :data_size=>'5',
-                               :data_style=>'width:20%'} %>
-      <%= f.collection_select :variant_id,
-                              Variant.order(:name),
-                              :id,
-                              :name,
-                              {},
-                              {:class=>'form-control',
-                               :data_size=>'5'}%>
-      <%= f.collection_select :medium_id,
-                              Medium.order(:name),
-                              :id,
-                              :name,
-                              {},
-                              {:class=>'form-control', 
-                               :data_size=>'5'}%>
-      <%= f.number_field      :light_wattage%>
-      <%= f.collection_select :plan_id,
-                              Plan.order(:name),
-                              :id,
-                              :name,
-                              {},
-                              {:class=>'form-control',
-                               :data_size=>'5'}%>
-      <%= f.collection_select :phase_id,
-                              Phase.order(:id),
-                              :id,
-                              :name,
-                              {},
-                              {:class=>'form-control',
-                               :data_size=>'5'}%>
-      <%= f.date_select       :start_date %>
-      <%= button_to 'Add Plant'%>
+    <div class="card-body" style="display:flex; justify-content:space-between;">
+      <div>
+        <%= f.collection_select :crop_id, 
+                                Crop.order(:name), 
+                                :id, 
+                                :name, 
+                                {}, 
+                                {:class=>'form-control', 
+                                 :data_size=>'5',} %>
+        <%= f.collection_select :variant_id,
+                                Variant.order(:name),
+                                :id,
+                                :name,
+                                {},
+                                {:class=>'form-control',
+                                 :data_size=>'5'}%>
+      </div>
+      <div>
+        <%= f.collection_select :medium_id,
+                                Medium.order(:name),
+                                :id,
+                                :name,
+                                {},
+                                {:class=>'form-control', 
+                                 :data_size=>'5'}%>
+        <%= f.number_field      :light_wattage%>
+      </div>
+      <div>
+        <%= f.collection_select :plan_id,
+                                Plan.order(:name),
+                                :id,
+                                :name,
+                                {},
+                                {:class=>'form-control',
+                                 :data_size=>'5'}%>
+        <%= f.collection_select :phase_id,
+                                Phase.order(:id),
+                                :id,
+                                :name,
+                                {},
+                                {:class=>'form-control',
+                                 :data_size=>'5'}%>
+      </div>
+      <div>
+        <%= f.date_select       :start_date %>
+        <%= button_to 'Add Plant'%>
+      </div>
     </div>
   </div>
 <% end %>
+<div class="card">
+  <div class="card-header">
+    <h4 class="card-title">Anything else you want to track?</h4>
+  </div>
+  <div class="card-body">
+    <div>
+      Another Form for other kinds of options
+    </div>
+  </div>
+</div>

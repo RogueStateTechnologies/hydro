@@ -8,6 +8,7 @@ class CreatePhases < ActiveRecord::Migration[6.1]
       t.integer :plan_id
       t.text    :description
       t.integer :feed_frequency
+      # add a column for light schedule
 
       t.timestamps
     end

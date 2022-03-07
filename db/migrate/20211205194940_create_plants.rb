@@ -11,6 +11,7 @@ class CreatePlants < ActiveRecord::Migration[6.1]
       t.integer :plan_id
       t.integer :phase_id
       t.date :start_date
+      # add a name column
 
       t.timestamps
     end

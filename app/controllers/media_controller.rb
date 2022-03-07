@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class MediaController < ApplicationController
-  before_action :find_media, except: :index
+  before_action :find_media, except: [:index, :new, :create]
 
   def index
     @media = Medium.all
@@ -34,6 +34,6 @@ class MediaController < ApplicationController
   end
 
   def medium_params
-    params.permit(:name, :description)
+    params.require(:medium).permit(:name, :description)
   end
 end
