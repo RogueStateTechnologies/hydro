@@ -1,2 +1,2 @@
-const paper = require.context('.', true, /_paper\.js$/)
+const paper = require.context('./', true, /\*.js$/)
 paper.keys().forEach(paper)

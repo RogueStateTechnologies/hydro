@@ -8,7 +8,10 @@ import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 import "chart.js"
-import "paper"
+import "bootstrap.min"
+import "jquery.min"
+import "paper-dashboard.min"
+
 
 Rails.start()
 Turbolinks.start()
