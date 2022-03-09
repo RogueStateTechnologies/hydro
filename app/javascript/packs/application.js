@@ -6,16 +6,19 @@
 import Rails from "@rails/ujs"
 import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
-import "channels"
-import "chart.js"
-import "bootstrap.min"
-import "jquery.min"
-import "paper-dashboard.min"
-
 
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
+
+import "jquery"
+import "bootstrap"
+import "../stylesheets/application"
+
+document.addEventListener("turbolinks:load", () =>{
+  $('[data-toggle="tooltip"]').tooltip()
+  $('[data-toggle="popover"]').popover()
+})
 
 function displayChart() {
   
