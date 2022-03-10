@@ -13,6 +13,7 @@ ActiveStorage.start()
 
 import "jquery"
 import "bootstrap"
+import "paper"
 import "../stylesheets/application"
 
 document.addEventListener("turbolinks:load", () =>{
