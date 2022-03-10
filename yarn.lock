@@ -924,6 +924,29 @@
   resolved "https://registry.npmjs.org/@csstools/convert-colors/-/convert-colors-1.4.0.tgz"
   integrity sha512-5a6wqoJV/xEdbRNKVo6I4hO3VjyDq//8q2f9I6PBAvMesJHFauXDorcNCsr9RzvsZnaWi5NYCcfyqP1QeFHFbw==
 
+"@fullcalendar/common@~5.10.1":
+  version "5.10.1"
+  resolved "https://registry.yarnpkg.com/@fullcalendar/common/-/common-5.10.1.tgz#a019951743852277a4095e536fd7716f6f85b9aa"
+  integrity sha512-EumKIJcQTvQdTs75/9dmeREFgjcRVWzqHJS1Xvlz5mNsmB+w9EINCHETRjChtAQg1WD/lTQyVj4sHsKO7vCMSw==
+  dependencies:
+    tslib "^2.1.0"
+
+"@fullcalendar/daygrid@^5.10.1":
+  version "5.10.1"
+  resolved "https://registry.yarnpkg.com/@fullcalendar/daygrid/-/daygrid-5.10.1.tgz#bdee4f58364fdab631b2abf8b56094ab5776f203"
+  integrity sha512-sfUMP+rew0krsBffgNcWWKhBCiyytGfRKZJoc64E8ohX7VWjPcPZuB1xgO5U4wPLmNkT0rZiHoGeQGTXw1+ZKg==
+  dependencies:
+    "@fullcalendar/common" "~5.10.1"
+    tslib "^2.1.0"
+
+"@fullcalendar/interaction@^5.10.1":
+  version "5.10.1"
+  resolved "https://registry.yarnpkg.com/@fullcalendar/interaction/-/interaction-5.10.1.tgz#dfa74b5c50bbd5608eb50aeab6e579c8d20cb367"
+  integrity sha512-H1g1QeXg7yXtUcKmVtfg7uzm5R5ElFTvYniiXU+8kJda69IDg7Lee+Y7UDv5dvLb5/HxO86RhPVxRtcOQ8XdXw==
+  dependencies:
+    "@fullcalendar/common" "~5.10.1"
+    tslib "^2.1.0"
+
 "@gar/promisify@^1.0.1":
   version "1.1.2"
   resolved "https://registry.npmjs.org/@gar/promisify/-/promisify-1.1.2.tgz"
@@ -1824,6 +1847,16 @@ boolbase@^1.0.0, boolbase@~1.0.0:
   resolved "https://registry.npmjs.org/boolbase/-/boolbase-1.0.0.tgz"
   integrity sha1-aN/1++YMUes3cl6p4+0xDcwed24=
 
+bootstrap-datetimepicker@^0.0.7:
+  version "0.0.7"
+  resolved "https://registry.yarnpkg.com/bootstrap-datetimepicker/-/bootstrap-datetimepicker-0.0.7.tgz#a98312648894b81915531b057ff742835843f971"
+  integrity sha1-qYMSZIiUuBkVUxsFf/dCg1hD+XE=
+
+bootstrap-notify@^3.1.3:
+  version "3.1.3"
+  resolved "https://registry.yarnpkg.com/bootstrap-notify/-/bootstrap-notify-3.1.3.tgz#7e98b3a696cf452a7b56727f0b3316a90037c10b"
+  integrity sha1-fpizppbPRSp7VnJ/CzMWqQA3wQs=
+
 bootstrap@^5.1.3:
   version "5.1.3"
   resolved "https://registry.yarnpkg.com/bootstrap/-/bootstrap-5.1.3.tgz#ba081b0c130f810fa70900acbc1c6d3c28fa8f34"
@@ -2387,6 +2420,11 @@ chart.js@^3.6.1:
   version "3.7.0"
   resolved "https://registry.npmjs.org/chart.js/-/chart.js-3.7.0.tgz"
   integrity sha512-31gVuqqKp3lDIFmzpKIrBeum4OpZsQjSIAqlOpgjosHDJZlULtvwLEZKtEhIAZc7JMPaHlYMys40Qy9Mf+1AAg==
+
+chartjs@^0.3.24:
+  version "0.3.24"
+  resolved "https://registry.yarnpkg.com/chartjs/-/chartjs-0.3.24.tgz#3addeb5ae3606b3e89e346c27d52ca158416e93d"
+  integrity sha1-Ot3rWuNgaz6J40bCfVLKFYQW6T0=
 
 check-error@^1.0.2:
   version "1.0.2"
@@ -5128,6 +5166,11 @@ jest-worker@^26.5.0:
     merge-stream "^2.0.0"
     supports-color "^7.0.0"
 
+jquery-validate@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/jquery-validate/-/jquery-validate-2.0.0.tgz#a9da9e56682627fc4fc5474cc1d10c268509c259"
+  integrity sha1-qdqeVmgmJ/xPxUdMwdEMJoUJwlk=
+
 jquery@^3.6.0:
   version "3.6.0"
   resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.6.0.tgz#c72a09f15c1bdce142f49dbf1170bdf8adac2470"
@@ -5808,6 +5851,11 @@ module-deps@^4.0.2, module-deps@^4.0.8:
     through2 "^2.0.0"
     xtend "^4.0.0"
 
+moment@^2.29.1:
+  version "2.29.1"
+  resolved "https://registry.yarnpkg.com/moment/-/moment-2.29.1.tgz#b2be769fa31940be9eeea6469c075e35006fa3d3"
+  integrity sha512-kHmoybcPV8Sqy59DwNDY3Jefr64lK/by/da0ViFcuA4DH0vQg5Q6Ze5VimxkfQNSC+Mls/Kx53s7TjP1RhFEDQ==
+
 move-concurrently@^1.0.1:
   version "1.0.1"
   resolved "https://registry.npmjs.org/move-concurrently/-/move-concurrently-1.0.1.tgz"
@@ -5989,6 +6037,11 @@ normalize-url@^6.0.1:
   version "6.1.0"
   resolved "https://registry.yarnpkg.com/normalize-url/-/normalize-url-6.1.0.tgz#40d0885b535deffe3f3147bec877d05fe4c5668a"
   integrity sha512-DlL+XwOy3NxAQ8xuC0okPgK46iuVNAK01YN7RueYBqqFeGsBjV9XmCAzAdgt+667bCl5kPh9EqKKDwnaPG1I7A==
+
+nouislider@^15.5.1:
+  version "15.5.1"
+  resolved "https://registry.yarnpkg.com/nouislider/-/nouislider-15.5.1.tgz#3d6c5e73f85110b91d4e029d88fd8532aca98353"
+  integrity sha512-V8LNPhLPXLNjkgXLfyzDRGDeKvzZeaiIx5YagMiHnOMqgcRzT75jqvEZYXbSrEffXouwcEShSd8Vllm2Nkwqew==
 
 npm-run-path@^2.0.0:
   version "2.0.2"
@@ -6393,6 +6446,11 @@ pend@~1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/pend/-/pend-1.2.0.tgz#7a57eb550a6783f9115331fcf4663d5c8e007a50"
   integrity sha1-elfrVQpng/kRUzH89GY9XI4AelA=
+
+perfect-scrollbar@^1.5.5:
+  version "1.5.5"
+  resolved "https://registry.yarnpkg.com/perfect-scrollbar/-/perfect-scrollbar-1.5.5.tgz#41a211a2fb52a7191eff301432134ea47052b27f"
+  integrity sha512-dzalfutyP3e/FOpdlhVryN4AJ5XDVauVWxybSkLZmakFE2sS3y3pc4JnSprw8tGmHvkaG5Edr5T7LBTZ+WWU2g==
 
 performance-now@^2.1.0:
   version "2.1.0"
@@ -8469,6 +8527,11 @@ svgo@^1.0.0:
     unquote "~1.1.1"
     util.promisify "~1.0.0"
 
+sweetalert2@^11.4.4:
+  version "11.4.4"
+  resolved "https://registry.yarnpkg.com/sweetalert2/-/sweetalert2-11.4.4.tgz#49b8db39f00a699224bb6aabcd1185b5a4fea739"
+  integrity sha512-9yYWQuRT1v9JNI/paPTSYV+68MHwe9C+HQ/I2jtfaFzoJgYRftWXOs4JqmDSjT7m2m4r8ebMMn8LcxD1Wq9B/w==
+
 syntax-error@^1.1.1:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/syntax-error/-/syntax-error-1.4.0.tgz#2d9d4ff5c064acb711594a3e3b95054ad51d907c"
@@ -8648,6 +8711,11 @@ ts-pnp@^1.1.6:
   version "1.2.0"
   resolved "https://registry.npmjs.org/ts-pnp/-/ts-pnp-1.2.0.tgz"
   integrity sha512-csd+vJOb/gkzvcCHgTGSChYpy5f1/XKNsmvBGO4JXS+z1v2HobugDz4s1IeFXM3wZB44uczs+eazB5Q/ccdhQw==
+
+tslib@^2.1.0:
+  version "2.3.1"
+  resolved "https://registry.yarnpkg.com/tslib/-/tslib-2.3.1.tgz#e8a335add5ceae51aa261d32a490158ef042ef01"
+  integrity sha512-77EbyPPpMz+FRFRuAFlWMtmgUWGe9UOG2Z25NqCwiIjRhOf5iKGuzSe5P2w1laq+FkRy4p+PCuVkJSGkzTEKVw==
 
 tty-browserify@0.0.0:
   version "0.0.0"
