@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(version: 2022_02_16_234707) do
   end
 
   create_table "harvest_reports", force: :cascade do |t|
-    t.integer "height"
+    t.integer "height_in_centimeters"
     t.integer "weight_wet_in_grams"
     t.integer "weight_dry_in_grams"
     t.integer "total_wattage_used"
@@ -104,12 +104,10 @@ ActiveRecord::Schema.define(version: 2022_02_16_234707) do
     t.integer "plan_id"
     t.integer "phase_id"
     t.date "start_date"
-    #give a published column
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  #look into user priveleges
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false

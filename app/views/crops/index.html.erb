@@ -1,4 +1,33 @@
-<div>
-  <%= render partial: "crop_card",
-             collection: @crops %>
-</div>
+<div class="col-md-12">
+            <div class="card">
+              <div class="card-header">
+                <h4 class="card-title"> Striped Table with Checkboxes</h4>
+              </div>
+              <div class="card-body">
+                <div class="table-responsive">
+                  <table class="table table-striped">
+                    <thead class="text-primary">
+                      <th class="text-left">
+                        Name
+                      </th>
+                      <th class="text-center">
+                        Favorites
+                      </th>
+                      <th class="text-center">
+                        Published Journals
+                      </th>
+                      <th class="text-center">
+                        Active Journals
+                      </th>
+                      <th class="text-right">
+                        Actions
+                      </th>
+                    </thead>
+                    <tbody>
+                      <%= render partial: "index_crop", collection: @crops%>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
