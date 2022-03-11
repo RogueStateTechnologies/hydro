@@ -35,8 +35,8 @@ class CropsController < ApplicationController
   end
 
   def crop_params
-    params.require(:crop).permit(:id,
-                                 :name,
-                                 :description)
+    params.permit(:id,
+                  :name,
+                  :description)
   end
 end
