@@ -4,6 +4,7 @@
   "dependencies": {
     "@fullcalendar/daygrid": "^5.10.1",
     "@fullcalendar/interaction": "^5.10.1",
+    "@iconify/iconify": "^2.1.2",
     "@popperjs/core": "^2.11.2",
     "@rails/actioncable": "^6.0.0",
     "@rails/activestorage": "^6.0.0",
@@ -22,6 +23,7 @@
     "perfect-scrollbar": "^1.5.5",
     "popper": "^1.0.1",
     "popper.js": "^1.16.1",
+    "resolve-url-loader": "^5.0.0",
     "sweetalert2": "^11.4.4",
     "turbolinks": "^5.2.0",
     "webpack": "^4.46.0",
