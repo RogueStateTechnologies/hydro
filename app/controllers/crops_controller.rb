@@ -27,16 +27,4 @@ class CropsController < ApplicationController
   def delete
     @crop.delete
   end
-
-  private
-
-  def find_crop
-    @crop = Crop.find(crop_params[:id])
-  end
-
-  def crop_params
-    params.permit(:id,
-                  :name,
-                  :description)
-  end
 end

@@ -27,30 +27,4 @@ class HarvestReportsController < ApplicationController
   def delete
     @harvest_report.delete
   end
-
-  private
-
-  def find_plant
-    @plant = Plant.find(params[:plant_id])
-  end
-
-  # do I need to reference it this way?
-  # or can I just use a normal find call?
-  def find_plant_user
-    @user = @plant.user
-  end
-
-  def find_harvest_report
-    @harvest_report = HarvestReport.find(harvest_params[:harvest_report_id])
-  end
-
-  def harvest_report_params
-    params.require(:harvest_report).permit(:height,
-                                           :weight_wet_in_grams,
-                                           :weight_dry_in_grams,
-                                           :total_wattage_used,
-                                           :total_water_used_in_milieters,
-                                           :water_per_gram_in_militeres,
-                                           :wattage_per_gram)
-  end
 end

@@ -26,14 +26,4 @@ class VariantsController < ApplicationController
   def delete
     @variant.delete
   end
-
-  private
-
-  def find_variant
-    @variant = Variant.find(params[:id])
-  end
-
-  def variant_params
-    params.require(:variant).permit(:name, :description, :crop_id)
-  end
 end
