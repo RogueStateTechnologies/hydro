@@ -4,11 +4,12 @@
     <span><%= %></span>
   </div>
   <div class="card-body">
-    <%= bootstrap_form_for @variant do |f| %>
-      <%= f.collection_select :crop_id, Crop.order(:name), :id, :name %><br>
+    <%= bootstrap_form_for [@crop, @variant] do |f| %>
       <%= f.text_field :name, placeholder: "Variant" %><br>
       <%= f.text_area :description, placeholder: "Enter Description Here..." %><br>
       <%= button_to "Add Variant", {}, {:class=>"btn btn-primary"} %>
     <% end %>
   </div>
 </div>
+
+/crops/1/variant/
