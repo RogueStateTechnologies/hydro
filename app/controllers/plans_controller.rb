@@ -26,14 +26,4 @@ class PlansController < ApplicationController
   def delete
     @plan.delete
   end
-
-  private
-
-  def find_plan
-    @plan = Plan.find(params[:id])
-  end
-
-  def plan_params
-    params.require(:plan).permit(:name, :description, :crop_id)
-  end
 end

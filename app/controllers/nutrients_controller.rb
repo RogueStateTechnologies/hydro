@@ -4,7 +4,7 @@ class NutrientsController < ApplicationController
   before_action :find_nutrient, except: [:index, :new, :create]
 
   def index
-    @nutrients = Nutrients.all
+    @nutrients = Nutrient.all
   end
 
   def show
@@ -25,15 +25,5 @@ class NutrientsController < ApplicationController
 
   def delete
     @nutrient.delete
-  end
-
-  private
-
-  def find_nutrient 
-    @nutrient = Nutrient.find(params[:id])
-  end
-
-  def nutrient_params
-    params.require(:nutrient).permit(:name, :plan_id, :phase_id, :amount_per_feeding)
   end
 end
