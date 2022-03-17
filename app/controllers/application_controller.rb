@@ -7,11 +7,6 @@ class ApplicationController < ActionController::Base
   private
 
   #finders
-  
-  def find_crop
-    @crop = Crop.find(crop_params[:id])
-  end
-
   def find_plant
     @plant = Plant.find(params[:id])
   end
@@ -49,14 +44,7 @@ class ApplicationController < ActionController::Base
   end
 
   # params
-
-  def crop_params
-    params.require( :crop)
-          .permit(  :id,
-                    :name,
-                    :description)
-  end
-
+  
   def harvest_report_params
     params.require( :harvest_report)
           .permit(  :height,

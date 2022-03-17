@@ -2,7 +2,7 @@
 
 class VariantsController < ApplicationController
   before_action :find_crop, except: [:index]
-  before_action :find_variant, except: [:index, :new, :create]
+  before_action :find_or_new_variant, except: [:index, :create]
 
   def index
     @variants = @crop.variants.all
@@ -15,7 +15,7 @@ class VariantsController < ApplicationController
   def create
     @variant = @crop.variants.new(variant_params)
     if @variant.save
-      redirect_to crops_path, flash: { notice: "Variant created" }
+      redirect_to crop_path(@crop), flash: { notice: "Variant created" }
     end
   end
 
@@ -37,11 +37,11 @@ class VariantsController < ApplicationController
     @crop = Crop.find(params[:crop_id])
   end
 
-  def find_variant
+  def find_or_new_variant
     @variant = params[:id] ? @crop.variants.find(params[:id]) : @crop.variants.new
   end
 
   def variant_params
-    params.require(:variant).permit()
+    params.require(:variant).permit(:name, :description)
   end
 end

@@ -3,6 +3,7 @@
 Rails.application.routes.draw do
 
   
+  resources :phase_weeks
   resources :reports
   devise_for :users
 

@@ -1,0 +1,2 @@
+class PhaseWeeksController < ApplicationController
+end

@@ -13,5 +13,5 @@
       <%= render partial: 'index_plant', collection: @plants %>
     </tbody>
   </table>
-  <%= link_to "New Plant", new_user_plant_path(@user), class: "btn btn-primary" %>
+  <%= link_to "New Plant", new_user_plant_path(current_user), class: "btn btn-primary" %>
 </div>
