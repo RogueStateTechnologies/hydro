@@ -3,7 +3,7 @@
 class HealthReportsController < ApplicationController
   before_action :find_plant
   before_action :find_plant_user
-  skip_before_action :verify_authenticity_token
+  # skip_before_action :verify_authenticity_token
 
   def index
     @health_reports = HealthReport.all
