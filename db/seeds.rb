@@ -71,7 +71,9 @@ Plant.create!(user_id: User.first.id,
               medium_id: Medium.first.id,
               light_wattage: 100,
               plan_id: Plan.first.id,
-              phase_id: Phase.first.id)
+              phase_id: Phase.first.id,
+              start_date: Date.today,
+              next_notification_date: Date.today)
 
 puts "Seeding Health Reports..."
 HealthReport.create!(height_in_centimeters: 100,

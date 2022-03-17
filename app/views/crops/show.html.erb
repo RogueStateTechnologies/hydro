@@ -24,7 +24,7 @@
           <li class="nav-item">
             <a class="nav-link" data-toggle="tab" href="#link9" role="tablist">
               <i class="now-ui-icons ui-2_settings-90"></i>
-              Growth Plans
+              Growth Plans 
             </a>
           </li>
         </ul>
@@ -32,13 +32,11 @@
         <div class="tab-pane" id="link7">
           <%= @crop.description %>
         </div>
-        <div class="tab-pane active" id="link8">
-          <%= render partial: "show_variants", collection: Variant.where(crop_id: @crop.id)%>
+        <div class="tab-pane" id="link8">
+          <%= render partial: "variants" %>
         </div>
-        <div class="tab-pane" id="link9">
-          Completely synergize resource taxing relationships via premier niche markets. Professionally cultivate one-to-one customer service with robust ideas.
-          <br><br>
-          Dynamically innovate resource-leveling customer service for state of the art customer service.
+        <div class="tab-pane active" id="link9">
+          <%= render partial: "growth_plans" %>
         </div>
       </div>
     </div>
