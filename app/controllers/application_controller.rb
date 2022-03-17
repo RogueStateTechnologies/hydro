@@ -1,19 +1,12 @@
 # frozen_string_literal: true
 
 class ApplicationController < ActionController::Base
-  skip_before_action :verify_authenticity_token
+  # skip_before_action :verify_authenticity_token
   before_action :authenticate_user!
 
   private
 
   #finders
-  def find_plant
-    @plant = Plant.find(params[:id])
-  end
-
-  def find_user
-    @user = User.find(params[:user_id])
-  end
 
   def find_harvest_report
     @harvest_report = HarvestReport.find(harvest_params[:harvest_report_id])
