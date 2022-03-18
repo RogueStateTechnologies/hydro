@@ -3,12 +3,6 @@
     <h5 class="card-category" style="text-align:center;">Plant Timeline</h5>
     <div style="width: 40%;text-align:center;">
       <h5 class="card-title">Health Reports</h5>
-      <%= link_to "View All",
-                  plant_health_reports_path(@user, @plant),
-                  class: "btn btn-primary"%>
-      <%= link_to "New Report", 
-                  new_plant_health_report_path(@user, @plant), 
-                  class: "btn btn-success" %>
       <div style="display:flex;justify-content:space-around;">
         <div>
           <h6>Total</h6>
@@ -26,12 +20,6 @@
     </div>
     <div>
       <h5 class="card-title">Harvest Reports</h5>
-      <%= link_to "View All",
-                    plant_harvest_reports_path(@user, @plant),
-                    class: "btn btn-primary"%>
-      <%= link_to "New Report", 
-                    new_plant_harvest_report_path(@user, @plant), 
-                    class: "btn btn-danger" %>
       <div style="display: flex; text-align: center">
         <div>
           <h6>Total</h6>
