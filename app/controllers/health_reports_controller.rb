@@ -2,8 +2,6 @@
 
 class HealthReportsController < ApplicationController
   before_action :find_plant
-  before_action :find_plant_user
-  # skip_before_action :verify_authenticity_token
 
   def index
     @health_reports = HealthReport.all
@@ -19,7 +17,7 @@ class HealthReportsController < ApplicationController
 
   def create
     @health_report = @plant.health_reports.create(health_report_params)
-    redirect_to user_plants_path(@user, @plant)
+    redirect_to user_plants_path(current_user, @plant)
   end
 
   def update
@@ -28,5 +26,11 @@ class HealthReportsController < ApplicationController
 
   def delete
     @health_report.delete
+  end
+
+  private 
+
+  def find_plant
+    @plant = Plant.find(params[:plant_id])
   end
 end

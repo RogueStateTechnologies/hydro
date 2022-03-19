@@ -7,6 +7,8 @@ class CreateNutrients < ActiveRecord::Migration[6.1]
       t.integer :plan_id
       t.integer :phase_id
       t.integer :amount_per_feeding
+      # add a manufatucrer column
+      # add a composition column
 
       t.timestamps
     end

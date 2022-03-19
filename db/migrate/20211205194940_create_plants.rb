@@ -12,7 +12,9 @@ class CreatePlants < ActiveRecord::Migration[6.1]
       t.integer :phase_id
       t.date    :start_date
       t.date    :next_notification_date
-      # add a name column
+      # add a container_size column
+      # change light_wattage column?
+      # 
 
       t.timestamps
     end

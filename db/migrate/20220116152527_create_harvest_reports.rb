@@ -3,6 +3,7 @@
 class CreateHarvestReports < ActiveRecord::Migration[6.1]
   def change
     create_table :harvest_reports do |t|
+      # different health reports based on the crop
       t.integer :height_in_centimeters
       t.integer :weight_wet_in_grams
       t.integer :weight_dry_in_grams

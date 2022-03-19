@@ -1,23 +1,20 @@
 # frozen_string_literal: true
 
 class HarvestReportsController < ApplicationController
-  before_action :find_plant, :find_plant_user, except: :index
-
+  before_action :find_plant
+  before_action :find_or_new_harvest, except: :index
+  
   def index
     @harvest_reports = @plant.harvest_reports
   end
 
-  def show
-    @harvest_report
-  end
+  def show; end
 
-  def new 
-    @harvest_report = @plant.harvest_reports.new
-  end
+  def new; end
   
   def create
     @harvest_report = @plant.harvest_reports.create(harvest_report_params)
-    redirect_to user_plants_path(@user)
+    redirect_to user_plant_path(current_user, @plant)
   end
 
   def update
@@ -26,5 +23,19 @@ class HarvestReportsController < ApplicationController
 
   def delete
     @harvest_report.delete
+  end
+
+  private
+
+  def harvest_report_params()
+    params.require(:harvest_report).permit()
+  end
+
+  def find_plant
+    @plant = Plant.find(params[:plant_id])
+  end
+
+  def find_or_new_harvest
+    @harvest = params[:id] ? HarvestReport.find(params[:id]) : HarvestReport.new
   end
 end
