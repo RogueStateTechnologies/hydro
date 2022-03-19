@@ -6,6 +6,7 @@ class CreatePlans < ActiveRecord::Migration[6.1]
       t.string :name
       t.text :description
       t.integer :crop_id
+      # should plans have a manufacturer?
 
       t.timestamps
     end
