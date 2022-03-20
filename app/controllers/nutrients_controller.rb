@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class NutrientsController < ApplicationController
+  before_action :find_or_new_nutrient, except: :index
 
   def index
     @nutrients = Nutrient.all
@@ -11,21 +12,34 @@ class NutrientsController < ApplicationController
   def new; end
 
   def create
-    @nutrient = Nutrient.create(nutrient_params)
+    @nutrient = Nutrient.new(nutrient_params)
+    if @nutrient.save
+      render "index"
+    else
+      render "new"
+    end
   end
 
   def update
-    @nutrient.update(nutrient_params)
+    if @nutrient.update(nutrient_params)
+      render "show"
+    else
+      render "update"
+    end
   end
 
   def delete
-    @nutrient.delete
+    if @nutrient.delete
+      render "index"
+    else
+      render "show"
+    end
   end
 
   private
 
   def nutrient_params
-    params.require(:nutrient).permit(:name, :plan_id, :phase_id, :amount_per_feeding)
+    params.require(:nutrient).permit(:name, :plan_id, :phase_id, :manufacturer, :composition)
   end
 
   def find_or_new_nutrient
