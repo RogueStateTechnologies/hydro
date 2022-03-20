@@ -3,6 +3,7 @@
 class CreateHarvestReports < ActiveRecord::Migration[6.1]
   def change
     create_table :harvest_reports do |t|
+      # should have different reports for different crops
       t.integer :height_in_centimeters
       t.integer :weight_wet_in_grams
       t.integer :weight_dry_in_grams
@@ -10,7 +11,7 @@ class CreateHarvestReports < ActiveRecord::Migration[6.1]
       t.integer :total_water_used_in_milileters
       t.integer :water_per_gram_in_milileters
       t.integer :wattage_per_gram
-      t.integer :reportable_id
+      t.integer :plant_id
 
       t.timestamps
     end

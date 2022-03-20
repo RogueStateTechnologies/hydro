@@ -58,13 +58,13 @@ ActiveRecord::Schema.define(version: 2022_03_17_151435) do
     t.integer "total_water_used_in_milileters"
     t.integer "water_per_gram_in_milileters"
     t.integer "wattage_per_gram"
-    t.integer "reportable_id"
+    t.integer "plant_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "health_reports", force: :cascade do |t|
-    t.integer "reportable_id"
+    t.integer "plant_id"
     t.string "plant_image"
     t.integer "height_in_centimeters"
     t.integer "air_humidity"

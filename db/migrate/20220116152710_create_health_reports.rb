@@ -3,7 +3,7 @@
 class CreateHealthReports < ActiveRecord::Migration[6.1]
   def change
     create_table :health_reports do |t|
-      t.integer :reportable_id
+      t.integer :plant_id
       t.string :plant_image
       t.integer :height_in_centimeters
       t.integer :air_humidity
