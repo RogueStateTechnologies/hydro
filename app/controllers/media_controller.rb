@@ -1,29 +1,48 @@
 # frozen_string_literal: true
 
 class MediaController < ApplicationController
-  before_action :find_media, except: [:index, :new, :create]
+  before_action :find_or_new_medium, except: :index
 
   def index
     @media = Medium.all
   end
 
-  def show
-    @media
-  end
+  def show; end
 
-  def new
-    @media = Medium.new
-  end
+  def new; end
 
   def create
-    @medium = Medium.create(medium_params)
+    @medium = Medium.new(medium_params)
+    if @medium.save
+      redirect_to @medium
+    else
+      render "new"
+    end
   end
 
   def update
-    @media.update(medium_params)
+    if @medium.update(medium_params)
+      redirect_to @medium
+    else
+      render "update"
+    end
   end
 
   def delete
-    @media.delete
+    if @medium.delete
+      render "index"
+    else
+      render @medium
+    end
+  end
+
+  private
+
+  def medium_params
+    params.require(:medium).permit(:name, :description)
+  end
+
+  def find_or_new_medium
+    @medium = params[:id] ? Medium.find(params[:id]) : Medium.new
   end
 end
