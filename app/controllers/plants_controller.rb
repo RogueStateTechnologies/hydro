@@ -1,9 +1,7 @@
 # frozen_string_literal: true
 
 class PlantsController < ApplicationController
-  # skip_before_action :verify_authenticity_token
-  before_action :find_plant, except: [:index, :new, :create]
-
+  before_action :find_or_new_plant, except: :index
 
   def index
     @plants = current_user.plants.all
@@ -11,26 +9,41 @@ class PlantsController < ApplicationController
 
   def show; end
   
-  def new
-    @plant = current_user.plants.new
-  end
+  def new; end
 
   def create
     @plant = current_user.plants.new(plant_params)
     if @plant.save!
-      # NotifierMailer.welcome(@user).deliver_now
-      redirect_to user_plant_path(@user, @plant)
+      render "show", flash: { notice: "Plant Created!"}
+    else 
+      render "new", flash: { notice: "Unsuccesful"}
+    end
+  end
+
+  def update
+    if @plant.update(plant_params)
+      render "show"
+    else
+      render "update"
+    end
+  end
+
+  def delete
+    if @plant.delete
+      render "index"
+    else
+      render "show"
     end
   end
 
   private
 
-  def find_plant
-    @plant = current_user.plants.find(params[:id])
+  def find_or_new_plant
+    @plant =params[:id] ? current_user.plants.find(params[:id]) : current_user.plants.new
   end
 
   def plant_params
-    params.require(:plant).permit(:user_id, :crop_id, :start_date, :variant_id, :medium_id, :plan_id, :phase_id)
+    params.permit(:user_id, :crop_id, :start_date, :variant_id, :medium_id, :plan_id, :phase_id)
     end
 
 end
