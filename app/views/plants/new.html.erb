@@ -1,9 +1,12 @@
+<% next_date =  %>
+
 <%= bootstrap_form_for [@user, @plant] do |f| %>
   <div class="card">
     <div class="card-header">
       <h4 class="card-title">What will you be growing today?</h4>
     </div>
     <div class="card-body" style="display:flex; justify-content:space-between;">
+      <%= f.hidden_field :next_notification_date, :value => Date.today + 1.week %>
       <div>
         <%= f.collection_select :crop_id, 
                                 Crop.order(:name), 

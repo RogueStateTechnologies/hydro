@@ -8,6 +8,6 @@ class NotifierMailer < ApplicationMailer
     end
     
     def plant_reminder(destination)
-      mail(to: 'tate@tateray.com')
+      mail(to: destination)
     end
 end
