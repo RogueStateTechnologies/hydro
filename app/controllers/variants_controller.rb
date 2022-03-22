@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
 class VariantsController < ApplicationController
-  before_action :find_crop, except: [:index]
-  before_action :find_or_new_variant, except: [:index, :create]
+  before_action :find_crop
+  before_action :find_or_new_variant, except: :index
 
   def index
     @variants = @crop.variants.all
@@ -15,7 +15,9 @@ class VariantsController < ApplicationController
   def create
     @variant = @crop.variants.new(variant_params)
     if @variant.save
-      redirect_to crop_path(@crop), flash: { notice: "Variant created" }
+      render "show", flash: { notice: "Variant created" }
+    else
+      render "new"
     end
   end
 

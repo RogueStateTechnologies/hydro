@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
 class PlansController < ApplicationController
-  before_action :find_crop, except: :index
-  before_action :find_or_new_plan, except: [:index, :create]
+  before_action :find_crop
+  before_action :find_or_new_plan, except: :index
 
   def index
     @plans = Plan.all
@@ -15,22 +15,32 @@ class PlansController < ApplicationController
   def create
     @plan = @crop.plan.new(plan_params)
     if @plan.save
-      redirect_to crop_path(@crop), flash: { notice: "Plan created" }
+      render "show", flash: { notice: "Plan created" }
+    else
+      render "new", flash: { notice: "ERROR: Creation Failed!" }
     end
   end
 
   def update
-    @plan.update(plan_params)
+    if @plan.update(plan_params)
+      render "show", flash: { notice: "Plant Updated" }
+    else 
+      render "update", flash: { notice: "Update Failed" }
+    end
   end
 
   def delete
-    @plan.delete
+    if @plan.delete
+      render "index", flash: { notice: "Plan Deleted" }
+    else
+      render "show", flash: { notice: "Unable to Delete" }
+    end
   end
 
   private
 
   def plan_params
-    params.require(:plan).permit(:name, :description, :crop_id)
+    params.permit(:name, :description, :crop_id)
   end
 
   def find_crop

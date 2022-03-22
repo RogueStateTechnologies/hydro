@@ -84,8 +84,6 @@ HealthReport.create!(height_in_centimeters: 100,
                      watering_volume_per_day: 12,
                      container_size: 12,
                      ph: 12,
+                     plant_id: Plant.first.id,
                      diagnosis: "healthy",
                      comments: "nothing to see here")
-
-puts "Seeding Plant Reports..."
-PlantReport.create!(plant_id: 1, reportable: HealthReport.first)
