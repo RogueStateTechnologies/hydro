@@ -3,8 +3,12 @@
 class CreateHealthReports < ActiveRecord::Migration[6.1]
   def change
     create_table :health_reports do |t|
+<<<<<<< HEAD
       # different health reports based on the phase?
       t.integer :reportable_id
+=======
+      t.integer :plant_id
+>>>>>>> main
       t.string :plant_image
       # this will be handled by active storage
       t.integer :height_in_centimeters
