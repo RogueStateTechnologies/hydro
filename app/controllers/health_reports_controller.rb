@@ -40,7 +40,7 @@ class HealthReportsController < ApplicationController
   private 
 
   def report_params
-    params.require(:health_report).permit(:height_in_centimeters, :air_humidity, :light_schedule, :day_air_temp, :night_air_temp, :watering_volume_per_day, :container_size, :ph, :diagnosis, :comments, :plant_id)
+    params.require(:health_report).permit(:height_in_centimeters, :air_humidity, :light_schedule, :day_air_temp, :night_air_temp, :watering_volume_per_day, :container_size, :ph, :diagnosis, :comments, :plant_id, :image)
   end
 
   def find_or_new_report

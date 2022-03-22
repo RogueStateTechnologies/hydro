@@ -17,8 +17,8 @@ Rails.application.routes.draw do
   end
 
   resources :crops do
-    resources :variants, except: :index
-    resources :plans, except: :index 
+    resources :variants
+    resources :plans 
   end
 
   resources :plans do
@@ -29,8 +29,6 @@ Rails.application.routes.draw do
   resources :nutrients, only: :index
   resources :phases, only: :index
   resources :media, only: :index
-  resources :plans, only: :index
-  resources :variants, only: :index
   resources :crops, only: :index
   # Root Route, where to go at application load.
   devise_scope :user do

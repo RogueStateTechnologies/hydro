@@ -7,7 +7,7 @@
     <div>
       <%= f.number_field :height_in_centimeters, placeholder: "100" %><br>
       <%= f.number_field :light_schedule, placeholder: "24" %><br>
-      <button class="btn btn-info">Add a picture</button>
+      <%= f.file_field   :image %>
     </div>
     <div>
       <%= f.number_field :air_humidity, placeholder: "95" %><br>

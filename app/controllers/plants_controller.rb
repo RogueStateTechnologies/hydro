@@ -13,7 +13,7 @@ class PlantsController < ApplicationController
 
   def create
     @plant = current_user.plants.new(plant_params)
-    if @plant.save!
+    if @plant.save
       render "show", flash: { notice: "Plant Created!"}
     else 
       render "new", flash: { notice: "Unsuccesful"}
@@ -43,7 +43,7 @@ class PlantsController < ApplicationController
   end
 
   def plant_params
-    params.permit(:user_id, :crop_id, :start_date, :variant_id, :medium_id, :plan_id, :phase_id)
+    params.require(:plant).permit(:user_id, :crop_id, :start_date, :variant_id, :medium_id, :plan_id, :phase_id)
     end
 
 end
