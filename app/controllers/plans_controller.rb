@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class PlansController < ApplicationController
-  before_action :find_crop
+  before_action :find_crop, except: :index
   before_action :find_or_new_plan, except: :index
 
   def index

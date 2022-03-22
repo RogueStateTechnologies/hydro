@@ -1,60 +1,9 @@
-<div class="card card-timeline">
-<<<<<<< HEAD
-  <%= render partial: "show_timeline_header" %>
-=======
-  <div class="card-header" style="display: flex">
-    <h5 class="card-category" style="text-align:center;">Plant Timeline</h5>
-    <div style="width: 40%;text-align:center;">
-      <h5 class="card-title">Health Reports</h5>
-      <%= link_to "View All",
-                  plant_health_reports_path(@user, plant_id: @plant.id),
-                  class: "btn btn-primary"%>
-      <%= link_to "New Report", 
-                  new_plant_health_report_path(@user, plant_id:  @plant.id), 
-                  class: "btn btn-success" %>
-      <div style="display:flex;justify-content:space-around;">
-        <div>
-          <h6>Total</h6>
-          <span><%= @plant.health_reports.length %></span>
-        </div>
-        <div>
-          <h6>Most Recent</h6>
-          <% if @plant.health_reports.length > 0 %>
-            <span>
-              <%= @plant.health_reports.last.created_at.strftime("%b %d") %>
-            </span>
-          <% end %>
-        </div>
-      </div>
-    </div>
-    <div>
-      <h5 class="card-title">Harvest Reports</h5>
-      <%= link_to "View All",
-                    plant_harvest_reports_path(@user, plant_id: @plant.id),
-                    class: "btn btn-primary"%>
-      <%= link_to "New Report", 
-                    new_plant_harvest_report_path(@user, plant_id: @plant.id), 
-                    class: "btn btn-danger" %>
-      <div style="display: flex; text-align: center">
-        <div>
-          <h6>Total</h6>
-          <span><%= @plant.harvest_reports.length %></span>
-        </div>
-        <div>
-          <h6>Most Recent</h6>
-          <% if @plant.harvest_reports.length > 0 %>
-            <span>
-              <%= @plant.harvest_reports.last.created_at.strftime("%b %d") %>
-            </span>
-          <% end %>
-        </div>
-      </div>
-    </div>
+<div class="card-timeline">
+  <h3 style="text-align: center">Plant Timeline</h3>
+  <div style="display: flex; justify-content: space-around;">
+    <%= render partial: "show_timeline_header" %>
   </div>
-</div>
->>>>>>> main
-  </div>
-  <div class="card-body">
+  <div style="overflow: scroll">
     <ul class="timeline">
       <%= render partial: '/health_reports/health_timeline', 
                  collection: @plant.health_reports %>

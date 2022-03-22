@@ -1,46 +1,42 @@
-<div class="card-header">
-    <h5 class="card-category">Plant Timeline</h5>
+<div class="card" style="text-align: center">
+  <div>
+    <h5 class="card-title">Health Reports</h5>
+      <%= link_to "View All", plant_health_reports_path(@user, plant_id: @plant.id), class: "btn btn-primary" %>
+      <%= link_to "New Report", new_plant_health_report_path(@user, plant_id: @plant.id), class: "btn btn-success" %>
+  </div>
+  <div style="display: flex; justify-content: space-around">
     <div>
-      <h5 class="card-title">Health Reports</h5>
-      <%= link_to "View All", plant_health_reports_path(@user, plant_id: @plant.id), 
-                  class: "btn btn-primary"%>
-      <%= link_to "New Report", new_plant_health_report_path(@user, plant_id: @plant.id), 
-                  class: "btn btn-success" %>
+      <h6>Total</h6>
+      <span><%= @plant.health_reports.length %></span>
     </div>
     <div>
-      <div>
-        <h6>Total</h6>
-        <span><%= @plant.health_reports.length %></span>
-      </div>
-      <div>
-        <h6>Most Recent</h6>
-        <% if @plant.health_reports.length > 0 %>
-          <span>
+      <h6>Most Recent</h6>
+      <% if @plant.health_reports.length > 0 %>
+        <span>
           <%= @plant.health_reports.last.created_at.strftime("%b %d") %>
-          </span>
-        <% end %>
-      </div>
+        </span>
+      <% end %>
     </div>
   </div>
+</div>
+<div class="card" style="text-align: center">
   <div>
     <h5 class="card-title">Harvest Reports</h5>
-    <%= link_to "View All", plant_harvest_reports_path(@user, plant_id: @plant.id), 
-                class: "btn btn-primary"%>
-    <%= link_to "New Report", new_plant_harvest_report_path(@user, plant_id: @plant.id), 
-                class: "btn btn-danger" %>
-    <div style="display: flex; text-align: center">
-      <div>
-        <h6>Total</h6>
-        <span><%= @plant.harvest_reports.length %></span>
-      </div>
-      <div>
-        <h6>Most Recent</h6>
-        <% if @plant.harvest_reports.length > 0 %>
-          <span>
+      <%= link_to "View All", plant_harvest_reports_path(@user, plant_id: @plant.id), class: "btn btn-primary" %>
+      <%= link_to "New Report", new_plant_harvest_report_path(@user, plant_id: @plant.id), class: "btn btn-success" %>
+  </div>
+  <div style="display: flex; justify-content: space-around">
+    <div>
+      <h6>Total</h6>
+      <span><%= @plant.harvest_reports.length %></span>
+    </div>
+    <div>
+      <h6>Most Recent</h6>
+      <% if @plant.harvest_reports.length > 0 %>
+        <span>
           <%= @plant.harvest_reports.last.created_at.strftime("%b %d") %>
-          </span>
-        <% end %>
-      </div>
+        </span>
+      <% end %>
     </div>
   </div>
 </div>

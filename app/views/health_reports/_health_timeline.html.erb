@@ -28,6 +28,11 @@
           <%= health_timeline.diagnosis %>
         </span>
       </div>
+      <div>
+        <% if health_timeline.image.representable? %>
+          <%= image_tag url_for(health_timeline.image) %>
+        <% end %>
+      </div>
     </div>
   </div>
 </li>
