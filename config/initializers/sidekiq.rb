@@ -1,15 +1,21 @@
-if Rails.env.development?
-  Sidekiq.configure_server do |config|
-    config.redis = { url: 'redis://localhost:6379' }
-  end
+require 'sidekiq_calculations'
+
+Sidekiq.configure_client do |config|
+  sidekiq_calculations = SidekiqCalculations.new
+  sidekiq_calculations.raise_error_for_env!
+
+  config.redis = {
+    url: ENV['REDISCLOUD_URL'],
+    size: sidekiq_calculations.client_redis_size
+  }
 end
 
-if Rails.env.production?
-  Sidekiq.configure_client do |config|
-    config.redis = { url: ENV['REDIS_URL'], size: 2 }
-  end
+Sidekiq.configure_server do |config|
+  sidekiq_calculations = SidekiqCalculations.new
+  sidekiq_calculations.raise_error_for_env!
 
-  Sidekiq.configure_server do |config|
-    config.redis = { url: ENV['REDIS_URL'], size: 20 }
-  end
+  config.options[:concurrency] = sidekiq_calculations.server_concurrency_size
+  config.redis = {
+    url: ENV['REDISCLOUD_URL']
+  }
 end
