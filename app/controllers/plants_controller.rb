@@ -20,11 +20,13 @@ class PlantsController < ApplicationController
     end
   end
 
+  def edit; end
+
   def update
     if @plant.update(plant_params)
       render "show"
     else
-      render "update"
+      render "edit"
     end
   end
 
@@ -39,7 +41,7 @@ class PlantsController < ApplicationController
   private
 
   def find_or_new_plant
-    @plant =params[:id] ? current_user.plants.find(params[:id]) : current_user.plants.new
+    @plant = params[:id] ? current_user.plants.find(params[:id]) : current_user.plants.new
   end
 
   def plant_params

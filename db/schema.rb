@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_03_17_151435) do
+ActiveRecord::Schema.define(version: 2022_03_26_205857) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -64,6 +64,7 @@ ActiveRecord::Schema.define(version: 2022_03_17_151435) do
   end
 
   create_table "health_reports", force: :cascade do |t|
+    t.integer "reportable_id"
     t.integer "plant_id"
     t.string "plant_image"
     t.integer "height_in_centimeters"
@@ -91,22 +92,18 @@ ActiveRecord::Schema.define(version: 2022_03_17_151435) do
     t.string "name"
     t.integer "plan_id"
     t.integer "phase_id"
+    t.integer "week_id"
     t.integer "amount_per_feeding"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "phase_weeks", force: :cascade do |t|
+    t.string "manufacturer"
+    t.string "composition"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "phases", force: :cascade do |t|
     t.string "name"
-    t.integer "duration"
     t.integer "plan_id"
     t.text "description"
-    t.integer "feed_frequency"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -115,17 +112,9 @@ ActiveRecord::Schema.define(version: 2022_03_17_151435) do
     t.string "name"
     t.text "description"
     t.integer "crop_id"
+    t.string "created_by"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "plant_reports", force: :cascade do |t|
-    t.integer "plant_id"
-    t.string "reportable_type"
-    t.bigint "reportable_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["reportable_type", "reportable_id"], name: "index_plant_reports_on_reportable"
   end
 
   create_table "plants", force: :cascade do |t|
@@ -158,6 +147,14 @@ ActiveRecord::Schema.define(version: 2022_03_17_151435) do
     t.string "name"
     t.string "description"
     t.integer "crop_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "weeks", force: :cascade do |t|
+    t.integer "phase_id"
+    t.integer "plan_id"
+    t.integer "feed_frequency"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

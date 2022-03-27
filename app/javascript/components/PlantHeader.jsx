@@ -1,117 +1,122 @@
 import React from "react"
 import { useState } from "react"
 
-const PlantHeader = ({crop, variant, startDate, phase, plan, plantHeight, containerSize, 
-                      wateringVolume, averagePh, lightIntensity, lightSchedule}) => {
+import HeaderBar from './HeaderBar'
+
+const PlantHeader = ({ crop, variant, plan, phase, plant, nutrients }) => {
 
   const [active, setActive] = useState("overview")
 
   const header = {
     display: "flex",
-    "justify-content": "space-between",
+    justifyContent: "space-between",
   }
   const body = {
     display: "flex",
-    "justify-content": "space-around",
-    "text-align": "center"
+    justifyContent: "space-around",
+    textAlign: "center"
   }
-
-  if(active === "details"){
-    return(
-      <>
-        <div className="card-header" style={header}>
+  console.log(active)
+  switch(active){
+    case "overview":
+      return (
+        <>
+        {/* descriptions should be at least a sentence or two to make it worth while for them to be on the screen; health score can be broken down into multiple aspects and can be based on growth prediction / benchmarks */}
+          <div className="card-header" style={header}>
             <div>
-              <button className="overview btn btn-sm" onClick={() => setActive("overview")}>Overview</button>
-              <button className="details btn btn-sm" onClick={() => setActive("details")}>Details</button>
-            </div>
-          <div>
-            <button className="btn btn-sm">X</button>
-          </div>
-        </div>
-        <div className="card-body">
-          <div className="details" style={body}>
-            <div>
-              <h5 className="card-category">Plant Height</h5>
-              <h6>100cm</h6>
-            </div>
-            <div>
-              <h5 className="card-category">Container Size</h5>
-              <h6>10 Gallons</h6>
-            </div>
-            <div>
-              <h5 className="card-category">Watering Volume</h5>
-              <h6>5 Gallons</h6>
-            </div>
-            <div>
-              <h5 className="card-category">Average Ph</h5>
-              <h6>10</h6>
-            </div>
-            <div>
-              <h5 className="card-category">Light Intensity</h5>
-              <h6>9001</h6>
-            </div>
-            <div>
-              <h5 className="card-category">Light Schedule</h5>
-              <h6>8hr</h6>
-            </div>
-            <div>
-              <h5 className="card-category">Next Scheduled Feeding</h5>
-              <h6> Mar 24, 2022</h6>
-            </div>
-            <div>
-              <h5 className="card-category">Next Scheduled Health Report</h5>
-              <h6>Mar 22, 2022</h6>
+              <HeaderBar setActive={setActive}/>
             </div>
           </div>
-        </div>
-      </>
-    )
-  } else{
-    return (
-      <>
-        <div className="card-header" style={header}>
-          <div>
-            <button className="overview btn btn-sm" onClick={() => setActive("overview")}>Overview</button>
-            <button className="details btn btn-sm" onClick={() => setActive("details")}>Details</button>
-          </div>
-          <div>
-            <button className="btn btn-sm">X</button>
-          </div>
-        </div>
-        <div className="card-body">
-          <div className="overview" style={body}>
-            <div>
-              <h5 className="card-category">Crop</h5>
-              <h6>{crop.name}</h6>
+          <div className="card-body">
+            <div className="overview" style={body}>
+              <div>
+                <h4 className="card-category">Crop</h4>
+                <h5>{crop.name}</h5>
+                <span>{crop.description}</span>
+              </div>
+              <div>
+                <h4 className="card-category">Variant</h4>
+                <h5>{variant.name}</h5>
+                <span>{variant.description}</span>
+              </div>
+              <div>
+                <h4 className="card-category">Overall Health Score</h4>
+                <h5>8/10</h5>
+              </div>
             </div>
+          </div>
+        </>
+      )
+    case "schedule":
+      return (
+        <>
+          {/* add a dates model to hold all of the different dates i need for a given plant; a plant has many dates; a date belongs to a plant; date will have a date_type column and the date column */}
+          <div className="card-header" style={header}>
             <div>
-              <h5 className="card-category">Variant</h5>
-              <h6>{variant.name}</h6>
+              <HeaderBar setActive={setActive}/>
+            </div>
           </div>
-          <div>
-            <h5 className="card-category">Start Date</h5>
-            <h6>{startDate}</h6>
+          <div className="card-body">
+            <div className="schedule" style={body}>
+              <div>
+                <h4 className="card-category">Next Scheduled Checkup</h4>
+                <h5>{plant.next_notification_date}</h5>
+              </div>
+              <div>
+                <h4 className="card-category">Next Feeding</h4>
+                <h5>Month Day</h5>
+              </div>
+              <div>
+                <h4 className="card-category">Estimated Harvest</h4>
+                <h5>Month Day</h5>
+              </div>
+            </div>
           </div>
-          <div>
-            <h5 className="card-category">Growth Plan</h5>
-            <h6>{plan.name}</h6>
-          </div>
-          <div>
-            <h5 className="card-category">Phase</h5>
-            <h6>P3:W5</h6>
-          </div>
-          <div>
-            <h5 className="card-category">Estimated Harvest Date</h5>
-            <h6>Mar 31, 2022</h6>
-          </div>
-          <div>
-            <h5 className="card-category">Overall Health Score</h5>
-            <h6>8/10</h6>
-          </div>
-        </div>
-      </div>
-    </>
-    )
+        </>
+      )
+      case "plan":
+        return (
+          <>
+            <div className="card-header" style={header}>
+              <div>
+                <HeaderBar setActive={setActive}/>
+              </div>
+            </div>
+            <div className="card-body">
+              <div className="plan" style={body}>
+                <div>
+                  <h4 className="card-category">Growth Plan</h4>
+                  <h5>{plan.name}</h5>
+                  <span>{plan.description}</span>
+                </div>
+                <div>
+                  <h4 className="card-category">Phase</h4>
+                  <h5>{phase.name}</h5>
+                  <span>{phase.description}</span>
+                </div>
+                <div>
+                  <h4 className="card-category">Phase Nutrients</h4>
+                  <ul>
+                    {nutrients.map((nute) => (
+                      <li key={nute.name}>{nute.name}</li>
+                    ))}
+                  </ul>
+                </div>
+                <div>
+                  <h4 className="card-category">Next Phase Start</h4>
+                  <h5>Month Day</h5>
+                </div>
+              </div>
+            </div>
+          </>
+        )
+      case "charts":
+        return (
+          <>
+            <h1>UNDER CONSTRUCTION</h1>
+            {/* will need to figure out how to integrate charts here */}
+          </>
+        )
   }
 }
 

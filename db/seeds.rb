@@ -36,29 +36,29 @@ flora = Plan.create!(name:        'Flora Series',
 
 puts "Seeding Phases..."
 seed = Phase.create!(name:           'Seed Phase',
-                    duration:       1,
                     plan_id:        flora.id,
-                    description:    'Little Baby Seedling',
-                    feed_frequency: 2)
+                    description:    'Little Baby Seedling')
 early = Phase.create!(name:           'Early Growth', 
-                     duration:       2, 
                      plan_id:        flora.id, 
-                     description:    'A Whole New Plant',
-                     feed_frequency: 4)
+                     description:    'A Whole New Plant')
 mid = Phase.create!(name:           'Mid Growth', 
-                   duration:       2, 
                    plan_id:        flora.id, 
-                   description:    'Taking it Higher and Higher',
-                   feed_frequency: 3)
+                   description:    'Taking it Higher and Higher')
 
 puts "Seeding Media..."
 coco = Medium.create!(name:        'CoCo', 
                      description: 'Made from Coconut')
 
+puts "Seeding Weeks..."
+week_one = Week.create!(phase_id: Phase.first.id,
+                       plan_id: Plan.first.id,
+                       feed_frequency: 4)
+
 puts "Seeding Nutrients..."
 Nutrient.create!(name:               'FloraGrow', 
                 plan_id:            flora.id, 
                 phase_id:           seed.id, 
+                week_id: week_one.id,
                 amount_per_feeding: 1)
 
 puts "Seeding Users..."

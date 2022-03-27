@@ -2,13 +2,17 @@
   <div class="timeline-badge success">
   </div>
   <div class="timeline-panel">
-    <div class="timeline-heading">
-      <span class="badge badge-pill badge-success">
-        Health Report
-      </span>
-      <span>
-        <%= health_timeline.created_at.strftime("%b, %d")%>
-      </span>
+    <div class="timeline-heading" style="display: flex; justify-content: space-between">
+      <div>
+        <span class="badge badge-pill badge-success">
+          Health Report
+        </span>
+      </div>
+      <div>
+        <span>
+          <%= health_timeline.created_at.strftime("%b, %d")%>
+        </span>
+      </div>
     </div>
     <hr>
     <div>

@@ -1,0 +1,10 @@
+<div class="card">
+  <div style="display: flex">
+    <div style="width: 100px">
+      <%= link_to 'Update Journal', edit_user_plant_path(current_user, @plant), class: "btn btn-sm btn-info" %>
+    </div>
+    <div style="width: 100px">
+      <%= link_to 'View Plan', crop_plan_path(crop_id: @plant.crop.id, plan_id: @plant.plan.id), class: "btn btn-sm btn-info" %>
+    </div>
+  </div>
+</div>
