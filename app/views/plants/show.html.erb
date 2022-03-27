@@ -1,4 +1,7 @@
 <%= content_for :content_header do%>
-  <%= render partial: 'show_header', local: @plant %>
+  <div class="card">
+    <%= react_component('PlantHeader', {crop: @plant.crop, variant: @plant.variant, plant: @plant, 
+                                        phase: @plant.phase, plan: @plant.plan, nutrients: Nutrient.where(plan_id: @plant.plan.id)}) %>
+  </div>
 <% end %>
 <%= render partial: 'show_timeline', local: @plant %>

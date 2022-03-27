@@ -1,2 +1,0 @@
-class PhaseWeek < ApplicationRecord
-end
