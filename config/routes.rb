@@ -2,13 +2,12 @@
 
 Rails.application.routes.draw do
 
-  
+  resources :plant_dates
   resources :phase_weeks
   resources :reports
-  devise_for :users
+  devise_for :user
 
-
-  resources :users do
+  resources :user do
     resources :plants
   end
   resources :plants do
@@ -32,6 +31,7 @@ Rails.application.routes.draw do
   resources :crops, only: :index
   # Root Route, where to go at application load.
   devise_scope :user do
+
     root to: "devise/sessions#new"
   end
 end

@@ -10,4 +10,5 @@ class Plant < ApplicationRecord
 
   has_many   :health_reports
   has_many   :harvest_reports
+  has_many   :plant_dates
 end

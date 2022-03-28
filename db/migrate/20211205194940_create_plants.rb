@@ -7,7 +7,8 @@ class CreatePlants < ActiveRecord::Migration[6.1]
       t.integer :crop_id
       t.integer :variant_id
       t.integer :medium_id
-      t.integer :light_wattage
+      t.string  :light_system
+      t.integer :container_size
       t.integer :plan_id
       t.integer :phase_id
       t.date    :start_date

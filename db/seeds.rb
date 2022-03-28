@@ -61,29 +61,3 @@ Nutrient.create!(name:               'FloraGrow',
                 week_id: week_one.id,
                 amount_per_feeding: 1)
 
-puts "Seeding Users..."
-User.create(email: "test@test.com", password: "password", password_confirmation: "password")
-
-puts "Seeding Plants..."
-Plant.create!(user_id: User.first.id,
-              crop_id: cannabis.id,
-              variant_id: Variant.first.id,
-              medium_id: Medium.first.id,
-              light_wattage: 100,
-              plan_id: Plan.first.id,
-              phase_id: Phase.first.id,
-              start_date: Date.today,
-              next_notification_date: Date.today)
-
-puts "Seeding Health Reports..."
-HealthReport.create!(height_in_centimeters: 100,
-                     air_humidity: 12,
-                     light_schedule: 2,
-                     day_air_temp: 2,
-                     night_air_temp: 2,
-                     watering_volume_per_day: 12,
-                     container_size: 12,
-                     ph: 12,
-                     plant_id: Plant.first.id,
-                     diagnosis: "healthy",
-                     comments: "nothing to see here")
