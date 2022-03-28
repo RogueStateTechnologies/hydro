@@ -69,17 +69,17 @@ Rails.application.configure do
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = false
   config.action_mailer.default :charset => "utf-8"
-  config.action_mailer.default_url_options = { :host => 'http://myapp.herokuapp.com' }
+  config.action_mailer.default_url_options = { :host => 'smtp.sendgrid.net' }
 
-  config.action_mailer.smtp_settings = {
-    :user_name => "apikey",
-    :password => ENV["SENDGRID_API_KEY"],
-    :address => 'smtp.sendgrid.net',
-    :domain => 'myapp.herokuapp.com',
-    :port => 587,
-    :authentication => :plain,
-    :enable_starttls_auto => true
-}
+  ActionMailer::Base.smtp_settings = {
+    :user_name            => ENV['SENDGRID_USERNAME'],
+    :password             => ENV['SENDGRID_PASSWORD'],
+    :address              => "smtp.sendgrid.net",
+    :port                 => 587,
+    :enable_starttls_auto => true,
+    :authentication       => :plain,
+    :domain               => "heroku.com"
+  }
 
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
