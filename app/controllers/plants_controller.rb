@@ -15,6 +15,7 @@ class PlantsController < ApplicationController
     @plant = current_user.plants.new(plant_params)
     if @plant.save
       render "show", flash: { notice: "Plant Created!"}
+      PlantMailer.new_plant_email()
     else 
       render "new", flash: { notice: "Unsuccesful"}
     end
