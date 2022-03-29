@@ -66,12 +66,14 @@ Rails.application.configure do
 
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-    address:        'smtp.gmail.com',
+    address:        'smtp.sendgrid.net',
     port:           587,
     domain:         'gmail.com',
     authentication: 'plain',
-    user_name:      "tate.ray92@gmail.com",
-    password:       "N0j=4eBm"
+    user_name:      "apikey",
+    password:       "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",
+    enable_starttls_auto: ""
+    # what does this do?
   }
 
   # Ignore bad email addresses and do not raise email delivery errors.
