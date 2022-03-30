@@ -75,6 +75,7 @@ Rails.application.configure do
     enable_starttls_auto: "true"
     # what does this do?
   }
+  config.action_mailer.default_url_options[:host] = "https://sheltered-castle-86259.herokuapp.com/"
 
 
   # Ignore bad email addresses and do not raise email delivery errors.
