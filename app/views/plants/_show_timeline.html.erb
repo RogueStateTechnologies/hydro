@@ -1,10 +1,13 @@
-<div class="card-timeline">
-  <div style="overflow: scroll; height: 500px">
-    <ul class="timeline">
-      <%= render partial: '/health_reports/health_timeline', 
-                 collection: @plant.health_reports %>
-      <%= render partial: '/harvest_reports/harvest_timeline', 
-                 collection: @plant.harvest_reports %>
-    </ul>
+<div class="card">
+  <%= react_component('PlantTimelineHeader') %>
+  <div class="card-body">
+    <div class="card-timeline">
+      <div style="overflow: scroll">
+        <ul class="timeline">
+          <%= react_component('PlantTimelineHealth') %>
+          <%= react_component('PlantTimelineHarvest') %>
+        </ul>
+      </div>
+    </div>
   </div>
 </div>
