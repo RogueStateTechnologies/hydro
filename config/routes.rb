@@ -7,12 +7,13 @@ Rails.application.routes.draw do
   resources :reports
   devise_for :user
 
-  resources :user do
-    resources :plants
-  end
   resources :plants do
     resources :health_reports
     resources :harvest_reports
+    member do
+      get 'schedule'
+      get 'timeline'
+    end
   end
 
   resources :crops do

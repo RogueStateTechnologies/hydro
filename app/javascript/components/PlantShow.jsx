@@ -3,7 +3,7 @@ import { useState } from "react"
 
 import HeaderBar from './HeaderBar'
 
-const PlantHeader = ({ crop, variant, plan, phase, plant, nutrients }) => {
+const PlantShow = ({ crop, variant, plan, phase, plant, nutrients }) => {
 
   const [active, setActive] = useState("overview")
 
@@ -120,4 +120,4 @@ const PlantHeader = ({ crop, variant, plan, phase, plant, nutrients }) => {
   }
 }
 
-export default PlantHeader
+export default PlantShow

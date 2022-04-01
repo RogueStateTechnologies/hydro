@@ -1,7 +1,18 @@
 <%= content_for :content_header do%>
-  <div class="card">
-    <%= react_component('PlantHeader', {crop: @plant.crop, variant: @plant.variant, plant: @plant, 
-                                        phase: @plant.phase, plan: @plant.plan, nutrients: Nutrient.where(plan_id: @plant.plan.id)}) %>
+  <div style="display:flex; justify-content:space-between">
+    <div>
+      <%= link_to 'Overview', plant_path(@plant.id), class: "btn btn-primary btn-sm active" %>
+      <%= link_to 'Schedule', schedule_plant_path(@plant.id), class: "btn btn-primary btn-sm" %>
+      <%= link_to 'Timeline', timeline_plant_path(@plant.id), class: "btn btn-primary btn-sm" %>
+    </div>
+    <div style="display:flex">
+      <h5 style="margin:10px">Plant: <%= @plant.id %></h5>
+      <h5 style="margin:10px"><%= @plant.crop.name %></h5>
+    </div>
   </div>
 <% end %>
-<%= render partial: 'show_timeline', local: @plant %>
+<%= render partial: 'show_details' %>
+<div class="row" style="justify-content:space-around">
+  <%= render partial: 'show_growth' %>
+  <%= render partial: 'show_plan' %>
+</div>

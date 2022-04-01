@@ -2,7 +2,9 @@
 
 class PlantsController < ApplicationController
   before_action :find_or_new_plant, except: :index
+  layout 'show', only: [:show, :schedule, :timeline]
 
+  # CRUD ACTIONS
   def index
     @plants = current_user.plants.all
   end
@@ -15,7 +17,9 @@ class PlantsController < ApplicationController
     @plant = current_user.plants.new(plant_params)
     if @plant.save
       render "show", flash: { notice: "Plant Created!"}
-      PlantMailer.new_plant_email(@plant.user.email).deliver_now()
+      PlantDate.create(plant_id: @plant.id, date_type: "check_up", on_date: @plant.start_date + 1.week)
+      PlantDate.create(plant_id: @plant.id, date_type: "next_feeding", on_date: @plant.start_date + 3.day)
+      PlantDate.create(plant_id: @plant.id, date_type: "next_phase_start", on_date: @plant.start_date + 3.week)
     else 
       render "new", flash: { notice: "Unsuccesful"}
     end
@@ -38,6 +42,12 @@ class PlantsController < ApplicationController
       render "show"
     end
   end
+
+  # NON CRUD ACTIONS
+
+  def schedule; end
+
+  def timeline; end
 
   private
 

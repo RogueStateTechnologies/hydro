@@ -64,16 +64,9 @@ ActiveRecord::Schema.define(version: 2022_03_28_004930) do
   end
 
   create_table "health_reports", force: :cascade do |t|
-    t.integer "reportable_id"
     t.integer "plant_id"
-    t.string "plant_image"
     t.integer "height_in_centimeters"
-    t.integer "air_humidity"
-    t.integer "light_schedule"
-    t.integer "day_air_temp"
-    t.integer "night_air_temp"
-    t.integer "watering_volume_per_day"
-    t.integer "container_size"
+    t.integer "average_air_temp"
     t.integer "ph"
     t.text "diagnosis"
     t.text "comments"

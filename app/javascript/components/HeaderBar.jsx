@@ -1,6 +1,6 @@
 import React from 'react'
 
-const HeaderBar = ({setActive}) => {
+const ShowHeader = ({setActive}) => {
   return(
     <>
       <button className="overview btn btn-sm" onClick={() => setActive("overview")}>Overview</button>
@@ -11,4 +11,4 @@ const HeaderBar = ({setActive}) => {
   )
 }
 
-export default HeaderBar
+export default ShowHeader
