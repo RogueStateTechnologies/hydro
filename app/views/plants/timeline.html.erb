@@ -2,8 +2,8 @@
   <div style="display:flex; justify-content:space-between">
     <div>
       <%= link_to 'Overview', plant_path(@plant.id), class: "btn btn-primary btn-sm" %>
-      <%= link_to 'Schedule', schedule_plant_path(@plant.id), class: "btn btn-primary btn-sm active" %>
-      <%= link_to 'Timeline', timeline_plant_path(@plant.id), class: "btn btn-primary btn-sm" %>
+      <%= link_to 'Schedule', schedule_plant_path(@plant.id), class: "btn btn-primary btn-sm" %>
+      <%= link_to 'Timeline', timeline_plant_path(@plant.id), class: "btn btn-primary btn-sm active" %>
     </div>
     <div style="display:flex">
       <h5 style="margin:10px">Plant: <%= @plant.id %></h5>
@@ -11,4 +11,5 @@
     </div>
   </div>
 <% end %>
-<%= react_component('PlantScheduleCalendar') %>
+<%= render partial: 'show_timeline_header' %>
+<%= render partial: 'show_timeline' %>

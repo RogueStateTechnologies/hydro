@@ -36,6 +36,9 @@ gem 'sidekiq'
 gem 'react-rails'
 gem 'aws-sdk-s3'
 gem 'rails_autoscale_agent'
+gem 'fullcalendar-rails'
+gem 'momentjs-rails' 
+gem 'jquery-rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
