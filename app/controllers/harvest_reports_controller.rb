@@ -14,7 +14,7 @@ class HarvestReportsController < ApplicationController
   def create
     @harvest = @plant.harvest_reports.new(harvest_params)
     if @harvest.save
-      render "show"
+      redirect_to timeline_plant_path(@plant)
     else
       render "new"
     end

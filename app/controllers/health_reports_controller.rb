@@ -15,7 +15,7 @@ class HealthReportsController < ApplicationController
   def create
     @health_report = @plant.health_reports.new(report_params)
     if @health_report.save
-      redirect_to user_plant_path(current_user, @plant)
+      redirect_to timeline_plant_path(@plant)
     else 
       render "new"
     end

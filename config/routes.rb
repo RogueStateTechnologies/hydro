@@ -11,7 +11,6 @@ Rails.application.routes.draw do
     resources :health_reports
     resources :harvest_reports
     member do
-      get 'schedule'
       get 'timeline'
     end
   end

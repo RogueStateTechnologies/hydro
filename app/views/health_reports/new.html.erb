@@ -6,17 +6,12 @@
   <div class="card-body" style="display:flex;justify-content:space-around;">
     <div>
       <%= f.number_field :height_in_centimeters, placeholder: "100" %><br>
-      <%= f.number_field :light_schedule, placeholder: "24" %><br>
       <%= f.file_field   :image %>
     </div>
     <div>
-      <%= f.number_field :air_humidity, placeholder: "95" %><br>
-      <%= f.number_field :day_air_temp, placeholder: "75"%><br>
-      <%= f.number_field :night_air_temp, placeholder: "65"%><br>
+      <%= f.number_field :average_air_temp, placeholder: "75"%><br>
     </div>
     <div>
-      <%= f.number_field :watering_volume_per_day, placeholder: "10"%><br>
-      <%= f.number_field :container_size, placeholder: "10"%><br>
       <%= f.number_field :ph, placeholder: "6.6"%><br>
     </div>
     <div>
