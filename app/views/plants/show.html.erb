@@ -6,12 +6,17 @@
     </div>
     <div style="display:flex">
       <h5 style="margin:10px">Plant: <%= @plant.id %></h5>
-      <h5 style="margin:10px"><%= @plant.crop.name %></h5>
     </div>
   </div>
 <% end %>
-<%= render partial: 'show_details' %>
+<div class="card">
+  <%= react_component('PlantHeader', props={plant: @plant, crop: @plant.crop, variant: @plant.variant})%>
+</div>
 <div class="row" style="justify-content:space-between">
-  <%= render partial: 'show_growth' %>
-  <%= render partial: 'show_plan' %>
+  <div class="card" style="width:30%; margin-left:20px">
+    <%= react_component('PlantGrowthSummary', props={report: @plant.health_reports.last}) %>
+  </div>
+  <div class="card" style="width:50%; margin-:20px">
+    <%= react_component('PlantPlanSummary', props={plan: @plant.plan}) %>
+  </div>
 </div>

@@ -12,7 +12,7 @@ class User::RegistrationsController < Devise::RegistrationsController
   # POST /resource
   def create
     super do |user|
-      NotifierMailer.welcom(user.email)
+      NotifierMailer.welcome(user.email)
     end
 
   end

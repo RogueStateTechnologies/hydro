@@ -12,6 +12,7 @@ Rails.application.routes.draw do
     resources :harvest_reports
     member do
       get 'timeline'
+      get 'plan'
     end
   end
 
