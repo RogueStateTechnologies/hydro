@@ -1,12 +1,19 @@
 <%= content_for :content_header do%>
   <div style="display:flex; justify-content:space-between">
     <div>
-      <%= link_to 'Overview', plant_path(@plant.id), class: "btn btn-primary btn-sm" %> 
-      <%= link_to 'Timeline', timeline_plant_path(@plant.id), class: "btn btn-primary btn-sm active" %>
+      <%= link_to 'Overview', plant_path(@plant.id), class: "btn btn-primary btn-sm active" %>
+      <%= link_to 'Timeline', timeline_plant_path(@plant.id), class: "btn btn-primary btn-sm" %>
+      <%= link_to 'Plan', plan_plant_path(@plant.id), class: "btn btn-primary btn-sm" %>
     </div>
-    <div style="display:flex">
-      <h5 style="margin:10px">Plant: <%= @plant.id %></h5>
-      <h5 style="margin:10px"><%= @plant.crop.name %></h5>
+    <div style="display: flex; justify-content: space-around; width: 300px">
+      <div>
+          <h6><%= @plant.start_date %></h6>
+          <span>Start Date</span>
+      </div>
+      <div>
+          <h6>May 10</h6>
+          <span>Projected End Date</span>
+      </div>
     </div>
   </div>
 <% end %>

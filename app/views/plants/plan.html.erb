@@ -18,13 +18,14 @@
   </div>
 <% end %>
 <div class="card">
-  <%= react_component('PlantHeader', props={plant: @plant, crop: @plant.crop, variant: @plant.variant})%>
+    <h5 class="card-title"><%= @plant.plan.name %></h5>
+    <span class="card-category"><%= @plant.plan.description %></span><br>
+    <span class="card-category"> 
+      Duration: <%= @plant.plan.weeks.length %> Weeks
+    </span>
 </div>
-<div class="row" style="justify-content:space-between">
-  <div class="card" style="width:30%; margin-left:20px">
-    <%= react_component('PlantGrowthSummary', props={report: @plant.health_reports.last, image: url_for(@plant.health_reports.last.image.service_url)}) %>
-  </div>
-  <div class="card" style="width:50%; margin-:20px">
-    <%= react_component('PlantPlanSummary', props={plan: @plant.plan}) %>
+<div class="card">
+  <div>
+  
   </div>
 </div>
