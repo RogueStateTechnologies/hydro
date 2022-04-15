@@ -7,6 +7,7 @@
     </div>
     <div class="card-body" style="display:flex; justify-content:space-between;">
       <%= f.hidden_field :next_notification_date, :value => Date.today + 1.week %>
+      <%= f.hidden_field :week_id, :value => 1 %>
       <div>
         <%= f.collection_select :crop_id, 
                                 Crop.order(:name), 

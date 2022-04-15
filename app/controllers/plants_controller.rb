@@ -15,11 +15,9 @@ class PlantsController < ApplicationController
 
   def create
     @plant = current_user.plants.new(plant_params)
+    puts @plant.inspect
     if @plant.save
       render "show", flash: { notice: "Plant Created!"}
-      PlantDate.create(plant_id: @plant.id, date_type: "check_up", on_date: @plant.start_date + 1.week)
-      PlantDate.create(plant_id: @plant.id, date_type: "next_feeding", on_date: @plant.start_date + 3.day)
-      PlantDate.create(plant_id: @plant.id, date_type: "next_phase_start", on_date: @plant.start_date + 3.week)
     else 
       render "new", flash: { notice: "Unsuccesful"}
     end
@@ -56,7 +54,7 @@ class PlantsController < ApplicationController
   end
 
   def plant_params
-    params.require(:plant).permit(:user_id, :crop_id, :start_date, :variant_id, :medium_id, :plan_id, :phase_id, :next_notification_date, :light_wattage)
+    params.require(:plant).permit(:user_id, :crop_id, :start_date, :variant_id, :medium_id, :plan_id, :phase_id, :next_notification_date, :light_system, :week_id)
     end
 
 end

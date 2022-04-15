@@ -21,11 +21,59 @@
     <h5 class="card-title"><%= @plant.plan.name %></h5>
     <span class="card-category"><%= @plant.plan.description %></span><br>
     <span class="card-category"> 
-      Duration: <%= @plant.plan.weeks.length %> Weeks
+      Duration: <%= @plant.plan.weeks.length %> Week(s)
     </span>
 </div>
 <div class="card">
-  <div>
-  
+  <div class="card-header">
+    <h5 class="card-title">Weekly Breakdown</h5>
+    <%# Add a button to add another week to the plan%>
+  </div>
+  <div class="card-body">
+    <div class="table-responsive">
+      <table class="table">
+        <thead class="text-primary">
+        <%# This will need to iterate over the collection of nutrients %>
+          <th>
+          Week
+          </th>
+          <th>
+          Nute 1
+          </th>
+          <th>
+          Nute 2
+          </th>
+          <th>
+          Nute 3
+          </th>
+          <th>
+          Nute 4
+          </th>
+          <th>
+          Nute 5
+          </th>
+        </thead>
+        <tbody>
+        <% @plant.plan.weeks.each do |week| %>
+          <tr>
+            <td>
+              <%= week.id %>
+            </td>
+            <% week.nutrients.each do |nutrient| %>
+              <td>
+                <%= nutrient.amount_per_feeding %>ml
+              </td>
+            <% end %>
+          </tr>
+        <% end %>
+        <%# 
+          This will need to iterate over the collection of weeks
+          and then iterate over the collection of Nutrients
+          should have buttons for editing the week and removing the week
+          will likely have a button to view the week in detail (whatever that looks like) 
+        %>
+        </tbody>
+      </table>
+    </div>
   </div>
 </div>

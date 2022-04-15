@@ -22,7 +22,9 @@
 </div>
 <div class="row" style="justify-content:space-between">
   <div class="card" style="width:30%; margin-left:20px">
-    <%= react_component('PlantGrowthSummary', props={report: @plant.health_reports.last, image: url_for(@plant.health_reports.last.image.service_url)}) %>
+    <% if @plant.health_reports.last %>
+      <%= react_component('PlantGrowthSummary', props={report: @plant.health_reports.last, image: url_for(@plant.health_reports.last.image.service_url)}) %>
+    <% end %>
   </div>
   <div class="card" style="width:50%; margin-:20px">
     <%= react_component('PlantPlanSummary', props={plan: @plant.plan}) %>

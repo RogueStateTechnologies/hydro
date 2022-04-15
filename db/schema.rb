@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_03_28_004930) do
+ActiveRecord::Schema.define(version: 2022_03_26_205857) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -110,15 +110,6 @@ ActiveRecord::Schema.define(version: 2022_03_28_004930) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "plant_dates", force: :cascade do |t|
-    t.integer "plant_id"
-    t.string "date_type"
-    t.date "on_date"
-    t.text "notes"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "plants", force: :cascade do |t|
     t.integer "user_id"
     t.integer "crop_id"
@@ -128,6 +119,7 @@ ActiveRecord::Schema.define(version: 2022_03_28_004930) do
     t.integer "container_size"
     t.integer "plan_id"
     t.integer "phase_id"
+    t.integer "week_id"
     t.date "start_date"
     t.date "next_notification_date"
     t.datetime "created_at", precision: 6, null: false
