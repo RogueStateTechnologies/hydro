@@ -1,24 +1,145 @@
-# README
+# GroWise
+  ### An Grow Journal for plant lovers of all stripes
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+  ## Goals  
+   - Provide a crowd-sourced Encyclopedia of plants, focusing on in-depth knowledge for optimal growth and health
+   - Provide an online grow journal that can be used by people of any skill/knowledge level while still providing the depth needed by "experts"
 
-Things you may want to cover:
+  ## User Stories
+    - Users should be able to create an account
+    - Users should be able to edit their Username, First Name, Last Name, email, password
+    - Users should be able to create a Journal
+    - users should be able to schedule Events
+    - Users should be able to create Reports
+    - Users should be able to set Favorite Plants
+    - Users should be able to view Profile
+    - Users should be able to view a Journal Dashboard
+      - Should display:
+        - Start Date
+        - Plant Name
+        - Upcoming Event
+        - Recent Comments
+        - Current Height
+        - Growth Style
+        - Origin
+    - Users should be able to view a Timeline of all Events
+    - Users should be able to view all Plants
+    - Users should be able to view a Plant page
+      - Should display:
+        - Name
+        - Description
+        - Number of active Plants
+        - Number of Published Plants
+        - Common Problems
+        - List of Published Plants
+    - Users should be able to view published Plants
+    - Users should be able to search for Plants
+    - Users should be ale to search for Published Plants
+    - Users should be able to see visualizations of Journal performance compared to other Plants
+    - Users should be able to post, edit, and delete comments
 
-* Ruby version
+  ## Data Modal
+   - Users - Devise
+     - Email Address
+     - User Name
+     - First Name
+     - Last Name
+     - Favorite Crops - has_many
+     - Plants - has_many
+     - Photos - has_many
+     - Comments - has_many
+   - Crops
+     - Name
+     - Description
+     - Photos - has_many
+     - Plants - has_many
+     - Pros(?)
+     - Cons(?)
+   - Reports
+     - Health Report
+       - Plants - belongs_to
+       - Expected Height
+       - Height
+       - Average Watering Volume per day
+       - Report Date
+       - Average Light per day
+       - Diagnosis
+       - Photos - has_many
+       - Comments - has_many
+     - Harvest Report
+       - Plants - belongs_to
+       - Amount Harvested
+       - Comments - has_many
+     - Feeding Report
+       - Nutrients - has_many
+       - Water Volume
+       - Report Date
+       - Comments - has_many
+   - Plants
+     - Origin
+     - Environment
+     - Grow Medium
+     - Crop - belongs_to
+     - User - belongs_to
+     - Start Date
+     - Reports - has_many
+     - Photos - has_many
+     - Nutrients - has_many
+     - Notifications - has_many
+     - Published?
+     - Comments - has_many
+     - Container Size
+     - Light System
+     - Plan - belongs_to
+     - Phase - belongs_to
+   - Favorite Crops
+     - User - belongs_to
+     - Crop - belongs_to
+   - Photos
+     - User - belongs_to
+     - Journal - belongs_to
+     - Crop - belongs_to
+     - Comments - belongs_to
+   - Notifications
+     - Notification Type 
+     - Notification Date
+     - Comments - has_many
+   - Comments 
+     - Comment Type
+     - User - belongs_to
+     - Notification - belongs_to
+     - Report - belongs_to
+     - Journal - belongs_to
+     - Crop - belongs_to
+   - Nutrients
+     - Name
+     - Description
+     - Compound
+     - Manufacturer
+     - amount_per_feeding
+     - Plan - belongs_to
+     - Phase - belongs_to
+   - Plan
+     - Name
+     - description
+     - Crop - belongs_to
+     - User - belongs_to
+     - Plant - has_many
+   - Phase
+     - Name
+     - Plan - belongs_to
+     - description
+   - 
+   - Photos - ActiveRecord
+     - 
 
-* System dependencies
+**Notes**
+  - Reports should be unique to the crop and "grow style" of the associated plant
+  - When to use an Enumerable and when to use Polymorphic Associations
+  - Want to focus on writing tests
+  - Use Figma to plan out the design?
+  - Will need helpers(?) for calculating some data and for creating schedules
 
-* Configuration
+### Technologies Used
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- Ruby on Rails

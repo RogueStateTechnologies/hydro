@@ -3,17 +3,17 @@
 class CreatePlants < ActiveRecord::Migration[6.1]
   def change
     create_table :plants do |t|
-      t.integer :user_id
-      t.integer :crop_id
-      t.integer :variant_id
-      t.integer :medium_id
+      t.string  :origin
+      t.string  :environment
+      t.string  :medium
+      t.integer :user, null: false, foreign_key: true
+      t.integer :crop, null: false, foreign_key:true
       t.string  :light_system
       t.integer :container_size
-      t.integer :plan_id
-      t.integer :phase_id
-      t.integer :week_id
-      t.date    :start_date
-      t.date    :next_notification_date
+      t.integer :plan, null: false, foreign_key: true
+      t.integer :phase, null: false, foreign_key: true
+      t.boolean :published
+      t.integer :feedings_per_week
 
       t.timestamps
     end

@@ -3,11 +3,8 @@
 class Plant < ApplicationRecord
   belongs_to :user
   belongs_to :crop
-  belongs_to :variant
   belongs_to :plan
-  belongs_to :medium
   belongs_to :phase
-  belongs_to :week
 
   has_many   :health_reports
   has_many   :harvest_reports

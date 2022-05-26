@@ -37,21 +37,11 @@
           <th>
           Week
           </th>
-          <th>
-          Nute 1
-          </th>
-          <th>
-          Nute 2
-          </th>
-          <th>
-          Nute 3
-          </th>
-          <th>
-          Nute 4
-          </th>
-          <th>
-          Nute 5
-          </th>
+          <% @plant.plan.nutrients.each do |nutrient| %>
+            <th>
+              <%= nutrient.name %
+            </th>
+          <% end %>
         </thead>
         <tbody>
         <% @plant.plan.weeks.each do |week| %>
@@ -66,12 +56,6 @@
             <% end %>
           </tr>
         <% end %>
-        <%# 
-          This will need to iterate over the collection of weeks
-          and then iterate over the collection of Nutrients
-          should have buttons for editing the week and removing the week
-          will likely have a button to view the week in detail (whatever that looks like) 
-        %>
         </tbody>
       </table>
     </div>

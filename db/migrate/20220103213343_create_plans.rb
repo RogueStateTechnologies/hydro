@@ -6,7 +6,7 @@ class CreatePlans < ActiveRecord::Migration[6.1]
       t.string :name
       t.text :description
       t.integer :crop_id
-      t.string :created_by
+      t.string :user_id
 
       t.timestamps
     end

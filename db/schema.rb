@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_03_26_205857) do
+ActiveRecord::Schema.define(version: 2022_05_25_190615) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,6 +43,16 @@ ActiveRecord::Schema.define(version: 2022_03_26_205857) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
+  create_table "comments", force: :cascade do |t|
+    t.string "comment_type"
+    t.string "user_id"
+    t.string "notification_id"
+    t.string "report_id"
+    t.string "plant_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "crops", force: :cascade do |t|
     t.string "name"
     t.text "description"
@@ -52,12 +62,7 @@ ActiveRecord::Schema.define(version: 2022_03_26_205857) do
 
   create_table "harvest_reports", force: :cascade do |t|
     t.integer "height_in_centimeters"
-    t.integer "weight_wet_in_grams"
-    t.integer "weight_dry_in_grams"
-    t.integer "total_wattage_used"
-    t.integer "total_water_used_in_milileters"
-    t.integer "water_per_gram_in_milileters"
-    t.integer "wattage_per_gram"
+    t.string "amount_harvested"
     t.integer "plant_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -74,9 +79,9 @@ ActiveRecord::Schema.define(version: 2022_03_26_205857) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "media", force: :cascade do |t|
-    t.string "name"
-    t.string "description"
+  create_table "notifications", force: :cascade do |t|
+    t.string "notification_type"
+    t.date "notification_date"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -85,10 +90,9 @@ ActiveRecord::Schema.define(version: 2022_03_26_205857) do
     t.string "name"
     t.integer "plan_id"
     t.integer "phase_id"
-    t.integer "week_id"
     t.integer "amount_per_feeding"
     t.string "manufacturer"
-    t.string "composition"
+    t.string "compound"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -105,23 +109,23 @@ ActiveRecord::Schema.define(version: 2022_03_26_205857) do
     t.string "name"
     t.text "description"
     t.integer "crop_id"
-    t.string "created_by"
+    t.string "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "plants", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "crop_id"
-    t.integer "variant_id"
-    t.integer "medium_id"
+    t.string "origin"
+    t.string "environment"
+    t.string "medium"
+    t.integer "user", null: false
+    t.integer "crop", null: false
     t.string "light_system"
     t.integer "container_size"
-    t.integer "plan_id"
-    t.integer "phase_id"
-    t.integer "week_id"
-    t.date "start_date"
-    t.date "next_notification_date"
+    t.integer "plan", null: false
+    t.integer "phase", null: false
+    t.boolean "published"
+    t.integer "feedings_per_week"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -129,6 +133,9 @@ ActiveRecord::Schema.define(version: 2022_03_26_205857) do
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
+    t.string "first_name"
+    t.string "last_name"
+    t.string "user_name"
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
@@ -136,22 +143,6 @@ ActiveRecord::Schema.define(version: 2022_03_26_205857) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
-  end
-
-  create_table "variants", force: :cascade do |t|
-    t.string "name"
-    t.string "description"
-    t.integer "crop_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "weeks", force: :cascade do |t|
-    t.integer "phase_id"
-    t.integer "plan_id"
-    t.integer "feed_frequency"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"

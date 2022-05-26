@@ -54,7 +54,7 @@ class PlantsController < ApplicationController
   end
 
   def plant_params
-    params.require(:plant).permit(:user_id, :crop_id, :start_date, :variant_id, :medium_id, :plan_id, :phase_id, :next_notification_date, :light_system, :week_id)
+    params.require(:plant).permit(:user_id, :crop_id, :start_date, :medium, :plan_id, :phase_id, :light_system)
     end
 
 end
