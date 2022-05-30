@@ -6,7 +6,7 @@ class CreatePlants < ActiveRecord::Migration[6.1]
       t.string  :origin
       t.string  :environment
       t.string  :medium
-      t.integer :user, null: false, foreign_key: true
+      t.integer :user_id, null: false, foreign_key: true
       t.integer :crop, null: false, foreign_key:true
       t.string  :light_system
       t.integer :container_size
