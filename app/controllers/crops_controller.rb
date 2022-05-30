@@ -14,23 +14,25 @@ class CropsController < ApplicationController
   def create
     @crop = Crop.new(crop_params)
     if @crop.save
-      redirect_to @crop
+     redirect_to @crop
     else
       render "new"
     end
   end
 
+  def edit; end
+
   def update
     if @crop.update(crop_params)
       redirect_to @crop
     else
-      render "update"
+      render "edit"
     end
   end
 
-  def delete
+  def destroy
     if @crop.delete
-      redirect_to "index"
+      redirect_to crops_url
     else
       redirect_to @crop
     end

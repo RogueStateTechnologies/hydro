@@ -9,7 +9,6 @@
       <div class="table-responsive">
         <table class="table">
           <thead class="">
-          </thead>
             <th>
               Name
             </th>
@@ -22,8 +21,8 @@
             <th>
               Actions
             </th>
+          </thead>
           <tbody>
-            <%= render partial: "crop_variant", collection: Variant.where(crop_id: @crop.id) %> 
           </tbody>
         </table>
       </div>
