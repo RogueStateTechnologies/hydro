@@ -16,13 +16,7 @@ Rails.application.routes.draw do
   end
 
   resources :crops do
-    resources :variants
-    resources :plans 
-  end
-
-  resources :plans do
-    resources :phases, except: :index
-    resources :nutrients, except: :index
+    resources :phases
   end
 
   resources :nutrients, only: :index
