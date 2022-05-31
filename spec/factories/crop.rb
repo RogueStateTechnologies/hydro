@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :crop do
-    name { "Hot House Tomatoes" }
-    description { "Big, ripe, juciy tomatoes" }
+    name { Faker::Cannabis.strain }
+    description { Faker::Cannabis.type }
   end
 end

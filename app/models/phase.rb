@@ -1,8 +1,10 @@
 # frozen_string_literal: true
 
 class Phase < ApplicationRecord
-  belongs_to :plan
 
-  has_many :weeks
-  has_many :nutrients
+  validates :name, uniqueness: true,  presence: true
+  validates :description, length: { maximum: 500 }
+
+  belongs_to :crop
+
 end

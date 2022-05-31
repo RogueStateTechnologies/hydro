@@ -4,9 +4,6 @@ Rails.application.routes.draw do
 
   resources :comments
   resources :notifications
-  resources :plant_dates
-  resources :phase_weeks
-  resources :reports
   devise_for :user, :controllers => { registrations:  'users/registrations'}
 
   resources :plants do

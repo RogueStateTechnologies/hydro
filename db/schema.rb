@@ -99,33 +99,23 @@ ActiveRecord::Schema.define(version: 2022_05_25_190615) do
 
   create_table "phases", force: :cascade do |t|
     t.string "name"
-    t.integer "plan_id"
+    t.integer "crop_id", null: false
     t.text "description"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "plans", force: :cascade do |t|
-    t.string "name"
-    t.text "description"
-    t.integer "crop_id"
-    t.string "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "plants", force: :cascade do |t|
+    t.boolean "published"
     t.string "origin"
     t.string "environment"
     t.string "medium"
-    t.integer "user_id", null: false
-    t.integer "crop", null: false
     t.string "light_system"
     t.integer "container_size"
-    t.integer "plan", null: false
-    t.integer "phase", null: false
-    t.boolean "published"
     t.integer "feedings_per_week"
+    t.integer "user_id", null: false
+    t.integer "crop_id", null: false
+    t.integer "phase_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

@@ -17,7 +17,7 @@ RSpec.describe User, :type => :model do
     expect(user).to_not be_valid
   end
 
-  it "is not valid if email is wronf format" do
+  it "is not valid if email is wrong format" do
     user = FactoryBot.build(:user, email: 'u.ser.com', email_confirmation: 'u.ser.com')
     expect(user).to_not be_valid
   end
