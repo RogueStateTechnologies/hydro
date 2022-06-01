@@ -1,0 +1,23 @@
+<div class="col-md-12">
+  <div class="card">
+    <div class="card-header">
+      <h4 class="card-title">GroWise Crops Index</h4>
+      <h5 class="card-category">All the crops we currently support</h5>
+      <%= link_to "Add Phase", new_crop_phase_path, class: "btn btn-primary btn-sm"%>
+    </div>
+    <div class="card-body">
+      <div class="table-responsive">
+        <table class="table table-striped">
+          <thead class="text-primary">
+            <th class="text-left">
+              Name
+            </th>
+          </thead>
+          <tbody>
+            <%= render partial: "index_phase", collection: @phases %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

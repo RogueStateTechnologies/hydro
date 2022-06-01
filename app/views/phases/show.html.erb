@@ -1,0 +1,18 @@
+<div class="row">
+  <div class="col-md-8 ml-auto mr-auto">
+    <div class="card card-subcategories">
+      <div class="card-header ">
+        <h4 class="card-title text-center">
+          <%= @phase.name%>
+        </h4>
+        <br />
+          <%= link_to "Edit Phase", edit_crop_phase_path, class: "btn btn-primary btn-sm"%>
+      </div>
+      <div class="card-body ">
+        <div class="tab-pane" id="link7">
+          <%= @phase.description %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

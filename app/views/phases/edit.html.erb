@@ -1,0 +1,14 @@
+<div class="card" style="width:40%;">
+  <div class="card-header">
+    <h5 class="card-title">Edit Phase</h5>
+  </div>
+  <div class="card-body">
+    <%= bootstrap_form_for @phase do |f| %>
+      <div>
+        <%= f.text_field :name, placeholder: "Phase" %><br>
+        <%= f.text_area :description, placeholder: "Enter Description here..." %><br>
+      </div>
+      <%= button_to "Add Phase" %>
+    <% end %>
+  </div>
+</div>
