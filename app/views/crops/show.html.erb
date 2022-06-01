@@ -6,37 +6,11 @@
           <%= @crop.name%>
         </h4>
         <br />
+          <%= link_to "Edit Crop", edit_crop_path, class: "btn btn-primary btn-sm"%>
       </div>
       <div class="card-body ">
-        <ul class="nav nav-pills nav-pills-primary nav-pills-icons justify-content-center" role="tablist">
-          <li class="nav-item">
-            <a class="nav-link active" data-toggle="tab" href="#link7" role="tablist">
-              <i class="now-ui-icons objects_umbrella-13"></i>
-              Description
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" data-toggle="tab" href="#link8" role="tablist">
-              <i class="now-ui-icons shopping_shop"></i>
-              Variants
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" data-toggle="tab" href="#link9" role="tablist">
-              <i class="now-ui-icons ui-2_settings-90"></i>
-              Growth Plans 
-            </a>
-          </li>
-        </ul>
-        <div class="tab-content tab-space tab-subcategories">
         <div class="tab-pane" id="link7">
           <%= @crop.description %>
-        </div>
-        <div class="tab-pane" id="link8">
-          <%= render partial: "variants" %>
-        </div>
-        <div class="tab-pane active" id="link9">
-          <%= render partial: "growth_plans" %>
         </div>
       </div>
     </div>

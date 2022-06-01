@@ -1,0 +1,11 @@
+<div class="card" style="width: 40%">
+  <div class="card-header">
+    <h5 class="card-title">Edit Crop</h5>
+  </div>
+  <div class="card-body">
+    <%= bootstrap_form_for @crop do |f| %>
+      <%= f.text_field :name, placeholder: "Crop" %><br>
+      <%= f.text_area :description, placeholder: "Enter Description Here..." %><br>
+      <%= button_to "Add Crop" %>
+    <% end %>
+</div>

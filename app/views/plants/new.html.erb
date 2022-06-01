@@ -16,32 +16,11 @@
                                 {}, 
                                 {:class=>'form-control', 
                                  :data_size=>'5',} %>
-        <%= f.collection_select :variant_id,
-                                Variant.order(:name),
-                                :id,
-                                :name,
-                                {},
-                                {:class=>'form-control',
-                                 :data_size=>'5'}%>
       </div>
       <div>
-        <%= f.collection_select :medium_id,
-                                Medium.order(:name),
-                                :id,
-                                :name,
-                                {},
-                                {:class=>'form-control', 
-                                 :data_size=>'5'}%>
         <%= f.text_field        :light_system%>
       </div>
       <div>
-        <%= f.collection_select :plan_id,
-                                Plan.order(:name),
-                                :id,
-                                :name,
-                                {},
-                                {:class=>'form-control',
-                                 :data_size=>'5'}%>
         <%= f.collection_select :phase_id,
                                 Phase.order(:id),
                                 :id,
@@ -51,19 +30,8 @@
                                  :data_size=>'5'}%>
       </div>
       <div>
-        <%= f.date_select       :start_date %>
         <%= button_to 'Add Plant'%>
       </div>
     </div>
   </div>
 <% end %>
-<div class="card">
-  <div class="card-header">
-    <h4 class="card-title">Anything else you want to track?</h4>
-  </div>
-  <div class="card-body">
-    <div>
-      Another Form for other kinds of options
-    </div>
-  </div>
-</div>

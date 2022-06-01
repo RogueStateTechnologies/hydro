@@ -16,3 +16,8 @@
  *= require fullcalendar
  * require_self
  */
+ 
+ footer{
+   position: absolute;
+   bottom: 0px;
+ }
