@@ -1,0 +1,23 @@
+<div class="col-md-12">
+  <div class="card">
+    <div class="card-header">
+      <h4 class="card-title">Nutrient Index</h4>
+      <h5 class="card-category"></h5>
+      <%= link_to "Add Nutrient", new_crop_nutrient_path, class: "btn btn-primary btn-sm"%>
+    </div>
+    <div class="card-body">
+      <div class="table-responsive">
+        <table class="table table-striped">
+          <thead class="text-primary">
+            <th class="text-left">
+              Name
+            </th>
+          </thead>
+          <tbody>
+            <%= render partial: "index_nutrient", collection: @nutrients %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

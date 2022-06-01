@@ -46,7 +46,7 @@ class NutrientsController < ApplicationController
   end
 
   def nutrient_params
-    params.require(:nutrient).permit(:name, :crop_id, :phase_id, :manufacturer, :composition)
+    params.require(:nutrient).permit(:name, :crop_id, :manufacturer, :compound)
   end
 
   def find_or_new_nutrient

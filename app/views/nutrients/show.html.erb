@@ -1,0 +1,18 @@
+<div class="row">
+  <div class="col-md-8 ml-auto mr-auto">
+    <div class="card card-subcategories">
+      <div class="card-header ">
+        <h4 class="card-title text-center">
+          <%= @nutrient.name%>
+        </h4>
+        <br />
+          <%= link_to "Edit Nutrient", edit_crop_nutrient_path, class: "btn btn-primary btn-sm"%>
+      </div>
+      <div class="card-body ">
+        <div class="tab-pane" id="link7">
+          <%= @nutrient.manufacturer %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
