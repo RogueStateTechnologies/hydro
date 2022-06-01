@@ -8,7 +8,6 @@ class CreateNutrients < ActiveRecord::Migration[6.1]
       t.string :compound
 
       t.integer :crop_id, null: false, foreign_key: true
-      t.integer :phase_id, null: false, foreign_key: true
 
       t.timestamps
     end

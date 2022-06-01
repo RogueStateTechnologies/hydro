@@ -7,5 +7,4 @@ class Nutrient < ApplicationRecord
   validates :compound, presence: true
 
   belongs_to :crop
-  belongs_to :phase
 end

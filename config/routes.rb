@@ -11,18 +11,14 @@ Rails.application.routes.draw do
     resources :harvest_reports
     member do
       get 'timeline'
-      get 'plan'
     end
   end
 
   resources :crops do
     resources :phases
+    resources :nutrients
   end
 
-  resources :nutrients, only: :index
-  resources :phases, only: :index
-  resources :media, only: :index
-  resources :crops, only: :index
   # Root Route, where to go at application load.
   devise_scope :user do
 

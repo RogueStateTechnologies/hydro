@@ -3,14 +3,9 @@
     <h5 class="card-title">Good Plants start with Good Nutrients</h5>
   </div>
   <div class="card-body">
-    <%= bootstrap_form_for @nutrients do |f| %>
+    <%= bootstrap_form_for [@crop, @nutrient] do |f| %>
       <div>
-        <%= f.text_field :name, placeholder: "Nutrient" %><br>
-        <%= f.number_field :amount_per_feeding, placeholder: "1" %><br>
-      </div>
-      <div>
-        <%= f.collection_select :plan_id, Plan.order(:name), :id, :name %><br>
-        <%= f.collection_select :phase_id, Phase.order(:id), :id, :name %><br>
+        <%= f.text_field :name, placeholder: "Nutrient" %><br />
       </div>
       <%= button_to "Add Nutrient" %>
     <% end %>

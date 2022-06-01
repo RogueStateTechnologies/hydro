@@ -91,7 +91,6 @@ ActiveRecord::Schema.define(version: 2022_05_25_190615) do
     t.string "manufacturer"
     t.string "compound"
     t.integer "crop_id", null: false
-    t.integer "phase_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

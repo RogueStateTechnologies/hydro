@@ -51,3 +51,5 @@ Phase.create!(name: 'Early Growth', crop_id: green_onions.id, description: 'Gett
 Phase.create!(name: 'Bloom', crop_id: green_onions.id, description: 'Flowers become fruit')
 Phase.create!(name: 'Vegatation', crop_id: green_onions.id, description: 'Soon To be harvested')
 puts 'Phases Seeded'
+
+Nutrient.create!(name: 'Test', manufacturer: 'Test', compound: 'Test', crop_id: iceberg.id)

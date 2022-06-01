@@ -4,6 +4,5 @@ FactoryBot.define do
     manufacturer { 'Fox Farms' }
     compound { 'Potassium Chloride' }
     crop_id { Crop.first.id }
-    phase_id { Phase.first.id }
   end
 end
