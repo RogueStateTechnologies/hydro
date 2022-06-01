@@ -1,7 +1,11 @@
 # frozen_string_literal: true
 
 class Nutrient < ApplicationRecord
-  belongs_to :plan
+
+  validates :name, presence: true, uniqueness: true
+  validates :manufacturer, presence: true
+  validates :compound, presence: true
+
+  belongs_to :crop
   belongs_to :phase
-  belongs_to :week
 end

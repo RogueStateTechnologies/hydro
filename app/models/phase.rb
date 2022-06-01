@@ -7,4 +7,6 @@ class Phase < ApplicationRecord
 
   belongs_to :crop
 
+  has_many :nutrients
+
 end

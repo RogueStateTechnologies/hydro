@@ -4,11 +4,11 @@ class CreateNutrients < ActiveRecord::Migration[6.1]
   def change
     create_table :nutrients do |t|
       t.string :name
-      t.integer :plan_id
-      t.integer :phase_id
-      t.integer :amount_per_feeding
       t.string :manufacturer
       t.string :compound
+
+      t.integer :crop_id, null: false, foreign_key: true
+      t.integer :phase_id, null: false, foreign_key: true
 
       t.timestamps
     end
