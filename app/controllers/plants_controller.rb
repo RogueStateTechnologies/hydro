@@ -15,7 +15,6 @@ class PlantsController < ApplicationController
 
   def create
     @plant = current_user.plants.new(plant_params)
-    puts @plant.inspect
     if @plant.save
       render "show", flash: { notice: "Plant Created!"}
     else 
@@ -33,7 +32,7 @@ class PlantsController < ApplicationController
     end
   end
 
-  def delete
+  def destroy
     if @plant.delete
       render "index"
     else
@@ -54,7 +53,7 @@ class PlantsController < ApplicationController
   end
 
   def plant_params
-    params.require(:plant).permit(:user_id, :crop_id, :start_date, :medium, :plan_id, :phase_id, :light_system)
+    params.require(:plant).permit(:user_id, :crop_id, :medium, :phase_id, :light_system, :origin, :medium, :container_size, :published, :feedings_per_week, :environment)
   end
 
 end

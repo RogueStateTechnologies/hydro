@@ -53,3 +53,6 @@ Phase.create!(name: 'Vegatation', crop_id: green_onions.id, description: 'Soon T
 puts 'Phases Seeded'
 
 Nutrient.create!(name: 'Test', manufacturer: 'Test', compound: 'Test', crop_id: iceberg.id)
+puts 'Nutrients Seeded'
+
+Plant.create!(published: true, origin: 'seed', environment: 'indoor', medium: 'soil', light_system: 'natural', container_size: 10, feedings_per_week: 10, user_id: User.first.id, crop_id: hot_house.id, phase_id: Phase.first.id)

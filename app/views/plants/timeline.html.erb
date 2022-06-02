@@ -1,28 +1,21 @@
-<%= content_for :content_header do%>
-  <div style="display:flex; justify-content:space-between">
-    <div>
-      <%= link_to 'Overview', plant_path(@plant.id), class: "btn btn-primary btn-sm active" %>
-      <%= link_to 'Timeline', timeline_plant_path(@plant.id), class: "btn btn-primary btn-sm" %>
-      <%= link_to 'Plan', plan_plant_path(@plant.id), class: "btn btn-primary btn-sm" %>
-    </div>
-    <div style="display: flex; justify-content: space-around; width: 300px">
+<%= content_for :content_header do %>
+  <div class="card">
+    <h1>
+      <%= @plant.crop.name %>
+    </h1>
+    <h5>
+      <%= @plant.created_at%>
+    </h5>
+  </div>
+  <div>
+    <div style="display:flex; justify-content:space-between">
       <div>
-          <h6><%= @plant.start_date %></h6>
-          <span>Start Date</span>
-      </div>
-      <div>
-          <h6>May 10</h6>
-          <span>Projected End Date</span>
+        <%= link_to 'Overview', plant_path(@plant.id), class: "btn btn-primary btn-sm" %>
+      <%= link_to 'Timeline', timeline_plant_path(@plant.id), class: "btn btn-primary btn-sm active" %>
       </div>
     </div>
   </div>
 <% end %>
-<div class="card" style="padding:10px">
-  <div>
-    <%= link_to 'New Health Report', new_plant_health_report_path(@plant.id), class: "btn btn-info btn-sm" %>
-    <%= link_to 'New Harvest Report', new_plant_harvest_report_path(@plant.id), class: "btn btn-info btn-sm" %>
+  <div class="row" style="justify-content:space-between">
+    <%= react_component('PlantTimeline', props={healthReports: @plant.health_reports.all, harvestReports: @plant.harvest_reports.all}) %>
   </div>
-  <div class="card-plain">
-    <%= react_component('PlantTimeline', props={healthReports: @plant.health_reports, harvestReports: @plant.harvest_reports}) %>
-  </div>
-</div>

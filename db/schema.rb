@@ -69,12 +69,13 @@ ActiveRecord::Schema.define(version: 2022_05_25_190615) do
   end
 
   create_table "health_reports", force: :cascade do |t|
-    t.integer "plant_id"
+    t.integer "plant_id", null: false
     t.integer "height_in_centimeters"
     t.integer "average_air_temp"
     t.integer "ph"
+    t.integer "light_exposure"
+    t.string "root_health"
     t.text "diagnosis"
-    t.text "comments"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
