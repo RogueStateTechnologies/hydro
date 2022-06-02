@@ -15,23 +15,25 @@ class HealthReportsController < ApplicationController
   def create
     @health_report = @plant.health_reports.new(report_params)
     if @health_report.save
-      redirect_to timeline_plant_path(@plant)
+      render "show"
     else 
       render "new"
     end
   end
 
+  def edit; end
+
   def update
     if @report.update(report_params)
-      redirect_to @report
+      render "show"
     else
-      render "update"
+      render "edit"
     end
   end
 
-  def delete
+  def destroy
     if @report.delete
-      redirect_to @plant
+      render "index"
     else
       redirect_to @report
     end
@@ -40,18 +42,12 @@ class HealthReportsController < ApplicationController
   private 
 
   def report_params
-    params.require(:health_report).permit(:height_in_centimeters, :air_humidity, :light_schedule, :day_air_temp, :night_air_temp, :watering_volume_per_day, :container_size, :ph, :diagnosis, :comments, :plant_id, :image)
+    params.require(:health_report).permit(:height_in_centimeters, :light_exposure, :average_air_temp, :ph, :root_health, :diagnosis, :plant_id, :image)
   end
 
   def find_or_new_report
     @report = params[:id] ? HealthReport.find(params[:id]) : HealthReport.new
   end
-
-  def find_plant
-    @plant = Plant.find(params[:plant_id])
-  end
-
-  private 
 
   def find_plant
     @plant = Plant.find(params[:plant_id])
