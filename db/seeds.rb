@@ -60,3 +60,5 @@ puts 'Plants Seeded'
 
 HealthReport.create!(plant_id: Plant.first.id, height_in_centimeters: 100, average_air_temp: 29, ph: 3, light_exposure: 10, root_health: 'good', diagnosis: "healthy")
 puts 'Health Reports Seeded'
+
+HarvestReport.create!(plant_id: Plant.first.id, height_in_centimeters: 100, amount_harvested: 100)

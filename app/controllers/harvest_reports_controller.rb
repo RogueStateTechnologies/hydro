@@ -15,7 +15,7 @@ class HarvestReportsController < ApplicationController
   def create
     @harvest = @plant.harvest_reports.new(harvest_params)
     if @harvest.save
-      redirect_to timeline_plant_path(@plant)
+      render "show"
     else
       render "new"
     end
@@ -25,17 +25,17 @@ class HarvestReportsController < ApplicationController
 
   def update
     if @harvest.update(harvest_params)
-      redirect_to @plant
+      render "show"
     else
-      render "update"
+      render "edit"
     end
   end
 
-  def delete
+  def destroy
     if @harvest.delete
-      redirect_to @plant
+      render "index"
     else
-      redirect_to @harvest
+      render "show"
     end
   end
 
