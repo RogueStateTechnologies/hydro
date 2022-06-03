@@ -56,5 +56,7 @@ Nutrient.create!(name: 'Test', manufacturer: 'Test', compound: 'Test', crop_id: 
 puts 'Nutrients Seeded'
 
 Plant.create!(published: true, origin: 'seed', environment: 'indoor', medium: 'soil', light_system: 'natural', container_size: 10, feedings_per_week: 10, user_id: User.first.id, crop_id: hot_house.id, phase_id: Phase.first.id)
+puts 'Plants Seeded'
 
 HealthReport.create!(plant_id: Plant.first.id, height_in_centimeters: 100, average_air_temp: 29, ph: 3, light_exposure: 10, root_health: 'good', diagnosis: "healthy")
+puts 'Health Reports Seeded'

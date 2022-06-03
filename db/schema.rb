@@ -62,8 +62,8 @@ ActiveRecord::Schema.define(version: 2022_05_25_190615) do
 
   create_table "harvest_reports", force: :cascade do |t|
     t.integer "height_in_centimeters"
-    t.string "amount_harvested"
-    t.integer "plant_id"
+    t.integer "amount_harvested"
+    t.integer "plant_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
